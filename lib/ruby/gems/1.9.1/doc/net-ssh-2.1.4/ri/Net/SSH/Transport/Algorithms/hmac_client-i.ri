@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"hmac_client:EFI"0Net::SSH::Transport::Algorithms#hmac_client;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"@The type of HMAC to use to sign packets sent by the client.:encoding"IBM437:
+@fileI"(lib/net/ssh/transport/algorithms.rb;@F@

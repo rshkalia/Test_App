@@ -1,0 +1,11 @@
+Tue, 01 Nov 2011 23:09:45 -0400
+lib/commands/commands.rb	Tue, 01 Nov 2011 23:09:31 -0400
+lib/commands/helpers.rb	Tue, 01 Nov 2011 23:09:31 -0400
+lib/commands/issues.rb	Tue, 01 Nov 2011 23:09:31 -0400
+lib/commands/network.rb	Tue, 01 Nov 2011 23:09:31 -0400
+lib/github/command.rb	Tue, 01 Nov 2011 23:09:31 -0400
+lib/github/extensions.rb	Tue, 01 Nov 2011 23:09:31 -0400
+lib/github/helper.rb	Tue, 01 Nov 2011 23:09:31 -0400
+lib/github/ui.rb	Tue, 01 Nov 2011 23:09:31 -0400
+lib/github/version.rb	Tue, 01 Nov 2011 23:09:31 -0400
+lib/github.rb	Tue, 01 Nov 2011 23:09:31 -0400

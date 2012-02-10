@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"split_words:EFI"Text::Format#split_words;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"IAn array of words split during formatting if #hard_margins is set to:encoding"IBM437I"+true+.;@o:RDoc::Markup::Verbatim;	["C#split_words << Text::Format::SplitWord.new(word, first, rest):@format0:
+@fileI"lib/text/format.rb;@F@

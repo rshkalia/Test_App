@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"server_version:EFI"0Net::SSH::Transport::Session#server_version;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"IThe ServerVersion instance that encapsulates the negotiated protocol:encoding"IBM437I"version.;@:
+@fileI"%lib/net/ssh/transport/session.rb;@F@

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"treeview:EFI")JSON::Editor::MenuExtension#treeview;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I",Returns the Gtk::TreeView of this menu.:encoding"IBM437:
+@fileI"lib/json/editor.rb;@F@

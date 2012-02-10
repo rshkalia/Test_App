@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"remote_id:EFI"&Net::SSH::Test::Channel#remote_id;FI"W;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"TSets the remote-id of this channel object (the id assigned by the mock-server).:encoding"IBM437:
+@fileI" lib/net/ssh/test/channel.rb;@F@

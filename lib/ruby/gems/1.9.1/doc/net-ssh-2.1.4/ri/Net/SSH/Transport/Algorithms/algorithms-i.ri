@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"algorithms:EFI"/Net::SSH::Transport::Algorithms#algorithms;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"JThe hash of algorithms preferred by the client, which will be told to:encoding"IBM437I"-the server during algorithm negotiation.;@:
+@fileI"(lib/net/ssh/transport/algorithms.rb;@F@

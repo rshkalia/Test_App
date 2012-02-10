@@ -1,0 +1,4 @@
+U:RDoc::Attr[iI"
+shell:EFI"HighLine::Menu#shell;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[
+I"FWhen set to +true+, responses are allowed to be an entire line of:encoding"IBM437I"Hinput, including details beyond the command itself.  Only the first;@I"K"word" of input will be matched against the menu choices, but both the;@I"Icommand selected and the rest of the line will be passed to provided;@I")action blocks.  Defaults to +false+.;@:
+@fileI"lib/highline/menu.rb;@F@

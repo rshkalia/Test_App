@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"validate:EFI" HighLine::Question#validate;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HIf set to a Regexp, the answer must match (before type conversion).:encoding"IBM437I"ECan also be set to a Proc which will be called with the provided;@I"8answer to validate with a +true+ or +false+ return.;@:
+@fileI"lib/highline/question.rb;@F@

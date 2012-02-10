@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"max_blocks:EFI"*Net::SSH::Transport::State#max_blocks;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LThe maximum number of blocks that this endpoint wants to process before:encoding"IBM437I"needing a rekey.;@:
+@fileI"#lib/net/ssh/transport/state.rb;@F@

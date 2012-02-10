@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"proxy_host:EFI"'Net::SSH::Proxy::SOCKS5#proxy_host;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"(The proxy's host name or IP address:encoding"IBM437:
+@fileI" lib/net/ssh/proxy/socks5.rb;@F@

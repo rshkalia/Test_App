@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"socket:EFI"+Net::SSH::Authentication::Agent#socket;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HThe underlying socket being used to communicate with the SSH agent.:encoding"IBM437:
+@fileI"(lib/net/ssh/authentication/agent.rb;@F@

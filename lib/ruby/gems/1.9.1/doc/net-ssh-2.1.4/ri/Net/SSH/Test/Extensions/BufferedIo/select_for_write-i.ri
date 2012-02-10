@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"select_for_write:EFI"<Net::SSH::Test::Extensions::BufferedIo#select_for_write;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"QSet this to +true+ if you want the IO to pretend to be available for writing:encoding"IBM437:
+@fileI"#lib/net/ssh/test/extensions.rb;@F@

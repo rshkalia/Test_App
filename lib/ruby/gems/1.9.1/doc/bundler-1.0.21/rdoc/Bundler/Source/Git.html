@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Class: Bundler::Source::Git</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/bundler/source.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Path.html">Bundler::Source::Path</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-from_lock">::from_lock</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-3D-3D">#==</a>
+    
+    <li><a href="#method-i-eql-3F">#eql?</a>
+    
+    <li><a href="#method-i-install">#install</a>
+    
+    <li><a href="#method-i-load_spec_files">#load_spec_files</a>
+    
+    <li><a href="#method-i-name">#name</a>
+    
+    <li><a href="#method-i-path">#path</a>
+    
+    <li><a href="#method-i-specs">#specs</a>
+    
+    <li><a href="#method-i-to_lock">#to_lock</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+    <li><a href="#method-i-unlock-21">#unlock!</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../lib/bundler/man/bundle.html">bundle</a>
+  
+    <li class="file"><a href="../../lib/bundler/man/bundle-config.html">bundle-config</a>
+  
+    <li class="file"><a href="../../lib/bundler/man/bundle-config_txt.html">bundle-config</a>
+  
+    <li class="file"><a href="../../lib/bundler/man/bundle-exec.html">bundle-exec</a>
+  
+    <li class="file"><a href="../../lib/bundler/man/bundle-exec_txt.html">bundle-exec</a>
+  
+    <li class="file"><a href="../../lib/bundler/man/bundle-install.html">bundle-install</a>
+  
+    <li class="file"><a href="../../lib/bundler/man/bundle-install_txt.html">bundle-install</a>
+  
+    <li class="file"><a href="../../lib/bundler/man/bundle-package.html">bundle-package</a>
+  
+    <li class="file"><a href="../../lib/bundler/man/bundle-package_txt.html">bundle-package</a>
+  
+    <li class="file"><a href="../../lib/bundler/man/bundle-update.html">bundle-update</a>
+  
+    <li class="file"><a href="../../lib/bundler/man/bundle-update_txt.html">bundle-update</a>
+  
+    <li class="file"><a href="../../lib/bundler/man/bundle_txt.html">bundle</a>
+  
+    <li class="file"><a href="../../lib/bundler/man/gemfile_5_txt.html">gemfile.5</a>
+  
+    <li class="file"><a href="../../lib/bundler/templates/Executable.html">Executable</a>
+  
+    <li class="file"><a href="../../lib/bundler/templates/Gemfile.html">Gemfile</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Bundler.html">Bundler</a>
+  
+    <li><a href="../../Bundler/BundlerError.html">Bundler::BundlerError</a>
+  
+    <li><a href="../../Bundler/CLI.html">Bundler::CLI</a>
+  
+    <li><a href="../../Bundler/Definition.html">Bundler::Definition</a>
+  
+    <li><a href="../../Bundler/DepProxy.html">Bundler::DepProxy</a>
+  
+    <li><a href="../../Bundler/Dependency.html">Bundler::Dependency</a>
+  
+    <li><a href="../../Bundler/Deployment.html">Bundler::Deployment</a>
+  
+    <li><a href="../../Bundler/DeprecatedError.html">Bundler::DeprecatedError</a>
+  
+    <li><a href="../../Bundler/Dsl.html">Bundler::Dsl</a>
+  
+    <li><a href="../../Bundler/DslError.html">Bundler::DslError</a>
+  
+    <li><a href="../../Bundler/Environment.html">Bundler::Environment</a>
+  
+    <li><a href="../../Bundler/GemHelper.html">Bundler::GemHelper</a>
+  
+    <li><a href="../../Bundler/GemHelpers.html">Bundler::GemHelpers</a>
+  
+    <li><a href="../../Bundler/GemInstaller.html">Bundler::GemInstaller</a>
+  
+    <li><a href="../../Bundler/GemNotFound.html">Bundler::GemNotFound</a>
+  
+    <li><a href="../../Bundler/GemfileError.html">Bundler::GemfileError</a>
+  
+    <li><a href="../../Bundler/GemfileNotFound.html">Bundler::GemfileNotFound</a>
+  
+    <li><a href="../../Bundler/GemspecError.html">Bundler::GemspecError</a>
+  
+    <li><a href="../../Bundler/GitError.html">Bundler::GitError</a>
+  
+    <li><a href="../../Bundler/Graph.html">Bundler::Graph</a>
+  
+    <li><a href="../../Bundler/GraphNode.html">Bundler::GraphNode</a>
+  
+    <li><a href="../../Bundler/Index.html">Bundler::Index</a>
+  
+    <li><a href="../../Bundler/InstallError.html">Bundler::InstallError</a>
+  
+    <li><a href="../../Bundler/Installer.html">Bundler::Installer</a>
+  
+    <li><a href="../../Bundler/InvalidOption.html">Bundler::InvalidOption</a>
+  
+    <li><a href="../../Bundler/InvalidSpecSet.html">Bundler::InvalidSpecSet</a>
+  
+    <li><a href="../../Bundler/LazySpecification.html">Bundler::LazySpecification</a>
+  
+    <li><a href="../../Bundler/LockfileParser.html">Bundler::LockfileParser</a>
+  
+    <li><a href="../../Bundler/MatchPlatform.html">Bundler::MatchPlatform</a>
+  
+    <li><a href="../../Bundler/PathError.html">Bundler::PathError</a>
+  
+    <li><a href="../../Bundler/ProductionError.html">Bundler::ProductionError</a>
+  
+    <li><a href="../../Bundler/RemoteSpecification.html">Bundler::RemoteSpecification</a>
+  
+    <li><a href="../../Bundler/Resolver.html">Bundler::Resolver</a>
+  
+    <li><a href="../../Bundler/Resolver/SpecGroup.html">Bundler::Resolver::SpecGroup</a>
+  
+    <li><a href="../../Bundler/RubygemsIntegration.html">Bundler::RubygemsIntegration</a>
+  
+    <li><a href="../../Bundler/RubygemsIntegration/AlmostModern.html">Bundler::RubygemsIntegration::AlmostModern</a>
+  
+    <li><a href="../../Bundler/RubygemsIntegration/Ancient.html">Bundler::RubygemsIntegration::Ancient</a>
+  
+    <li><a href="../../Bundler/RubygemsIntegration/Deprecate.html">Bundler::RubygemsIntegration::Deprecate</a>
+  
+    <li><a href="../../Bundler/RubygemsIntegration/Gem.html">Bundler::RubygemsIntegration::Gem</a>
+  
+    <li><a href="../../Bundler/RubygemsIntegration/Gem/SourceIndex.html">Bundler::RubygemsIntegration::Gem::SourceIndex</a>
+  
+    <li><a href="../../Bundler/RubygemsIntegration/Legacy.html">Bundler::RubygemsIntegration::Legacy</a>
+  
+    <li><a href="../../Bundler/RubygemsIntegration/Modern.html">Bundler::RubygemsIntegration::Modern</a>
+  
+    <li><a href="../../Bundler/RubygemsIntegration/Transitional.html">Bundler::RubygemsIntegration::Transitional</a>
+  
+    <li><a href="../../Bundler/Runtime.html">Bundler::Runtime</a>
+  
+    <li><a href="../../Bundler/Settings.html">Bundler::Settings</a>
+  
+    <li><a href="../../Bundler/SharedHelpers.html">Bundler::SharedHelpers</a>
+  
+    <li><a href="../../Bundler/Source.html">Bundler::Source</a>
+  
+    <li><a href="../../Bundler/Source/Git.html">Bundler::Source::Git</a>
+  
+    <li><a href="../../Bundler/Source/Path.html">Bundler::Source::Path</a>
+  
+    <li><a href="../../Bundler/Source/Path/Installer.html">Bundler::Source::Path::Installer</a>
+  
+    <li><a href="../../Bundler/Source/Rubygems.html">Bundler::Source::Rubygems</a>
+  
+    <li><a href="../../Bundler/SpecSet.html">Bundler::SpecSet</a>
+  
+    <li><a href="../../Bundler/UI.html">Bundler::UI</a>
+  
+    <li><a href="../../Bundler/UI/RGProxy.html">Bundler::UI::RGProxy</a>
+  
+    <li><a href="../../Bundler/UI/Shell.html">Bundler::UI::Shell</a>
+  
+    <li><a href="../../Bundler/VersionConflict.html">Bundler::VersionConflict</a>
+  
+    <li><a href="../../Thor.html">Thor</a>
+  
+    <li><a href="../../Thor/Actions.html">Thor::Actions</a>
+  
+    <li><a href="../../Thor/Actions/ClassMethods.html">Thor::Actions::ClassMethods</a>
+  
+    <li><a href="../../Thor/Base.html">Thor::Base</a>
+  
+    <li><a href="../../Thor/Base/ClassMethods.html">Thor::Base::ClassMethods</a>
+  
+    <li><a href="../../Thor/DynamicTask.html">Thor::DynamicTask</a>
+  
+    <li><a href="../../Thor/Error.html">Thor::Error</a>
+  
+    <li><a href="../../Thor/Group.html">Thor::Group</a>
+  
+    <li><a href="../../Thor/HiddenTask.html">Thor::HiddenTask</a>
+  
+    <li><a href="../../Thor/Invocation.html">Thor::Invocation</a>
+  
+    <li><a href="../../Thor/Invocation/ClassMethods.html">Thor::Invocation::ClassMethods</a>
+  
+    <li><a href="../../Thor/InvocationError.html">Thor::InvocationError</a>
+  
+    <li><a href="../../Thor/MalformattedArgumentError.html">Thor::MalformattedArgumentError</a>
+  
+    <li><a href="../../Thor/RakeCompat.html">Thor::RakeCompat</a>
+  
+    <li><a href="../../Thor/RequiredArgumentMissingError.html">Thor::RequiredArgumentMissingError</a>
+  
+    <li><a href="../../Thor/Shell.html">Thor::Shell</a>
+  
+    <li><a href="../../Thor/Shell/Basic.html">Thor::Shell::Basic</a>
+  
+    <li><a href="../../Thor/Shell/Color.html">Thor::Shell::Color</a>
+  
+    <li><a href="../../Thor/Shell/HTML.html">Thor::Shell::HTML</a>
+  
+    <li><a href="../../Thor/Task.html">Thor::Task</a>
+  
+    <li><a href="../../Thor/UndefinedTaskError.html">Thor::UndefinedTaskError</a>
+  
+    <li><a href="../../Thor/UnknownArgumentError.html">Thor::UnknownArgumentError</a>
+  
+    <li><a href="../../Thor/Util.html">Thor::Util</a>
+  
+    <li><a href="../../Gem.html">Gem</a>
+  
+    <li><a href="../../Gem/Dependency.html">Gem::Dependency</a>
+  
+    <li><a href="../../Gem/Platform.html">Gem::Platform</a>
+  
+    <li><a href="../../Gem/Requirement.html">Gem::Requirement</a>
+  
+    <li><a href="../../Gem/Specification.html">Gem::Specification</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Bundler::Source::Git</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">options</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-ref" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">ref</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-submodules" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">submodules</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-uri" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">uri</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-from_lock" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">from_lock</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="from_lock-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source.rb, line 496</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">from_lock</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-string">&quot;uri&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;remote&quot;</span>)))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- from_lock-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- from_lock-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source.rb, line 482</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">super</span>
+
+  <span class="ruby-comment"># stringify options that could be set as symbols</span>
+  <span class="ruby-node">%w(ref branch tag revision)</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">k</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">k</span>] }
+
+  <span class="ruby-ivar">@uri</span>        = <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;uri&quot;</span>]
+  <span class="ruby-ivar">@ref</span>        = <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;ref&quot;</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;branch&quot;</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;tag&quot;</span>] <span class="ruby-operator">||</span> <span class="ruby-string">'master'</span>
+  <span class="ruby-ivar">@revision</span>   = <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;revision&quot;</span>]
+  <span class="ruby-ivar">@submodules</span> = <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;submodules&quot;</span>]
+  <span class="ruby-ivar">@update</span>     = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@installed</span>  = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-3D-3D" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(o)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Git.html#method-i-eql-3F">eql?</a>
+        </div>
+        
+      </div><!-- 3D-3D-method -->
+
+    
+      <div id="method-i-eql-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eql?</span><span
+            class="method-args">(o)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="eql-3F-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source.rb, line 511</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">o</span>)
+  <span class="ruby-constant">Git</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">o</span>            <span class="ruby-operator">&amp;&amp;</span>
+  <span class="ruby-identifier">uri</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">uri</span>         <span class="ruby-operator">&amp;&amp;</span>
+  <span class="ruby-identifier">ref</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">ref</span>         <span class="ruby-operator">&amp;&amp;</span>
+  <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">name</span>       <span class="ruby-operator">&amp;&amp;</span>
+  <span class="ruby-identifier">version</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">version</span> <span class="ruby-operator">&amp;&amp;</span>
+  <span class="ruby-identifier">submodules</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">submodules</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eql-3F-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Git.html#method-i-3D-3D">==</a>
+        </div>
+        
+
+        
+      </div><!-- eql-3F-method -->
+
+    
+      <div id="method-i-install" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">install</span><span
+            class="method-args">(spec)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="install-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source.rb, line 558</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">install</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Using #{spec.name} (#{spec.version}) from #{to_s} &quot;</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@installed</span>
+    <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;  * Checking out revision: #{ref}&quot;</span>
+    <span class="ruby-identifier">checkout</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">allow_git_ops?</span>
+    <span class="ruby-ivar">@installed</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">generate_bin</span>(<span class="ruby-identifier">spec</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- install-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- install-method -->
+
+    
+      <div id="method-i-load_spec_files" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_spec_files</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="load_spec_files-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source.rb, line 569</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_spec_files</span>
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">PathError</span>, <span class="ruby-constant">GitError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GitError</span>, <span class="ruby-node">&quot;#{to_s} is not checked out. Please run `bundle install`&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load_spec_files-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load_spec_files-method -->
+
+    
+      <div id="method-i-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source.rb, line 527</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-ivar">@uri</span>, <span class="ruby-string">'.git'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name-method -->
+
+    
+      <div id="method-i-path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="path-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source.rb, line 531</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-ivar">@install_path</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">git_scope</span> = <span class="ruby-node">&quot;#{base_name}-#{shortref_for_path(revision)}&quot;</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">requires_sudo?</span>
+      <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">user_bundle_path</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ruby_scope</span>).<span class="ruby-identifier">join</span>(<span class="ruby-identifier">git_scope</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">install_path</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">git_scope</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- path-method -->
+
+    
+      <div id="method-i-specs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">specs</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>TODO: actually cache git specs</p>
+          
+
+          
+          <div class="method-source-code" id="specs-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source.rb, line 548</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">specs</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">allow_git_ops?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@update</span>
+    <span class="ruby-comment"># Start by making sure the git cache is up to date</span>
+    <span class="ruby-identifier">cache</span>
+    <span class="ruby-identifier">checkout</span>
+    <span class="ruby-ivar">@update</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">local_specs</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- specs-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- specs-method -->
+
+    
+      <div id="method-i-to_lock" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_lock</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_lock-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source.rb, line 500</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_lock</span>
+  <span class="ruby-identifier">out</span> = <span class="ruby-string">&quot;GIT\n&quot;</span>
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;  remote: #{@uri}\n&quot;</span>
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;  revision: #{revision}\n&quot;</span>
+  <span class="ruby-node">%w(ref branch tag submodules)</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;  #{opt}: #{options[opt]}\n&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">opt</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;  glob: #{@glob}\n&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@glob</span> <span class="ruby-operator">==</span> <span class="ruby-constant">DEFAULT_GLOB</span>
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;  specs:\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_lock-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_lock-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source.rb, line 522</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">sref</span> = <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;ref&quot;</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">shortref_for_display</span>(<span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;ref&quot;</span>]) <span class="ruby-operator">:</span> <span class="ruby-identifier">ref</span>
+  <span class="ruby-node">&quot;#{uri} (at #{sref})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+      <div id="method-i-unlock-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unlock!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="unlock-21-source">
+            <pre><span class="ruby-comment"># File lib/bundler/source.rb, line 543</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unlock!</span>
+  <span class="ruby-ivar">@revision</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unlock-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unlock-21-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

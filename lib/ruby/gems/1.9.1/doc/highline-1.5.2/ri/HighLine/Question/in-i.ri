@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"in:EFI"HighLine::Question#in;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"AIf set, answer must pass an include?() check on this object.:encoding"IBM437:
+@fileI"lib/highline/question.rb;@F@

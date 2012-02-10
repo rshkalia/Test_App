@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"select_for_error?:EFI"=Net::SSH::Test::Extensions::BufferedIo#select_for_error?;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"MSet this to +true+ if you want the IO to pretend to be in an error state:encoding"IBM437:
+@fileI"#lib/net/ssh/test/extensions.rb;@F@

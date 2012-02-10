@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Class: Text::Format</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/text/format.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-3D-3D">#==</a>
+    
+    <li><a href="#method-i-center">#center</a>
+    
+    <li><a href="#method-i-expand">#expand</a>
+    
+    <li><a href="#method-i-format">#format</a>
+    
+    <li><a href="#method-i-format_one_paragraph">#format_one_paragraph</a>
+    
+    <li><a href="#method-i-hyphenate_to">#hyphenate_to</a>
+    
+    <li><a href="#method-i-justify-3F">#justify?</a>
+    
+    <li><a href="#method-i-left_align-3F">#left_align?</a>
+    
+    <li><a href="#method-i-paragraphs">#paragraphs</a>
+    
+    <li><a href="#method-i-right_align-3F">#right_align?</a>
+    
+    <li><a href="#method-i-right_fill-3F">#right_fill?</a>
+    
+    <li><a href="#method-i-split_word_to">#split_word_to</a>
+    
+    <li><a href="#method-i-unexpand">#unexpand</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../Changelog.html">Changelog</a>
+  
+    <li class="file"><a href="../Install.html">Install</a>
+  
+    <li class="file"><a href="../README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Text.html">Text</a>
+  
+    <li><a href="../Text/Format.html">Text::Format</a>
+  
+    <li><a href="../Text/Format/Alpha.html">Text::Format::Alpha</a>
+  
+    <li><a href="../Text/Format/Number.html">Text::Format::Number</a>
+  
+    <li><a href="../Text/Format/Roman.html">Text::Format::Roman</a>
+  
+    <li><a href="../Text/Format/SplitWord.html">Text::Format::SplitWord</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Text::Format</h1>
+
+  <div id="description" class="description">
+    
+<h1 id="label-Introduction">Introduction</h1>
+
+<p><a href="Format.html">Text::Format</a> provides the ability to nicely
+format fixed-width text with knowledge of the writeable space (number of
+columns), margins, and indentation settings.</p>
+<dl class="rdoc-list note-list"><dt>Copyright
+<dd>
+<p>Copyright (c) 2002 - 2005 by Austin Ziegler</p>
+</dd><dt>Version
+<dd>
+<p>1.0.0</p>
+</dd><dt>Based On
+<dd>
+<p>Perl <a
+href="http://search.cpan.org/author/GABOR/Text-Format0.52/lib/Text/Format.pm">Text::Format</a>,
+Copyright (c) 1998 Gábor Egressy</p>
+</dd><dt>Licence
+<dd>
+<p>Ruby's, Perl Artistic, or GPL version 2 (or later)</p>
+</dd></dl>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(options = {}) { |self| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a <a href="Format.html">Text::Format</a> object. Accepts an optional
+hash of construction options (this will be changed to named paramters in
+Ruby 2.0). After the initial object is constructed (with either the
+provided or default values), the object will be yielded (as
+<code>self</code>) to an optional block for further construction and
+operation.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/text/format.rb, line 1016</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span> = {}) <span class="ruby-comment">#:yields self:</span>
+  <span class="ruby-ivar">@text</span>                 = <span class="ruby-identifier">options</span>[<span class="ruby-value">:text</span>]                  <span class="ruby-operator">||</span> []
+  <span class="ruby-ivar">@columns</span>              = <span class="ruby-identifier">options</span>[<span class="ruby-value">:columns</span>]               <span class="ruby-operator">||</span> <span class="ruby-value">72</span>
+  <span class="ruby-ivar">@tabstop</span>              = <span class="ruby-identifier">options</span>[<span class="ruby-value">:tabstop</span>]               <span class="ruby-operator">||</span> <span class="ruby-value">8</span>
+  <span class="ruby-ivar">@first_indent</span>         = <span class="ruby-identifier">options</span>[<span class="ruby-value">:first_indent</span>]          <span class="ruby-operator">||</span> <span class="ruby-value">4</span>
+  <span class="ruby-ivar">@body_indent</span>          = <span class="ruby-identifier">options</span>[<span class="ruby-value">:body_indent</span>]           <span class="ruby-operator">||</span> <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@format_style</span>         = <span class="ruby-identifier">options</span>[<span class="ruby-value">:format_style</span>]          <span class="ruby-operator">||</span> <span class="ruby-constant">LEFT_ALIGN</span>
+  <span class="ruby-ivar">@left_margin</span>          = <span class="ruby-identifier">options</span>[<span class="ruby-value">:left_margin</span>]           <span class="ruby-operator">||</span> <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@right_margin</span>         = <span class="ruby-identifier">options</span>[<span class="ruby-value">:right_margin</span>]          <span class="ruby-operator">||</span> <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@extra_space</span>          = <span class="ruby-identifier">options</span>[<span class="ruby-value">:extra_space</span>]           <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@tag_paragraph</span>        = <span class="ruby-identifier">options</span>[<span class="ruby-value">:tag_paragraph</span>]         <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@tag_text</span>             = <span class="ruby-identifier">options</span>[<span class="ruby-value">:tag_text</span>]              <span class="ruby-operator">||</span> []
+  <span class="ruby-ivar">@abbreviations</span>        = <span class="ruby-identifier">options</span>[<span class="ruby-value">:abbreviations</span>]         <span class="ruby-operator">||</span> []
+  <span class="ruby-ivar">@terminal_punctuation</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:terminal_punctuation</span>]  <span class="ruby-operator">||</span> <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-ivar">@terminal_quotes</span>      = <span class="ruby-identifier">options</span>[<span class="ruby-value">:terminal_quotes</span>]       <span class="ruby-operator">||</span> <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-ivar">@nobreak</span>              = <span class="ruby-identifier">options</span>[<span class="ruby-value">:nobreak</span>]               <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@nobreak_regex</span>        = <span class="ruby-identifier">options</span>[<span class="ruby-value">:nobreak_regex</span>]         <span class="ruby-operator">||</span> {}
+  <span class="ruby-ivar">@hard_margins</span>         = <span class="ruby-identifier">options</span>[<span class="ruby-value">:hard_margins</span>]          <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@split_rules</span>          = <span class="ruby-identifier">options</span>[<span class="ruby-value">:split_rules</span>]           <span class="ruby-operator">||</span> <span class="ruby-constant">SPLIT_FIXED</span>
+  <span class="ruby-ivar">@hyphenator</span>           = <span class="ruby-identifier">options</span>[<span class="ruby-value">:hyphenator</span>]            <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>
+
+  <span class="ruby-ivar">@hyphenator_arity</span>     = <span class="ruby-ivar">@hyphenator</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:hyphenate_to</span>).<span class="ruby-identifier">arity</span>
+  <span class="ruby-ivar">@tag_cur</span>              = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-ivar">@split_words</span>          = []
+
+  <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-3D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(o)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Compares the formatting rules, excepting <a
+href="Format.html#attribute-i-hyphenator">#hyphenator</a>, of two <a
+href="Format.html">Text::Format</a> objects. Generated results (e.g., <a
+href="Format.html#attribute-i-split_words">#split_words</a>) are not
+compared.</p>
+          
+
+          
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File lib/text/format.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">o</span>)
+  (<span class="ruby-ivar">@text</span>                  <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">text</span>)                  <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@columns</span>               <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">columns</span>)               <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@left_margin</span>           <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">left_margin</span>)           <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@right_margin</span>          <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">right_margin</span>)          <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@hard_margins</span>          <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">hard_margins</span>)          <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@split_rules</span>           <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">split_rules</span>)           <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@first_indent</span>          <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">first_indent</span>)          <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@body_indent</span>           <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">body_indent</span>)           <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@tag_text</span>              <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tag_text</span>)              <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@tabstop</span>               <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tabstop</span>)               <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@format_style</span>          <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">format_style</span>)          <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@extra_space</span>           <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">extra_space</span>)           <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@tag_paragraph</span>         <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">tag_paragraph</span>)         <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@nobreak</span>               <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">nobreak</span>)               <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@terminal_punctuation</span>  <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">terminal_punctuation</span>)  <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@terminal_quotes</span>       <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">terminal_quotes</span>)       <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@abbreviations</span>         <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">abbreviations</span>)         <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@nobreak_regex</span>         <span class="ruby-operator">==</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">nobreak_regex</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3D-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 3D-3D-method -->
+
+    
+      <div id="method-i-center" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">center</span><span
+            class="method-args">(to_center = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Centers the text, preserving empty lines and tabs.</p>
+          
+
+          
+          <div class="method-source-code" id="center-source">
+            <pre><span class="ruby-comment"># File lib/text/format.rb, line 728</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">center</span>(<span class="ruby-identifier">to_center</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">to_center</span> = <span class="ruby-ivar">@text</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">to_center</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">to_center</span> = [<span class="ruby-identifier">to_center</span>].<span class="ruby-identifier">flatten</span>
+
+  <span class="ruby-identifier">tabs</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">width</span> = <span class="ruby-ivar">@columns</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@left_margin</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@right_margin</span>
+  <span class="ruby-identifier">centered</span> = []
+  <span class="ruby-identifier">to_center</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tc</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-identifier">tc</span>.<span class="ruby-identifier">strip</span>
+    <span class="ruby-identifier">tabs</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">count</span>(<span class="ruby-constant">TAB</span>)
+    <span class="ruby-identifier">tabs</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">tabs</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">ct</span> = ((<span class="ruby-identifier">width</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">tabs</span> * <span class="ruby-ivar">@tabstop</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">tabs</span>) <span class="ruby-operator">/</span> <span class="ruby-value">2</span>)
+    <span class="ruby-identifier">ct</span> = (<span class="ruby-identifier">width</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@left_margin</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@right_margin</span>) <span class="ruby-operator">-</span> <span class="ruby-identifier">ct</span>
+    <span class="ruby-identifier">centered</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{s.rjust(ct)}\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">centered</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- center-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- center-method -->
+
+    
+      <div id="method-i-expand" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">expand</span><span
+            class="method-args">(to_expand = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Replaces all tab characters in the text with <a
+href="Format.html#attribute-i-tabstop">#tabstop</a> spaces.</p>
+          
+
+          
+          <div class="method-source-code" id="expand-source">
+            <pre><span class="ruby-comment"># File lib/text/format.rb, line 747</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">expand</span>(<span class="ruby-identifier">to_expand</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">to_expand</span> = <span class="ruby-ivar">@text</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">to_expand</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-identifier">tmp</span> = <span class="ruby-string">' '</span> * <span class="ruby-ivar">@tabstop</span>
+  <span class="ruby-identifier">changer</span> = <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">text</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">res</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">NEWLINE_RE</span>)
+    <span class="ruby-identifier">res</span>.<span class="ruby-identifier">collect!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ln</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ln</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\t/</span>, <span class="ruby-identifier">tmp</span>) }
+    <span class="ruby-identifier">res</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">NEWLINE</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">to_expand</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>)
+    <span class="ruby-identifier">to_expand</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">te</span><span class="ruby-operator">|</span> <span class="ruby-identifier">changer</span>[<span class="ruby-identifier">te</span>] }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">changer</span>[<span class="ruby-identifier">to_expand</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- expand-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- expand-method -->
+
+    
+      <div id="method-i-format" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">format</span><span
+            class="method-args">(text = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Format.html#method-i-format_one_paragraph">format_one_paragraph</a>
+        </div>
+        
+      </div><!-- format-method -->
+
+    
+      <div id="method-i-format_one_paragraph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">format_one_paragraph</span><span
+            class="method-args">(text = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Formats text into a nice paragraph format. The text is separated into words
+and then reassembled a word at a time using the settings of this <a
+href="Format.html">Format</a> object.</p>
+
+<p>If <code>text</code> is <code>nil</code>, then the value of <a
+href="Format.html#attribute-i-text">#text</a> will be worked on.</p>
+          
+
+          
+          <div class="method-source-code" id="format_one_paragraph-source">
+            <pre><span class="ruby-comment"># File lib/text/format.rb, line 550</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">format_one_paragraph</span>(<span class="ruby-identifier">text</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">text</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@text</span>
+  <span class="ruby-identifier">text</span> = <span class="ruby-identifier">text</span>[<span class="ruby-value">0</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>)
+
+    <span class="ruby-comment"># Convert the provided paragraph to a list of words.</span>
+  <span class="ruby-identifier">words</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">SPACES_RE</span>).<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ww</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ww</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">ww</span>.<span class="ruby-identifier">empty?</span> }
+
+  <span class="ruby-identifier">text</span> = []
+
+    <span class="ruby-comment"># Find the maximum line width and the initial indent string.</span>
+    <span class="ruby-comment"># TODO 20050114 - allow the left and right margins to be specified as</span>
+    <span class="ruby-comment"># strings. If they are strings, then we need to use the sizes of the</span>
+    <span class="ruby-comment"># strings. Also: allow the indent string to be set manually and</span>
+    <span class="ruby-comment"># indicate whether the indent string will have a following space.</span>
+  <span class="ruby-identifier">max_line_width</span> = <span class="ruby-ivar">@columns</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@first_indent</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@left_margin</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@right_margin</span>
+  <span class="ruby-identifier">indent_str</span> = <span class="ruby-string">' '</span> * <span class="ruby-ivar">@first_indent</span>
+
+  <span class="ruby-identifier">first_line</span> = <span class="ruby-keyword">true</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">words</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">line</span>        = []
+    <span class="ruby-identifier">line_size</span>   = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">extra_space</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">line</span>        = [ <span class="ruby-identifier">words</span>.<span class="ruby-identifier">pop</span> ]
+    <span class="ruby-identifier">line_size</span>   = <span class="ruby-identifier">line</span>[<span class="ruby-value">-1</span>].<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">extra_space</span> = <span class="ruby-identifier">__add_extra_space?</span>(<span class="ruby-identifier">line</span>[<span class="ruby-value">-1</span>])
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">next_word</span> = <span class="ruby-identifier">words</span>.<span class="ruby-identifier">pop</span>
+    <span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">strip!</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">new_line_size</span> = (<span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">line_size</span>) <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">extra_space</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">line</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">!~</span> <span class="ruby-identifier">__sentence_end_re</span>)
+        <span class="ruby-identifier">extra_space</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># Increase the width of the new line if there's a sentence</span>
+      <span class="ruby-comment"># terminator and we are applying extra_space.</span>
+    <span class="ruby-identifier">new_line_size</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">extra_space</span>
+
+      <span class="ruby-comment"># Will the word fit onto the current line? If so, simply append it</span>
+      <span class="ruby-comment"># to the end of the line.</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">new_line_size</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">max_line_width</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">next_word</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">extra_space</span>
+          <span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;  #{next_word}&quot;</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; #{next_word}&quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+        <span class="ruby-comment"># Forcibly wrap the line if nonbreaking spaces are turned on and</span>
+        <span class="ruby-comment"># there is a condition where words must be wrapped. If we have</span>
+        <span class="ruby-comment"># returned more than one word, readjust the word list.</span>
+      <span class="ruby-identifier">line</span>, <span class="ruby-identifier">next_word</span> = <span class="ruby-identifier">__wrap_line</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">next_word</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@nobreak</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+          <span class="ruby-identifier">words</span>.<span class="ruby-identifier">push</span>(*(<span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">reverse</span>))
+          <span class="ruby-identifier">next_word</span> = <span class="ruby-identifier">words</span>.<span class="ruby-identifier">pop</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">next_word</span> = <span class="ruby-identifier">next_word</span>[<span class="ruby-value">0</span>]
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">strip!</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment"># Check to see if the line needs to be hyphenated. If a word has a</span>
+        <span class="ruby-comment"># hyphen in it (e.g., &quot;fixed-width&quot;), then we can ALWAYS wrap at</span>
+        <span class="ruby-comment"># that hyphenation, even if #hard_margins is not turned on. More</span>
+        <span class="ruby-comment"># elaborate forms of hyphenation will only be performed if</span>
+        <span class="ruby-comment"># #hard_margins is turned on. If we have returned more than one</span>
+        <span class="ruby-comment"># word, readjust the word list.</span>
+      <span class="ruby-identifier">line</span>, <span class="ruby-identifier">new_line_size</span>, <span class="ruby-identifier">next_word</span> = <span class="ruby-identifier">__hyphenate</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">line_size</span>, <span class="ruby-identifier">next_word</span>, <span class="ruby-identifier">max_line_width</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+          <span class="ruby-identifier">words</span>.<span class="ruby-identifier">push</span>(*(<span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">reverse</span>))
+          <span class="ruby-identifier">next_word</span> = <span class="ruby-identifier">words</span>.<span class="ruby-identifier">pop</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">next_word</span> = <span class="ruby-identifier">next_word</span>[<span class="ruby-value">0</span>]
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">strip!</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">text</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">__make_line</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">indent_str</span>, <span class="ruby-identifier">max_line_width</span>, <span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">nil?</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">nil?</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">first_line</span>
+        <span class="ruby-identifier">first_line</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">max_line_width</span> = <span class="ruby-ivar">@columns</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@body_indent</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@left_margin</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@right_margin</span>
+        <span class="ruby-identifier">indent_str</span> = <span class="ruby-string">' '</span> * <span class="ruby-ivar">@body_indent</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-identifier">line</span>          = []
+        <span class="ruby-identifier">new_line_size</span> = <span class="ruby-value">0</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">line</span>          = [ <span class="ruby-identifier">next_word</span> ]
+        <span class="ruby-identifier">new_line_size</span> = <span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">size</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">line_size</span>   = <span class="ruby-identifier">new_line_size</span>
+    <span class="ruby-identifier">extra_space</span> = <span class="ruby-identifier">__add_extra_space?</span>(<span class="ruby-identifier">next_word</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">next_word</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">line</span>, <span class="ruby-identifier">line_size</span>, <span class="ruby-identifier">ww</span> = <span class="ruby-identifier">__hyphenate</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">line_size</span>, <span class="ruby-identifier">ww</span>, <span class="ruby-identifier">max_line_width</span>)<span class="ruby-comment">#if @hard_margins</span>
+    <span class="ruby-identifier">text</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">__make_line</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">indent_str</span>, <span class="ruby-identifier">max_line_width</span>, <span class="ruby-identifier">ww</span>.<span class="ruby-identifier">nil?</span>)
+    <span class="ruby-identifier">line</span> = <span class="ruby-identifier">ww</span>
+    <span class="ruby-identifier">ww</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@tag_paragraph</span> <span class="ruby-keyword">and</span> (<span class="ruby-keyword">not</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">empty?</span>))
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@tag_cur</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-ivar">@tag_cur</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-ivar">@tag_cur</span> = <span class="ruby-ivar">@tag_text</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">fchar</span> = <span class="ruby-regexp">/(\S)/</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">text</span>[<span class="ruby-value">0</span>])[<span class="ruby-value">1</span>]
+    <span class="ruby-identifier">white</span> = <span class="ruby-identifier">text</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">index</span>(<span class="ruby-identifier">fchar</span>)
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@tag_cur</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">white</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@left_margin</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@tag_cur</span>.<span class="ruby-identifier">size</span>) <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">white</span> = <span class="ruby-ivar">@tag_cur</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@left_margin</span>
+        <span class="ruby-identifier">text</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/^ {#{white}}/</span>, <span class="ruby-node">&quot;#{' ' * @left_margin}#{@tag_cur}&quot;</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">text</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-node">&quot;#{' ' * @left_margin}#{@tag_cur}\n&quot;</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- format_one_paragraph-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Format.html#method-i-format">format</a>
+        </div>
+        
+
+        
+      </div><!-- format_one_paragraph-method -->
+
+    
+      <div id="method-i-hyphenate_to" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hyphenate_to</span><span
+            class="method-args">(word, size)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The formatting object itself can be used as a <a
+href="Format.html#attribute-i-hyphenator">#hyphenator</a>, where the
+default implementation of <a
+href="Format.html#method-i-hyphenate_to">#hyphenate_to</a> implements the
+conditions necessary to properly produce <a
+href="Format.html#SPLIT_CONTINUATION">SPLIT_CONTINUATION</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="hyphenate_to-source">
+            <pre><span class="ruby-comment"># File lib/text/format.rb, line 531</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hyphenate_to</span>(<span class="ruby-identifier">word</span>, <span class="ruby-identifier">size</span>)
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>) <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+    [<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">word</span>]
+  <span class="ruby-keyword">else</span>
+    [<span class="ruby-identifier">word</span>[<span class="ruby-value">0</span> <span class="ruby-operator">..</span> (<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>)] <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\\&quot;</span>, <span class="ruby-identifier">word</span>[(<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-operator">..</span> <span class="ruby-value">-1</span>]]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hyphenate_to-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hyphenate_to-method -->
+
+    
+      <div id="method-i-justify-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">justify?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Indicates that the format style is full justification.</p>
+<dl class="rdoc-list note-list"><dt><strong>Default</strong>
+<dd>
+<p><code>false</code></p>
+</dd><dt><strong>Used in</strong>
+<dd>
+<p><a href="Format.html#method-i-format">#format</a>, <a
+href="Format.html#method-i-paragraphs">#paragraphs</a></p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="justify-3F-source">
+            <pre><span class="ruby-comment"># File lib/text/format.rb, line 524</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">justify?</span>
+  <span class="ruby-ivar">@format_style</span> <span class="ruby-operator">==</span> <span class="ruby-constant">JUSTIFY</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- justify-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- justify-3F-method -->
+
+    
+      <div id="method-i-left_align-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">left_align?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Indicates that the format style is left alignment.</p>
+<dl class="rdoc-list note-list"><dt><strong>Default</strong>
+<dd>
+<p><code>true</code></p>
+</dd><dt><strong>Used in</strong>
+<dd>
+<p><a href="Format.html#method-i-format">#format</a>, <a
+href="Format.html#method-i-paragraphs">#paragraphs</a></p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="left_align-3F-source">
+            <pre><span class="ruby-comment"># File lib/text/format.rb, line 500</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">left_align?</span>
+  <span class="ruby-ivar">@format_style</span> <span class="ruby-operator">==</span> <span class="ruby-constant">LEFT_ALIGN</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- left_align-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- left_align-3F-method -->
+
+    
+      <div id="method-i-paragraphs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">paragraphs</span><span
+            class="method-args">(to_wrap = nil, split_on = /(</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Considers each element of text (provided or internal) as a paragraph. If <a
+href="Format.html#attribute-i-first_indent">#first_indent</a> is the same
+as <a href="Format.html#attribute-i-body_indent">#body_indent</a>, then
+paragraphs will be separated by a single empty line in the result;
+otherwise, the paragraphs will follow immediately after each other. Uses <a
+href="Format.html#method-i-format">#format</a> to do the heavy lifting.</p>
+
+<p>If <code>to_wrap</code> responds to split, then it will be split into an
+array of elements by calling split with the value of <code>split_on</code>.
+The default value of split_on is $/, or the default record separator,
+repeated twice (e.g., /nn/).</p>
+          
+
+          
+          <div class="method-source-code" id="paragraphs-source">
+            <pre><span class="ruby-comment"># File lib/text/format.rb, line 699</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">paragraphs</span>(<span class="ruby-identifier">to_wrap</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">split_on</span> = <span class="ruby-node">/(#{$/}){2}/</span>)
+  <span class="ruby-identifier">to_wrap</span> = <span class="ruby-ivar">@text</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">to_wrap</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">to_wrap</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:split</span>)
+    <span class="ruby-identifier">to_wrap</span> = <span class="ruby-identifier">to_wrap</span>.<span class="ruby-identifier">split</span>(<span class="ruby-identifier">split_on</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">to_wrap</span> = [<span class="ruby-identifier">to_wrap</span>].<span class="ruby-identifier">flatten</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> ((<span class="ruby-ivar">@first_indent</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@body_indent</span>) <span class="ruby-keyword">or</span> <span class="ruby-ivar">@tag_paragraph</span>) <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">p_end</span> = <span class="ruby-constant">NEWLINE</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">p_end</span> = <span class="ruby-string">''</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">cnt</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">ret</span> = []
+  <span class="ruby-identifier">to_wrap</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tw</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@tag_cur</span> = <span class="ruby-ivar">@tag_text</span>[<span class="ruby-identifier">cnt</span>] <span class="ruby-keyword">if</span> <span class="ruby-ivar">@tag_paragraph</span>
+    <span class="ruby-ivar">@tag_cur</span> = <span class="ruby-string">''</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@tag_cur</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">line</span> = <span class="ruby-identifier">format</span>(<span class="ruby-identifier">tw</span>)
+    <span class="ruby-identifier">ret</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{line}#{p_end}&quot;</span> <span class="ruby-keyword">if</span> (<span class="ruby-keyword">not</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">nil?</span>) <span class="ruby-keyword">and</span> (<span class="ruby-identifier">line</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+    <span class="ruby-identifier">cnt</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">ret</span>[<span class="ruby-value">-1</span>].<span class="ruby-identifier">chomp!</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ret</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">ret</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- paragraphs-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- paragraphs-method -->
+
+    
+      <div id="method-i-right_align-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">right_align?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Indicates that the format style is right alignment.</p>
+<dl class="rdoc-list note-list"><dt><strong>Default</strong>
+<dd>
+<p><code>false</code></p>
+</dd><dt><strong>Used in</strong>
+<dd>
+<p><a href="Format.html#method-i-format">#format</a>, <a
+href="Format.html#method-i-paragraphs">#paragraphs</a></p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="right_align-3F-source">
+            <pre><span class="ruby-comment"># File lib/text/format.rb, line 508</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">right_align?</span>
+  <span class="ruby-ivar">@format_style</span> <span class="ruby-operator">==</span> <span class="ruby-constant">RIGHT_ALIGN</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- right_align-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- right_align-3F-method -->
+
+    
+      <div id="method-i-right_fill-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">right_fill?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Indicates that the format style is right fill.</p>
+<dl class="rdoc-list note-list"><dt><strong>Default</strong>
+<dd>
+<p><code>false</code></p>
+</dd><dt><strong>Used in</strong>
+<dd>
+<p><a href="Format.html#method-i-format">#format</a>, <a
+href="Format.html#method-i-paragraphs">#paragraphs</a></p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="right_fill-3F-source">
+            <pre><span class="ruby-comment"># File lib/text/format.rb, line 516</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">right_fill?</span>
+  <span class="ruby-ivar">@format_style</span> <span class="ruby-operator">==</span> <span class="ruby-constant">RIGHT_FILL</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- right_fill-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- right_fill-3F-method -->
+
+    
+      <div id="method-i-split_word_to" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">split_word_to</span><span
+            class="method-args">(word, size)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Splits the provided word so that it is in two parts, <code>word[0 .. (size
+- 1)]</code> and <code>word[size .. -1]</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="split_word_to-source">
+            <pre><span class="ruby-comment"># File lib/text/format.rb, line 541</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">split_word_to</span>(<span class="ruby-identifier">word</span>, <span class="ruby-identifier">size</span>)
+  [<span class="ruby-identifier">word</span>[<span class="ruby-value">0</span> <span class="ruby-operator">..</span> (<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)], <span class="ruby-identifier">word</span>[<span class="ruby-identifier">size</span> <span class="ruby-operator">..</span> <span class="ruby-value">-1</span>]]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- split_word_to-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- split_word_to-method -->
+
+    
+      <div id="method-i-unexpand" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unexpand</span><span
+            class="method-args">(to_unexpand = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Replaces all occurrences of <a
+href="Format.html#attribute-i-tabstop">#tabstop</a> consecutive spaces with
+a tab character.</p>
+          
+
+          
+          <div class="method-source-code" id="unexpand-source">
+            <pre><span class="ruby-comment"># File lib/text/format.rb, line 766</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unexpand</span>(<span class="ruby-identifier">to_unexpand</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">to_unexpand</span> = <span class="ruby-ivar">@text</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">to_unexpand</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-identifier">tmp</span> = <span class="ruby-node">/ {#{@tabstop}}/</span>
+  <span class="ruby-identifier">changer</span> = <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">text</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">res</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">NEWLINE_RE</span>)
+    <span class="ruby-identifier">res</span>.<span class="ruby-identifier">collect!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ln</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ln</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-identifier">tmp</span>, <span class="ruby-constant">TAB</span>) }
+    <span class="ruby-identifier">res</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">NEWLINE</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">to_unexpand</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>)
+    <span class="ruby-identifier">to_unexpand</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">tu</span><span class="ruby-operator">|</span> <span class="ruby-identifier">changer</span>[<span class="ruby-identifier">tu</span>] }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">changer</span>[<span class="ruby-identifier">to_unexpand</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unexpand-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unexpand-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

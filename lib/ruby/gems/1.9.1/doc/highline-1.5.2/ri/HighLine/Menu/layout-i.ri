@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"layout:EFI"HighLine::Menu#layout;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"BAn ERb _layout_ to use when displaying this Menu object.  See:encoding"IBM437I" Menu.layout=() for details.;@:
+@fileI"lib/highline/menu.rb;@F@

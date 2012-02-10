@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Module: HighLine::SystemExtensions</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/highline/system_extensions.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-GetConsoleMode">#GetConsoleMode</a>
+    
+    <li><a href="#method-i-GetConsoleScreenBufferInfo">#GetConsoleScreenBufferInfo</a>
+    
+    <li><a href="#method-i-GetStdHandle">#GetStdHandle</a>
+    
+    <li><a href="#method-i-SetConsoleEcho">#SetConsoleEcho</a>
+    
+    <li><a href="#method-i-SetConsoleMode">#SetConsoleMode</a>
+    
+    <li><a href="#method-i-get_character">#get_character</a>
+    
+    <li><a href="#method-i-raw_no_echo_mode">#raw_no_echo_mode</a>
+    
+    <li><a href="#method-i-restore_mode">#restore_mode</a>
+    
+    <li><a href="#method-i-terminal_size">#terminal_size</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../INSTALL.html">INSTALL</a>
+  
+    <li class="file"><a href="../LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../README.html">README</a>
+  
+    <li class="file"><a href="../TODO.html">TODO</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../HighLine.html">HighLine</a>
+  
+    <li><a href="../HighLine/ColorScheme.html">HighLine::ColorScheme</a>
+  
+    <li><a href="../HighLine/Menu.html">HighLine::Menu</a>
+  
+    <li><a href="../HighLine/Question.html">HighLine::Question</a>
+  
+    <li><a href="../HighLine/Question/NoAutoCompleteMatch.html">HighLine::Question::NoAutoCompleteMatch</a>
+  
+    <li><a href="../HighLine/QuestionError.html">HighLine::QuestionError</a>
+  
+    <li><a href="../HighLine/SampleColorScheme.html">HighLine::SampleColorScheme</a>
+  
+    <li><a href="../HighLine/SystemExtensions.html">HighLine::SystemExtensions</a>
+  
+    <li><a href="../IO.html">IO</a>
+  
+    <li><a href="../Kernel.html">Kernel</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../String.html">String</a>
+  
+    <li><a href="../StringIO.html">StringIO</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module HighLine::SystemExtensions</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="CHARACTER_MODE">CHARACTER_MODE
+        
+        <dd class="description"><p>work correctly in JRuby manually installing the ffi-ncurses gem is the only
+way to get highline to operate correctly in  JRuby. The ncurses library is
+only present on unix platforms so this is not a solution for using highline
+in JRuby on windows.</p>
+        
+      
+        <dt id="ENABLE_ECHO_INPUT">ENABLE_ECHO_INPUT
+        
+        <dd class="description">
+        
+      
+        <dt id="ENABLE_INSERT_MODE">ENABLE_INSERT_MODE
+        
+        <dd class="description">
+        
+      
+        <dt id="ENABLE_LINE_INPUT">ENABLE_LINE_INPUT
+        
+        <dd class="description">
+        
+      
+        <dt id="ENABLE_MOUSE_INPUT">ENABLE_MOUSE_INPUT
+        
+        <dd class="description">
+        
+      
+        <dt id="ENABLE_PROCESSED_INPUT">ENABLE_PROCESSED_INPUT
+        
+        <dd class="description">
+        
+      
+        <dt id="ENABLE_QUICK_EDIT_MODE">ENABLE_QUICK_EDIT_MODE
+        
+        <dd class="description">
+        
+      
+        <dt id="ENABLE_WINDOW_INPUT">ENABLE_WINDOW_INPUT
+        
+        <dd class="description">
+        
+      
+        <dt id="ENABLE_WRAP_AT_EOL_OUTPUT">ENABLE_WRAP_AT_EOL_OUTPUT
+        
+        <dd class="description">
+        
+      
+        <dt id="JRUBY">JRUBY
+        
+        <dd class="description">
+        
+      
+        <dt id="STD_ERROR_HANDLE">STD_ERROR_HANDLE
+        
+        <dd class="description">
+        
+      
+        <dt id="STD_INPUT_HANDLE">STD_INPUT_HANDLE
+        
+        <dd class="description"><p>win32 console APIs</p>
+        
+      
+        <dt id="STD_OUTPUT_HANDLE">STD_OUTPUT_HANDLE
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-GetConsoleMode" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">GetConsoleMode</span><span
+            class="method-args">( console_handle )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="GetConsoleMode-source">
+            <pre><span class="ruby-comment"># File lib/highline/system_extensions.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">GetConsoleMode</span>( <span class="ruby-identifier">console_handle</span> )
+  <span class="ruby-identifier">@@apiGetConsoleMode</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Win32API</span>.<span class="ruby-identifier">new</span>( <span class="ruby-string">&quot;kernel32&quot;</span>, <span class="ruby-string">&quot;GetConsoleMode&quot;</span>,
+  [<span class="ruby-string">'L'</span>, <span class="ruby-string">'P'</span>], <span class="ruby-string">'I'</span> )
+
+  <span class="ruby-identifier">mode</span> = <span class="ruby-string">' '</span> * <span class="ruby-value">4</span>
+  <span class="ruby-identifier">@@apiGetConsoleMode</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">console_handle</span>, <span class="ruby-identifier">mode</span>)
+  <span class="ruby-identifier">mode</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">'L'</span>)[<span class="ruby-value">0</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- GetConsoleMode-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- GetConsoleMode-method -->
+
+    
+      <div id="method-i-GetConsoleScreenBufferInfo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">GetConsoleScreenBufferInfo</span><span
+            class="method-args">( console_handle )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="GetConsoleScreenBufferInfo-source">
+            <pre><span class="ruby-comment"># File lib/highline/system_extensions.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">GetConsoleScreenBufferInfo</span>( <span class="ruby-identifier">console_handle</span> )
+  <span class="ruby-identifier">@@apiGetConsoleScreenBufferInfo</span> <span class="ruby-operator">||=</span>
+  <span class="ruby-constant">Win32API</span>.<span class="ruby-identifier">new</span>( <span class="ruby-string">&quot;kernel32&quot;</span>, <span class="ruby-string">&quot;GetConsoleScreenBufferInfo&quot;</span>,
+  [<span class="ruby-string">'L'</span>, <span class="ruby-string">'P'</span>], <span class="ruby-string">'L'</span> )
+
+  <span class="ruby-identifier">format</span> = <span class="ruby-string">'SSSSSssssSS'</span>
+  <span class="ruby-identifier">buf</span>    = ([<span class="ruby-value">0</span>] * <span class="ruby-identifier">format</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">pack</span>(<span class="ruby-identifier">format</span>)        
+  <span class="ruby-identifier">@@apiGetConsoleScreenBufferInfo</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">console_handle</span>, <span class="ruby-identifier">buf</span>)
+  <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-identifier">format</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- GetConsoleScreenBufferInfo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- GetConsoleScreenBufferInfo-method -->
+
+    
+      <div id="method-i-GetStdHandle" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">GetStdHandle</span><span
+            class="method-args">( handle_type )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="GetStdHandle-source">
+            <pre><span class="ruby-comment"># File lib/highline/system_extensions.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">GetStdHandle</span>( <span class="ruby-identifier">handle_type</span> )
+  <span class="ruby-identifier">@@apiGetStdHandle</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Win32API</span>.<span class="ruby-identifier">new</span>( <span class="ruby-string">&quot;kernel32&quot;</span>, <span class="ruby-string">&quot;GetStdHandle&quot;</span>,
+  [<span class="ruby-string">'L'</span>], <span class="ruby-string">'L'</span> )
+
+  <span class="ruby-identifier">@@apiGetStdHandle</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">handle_type</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- GetStdHandle-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- GetStdHandle-method -->
+
+    
+      <div id="method-i-SetConsoleEcho" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">SetConsoleEcho</span><span
+            class="method-args">( console_handle, on )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>windows savvy console echo toggler</p>
+          
+
+          
+          <div class="method-source-code" id="SetConsoleEcho-source">
+            <pre><span class="ruby-comment"># File lib/highline/system_extensions.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">SetConsoleEcho</span>( <span class="ruby-identifier">console_handle</span>, <span class="ruby-identifier">on</span> )
+  <span class="ruby-identifier">mode</span> = <span class="ruby-constant">GetConsoleMode</span>(<span class="ruby-identifier">console_handle</span>)
+
+  <span class="ruby-comment"># toggle the console echo bit</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">on</span>
+    <span class="ruby-identifier">mode</span> <span class="ruby-operator">|=</span>  <span class="ruby-constant">ENABLE_ECHO_INPUT</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">mode</span> <span class="ruby-operator">&amp;=</span> <span class="ruby-operator">~</span><span class="ruby-constant">ENABLE_ECHO_INPUT</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">ok</span> = <span class="ruby-constant">SetConsoleMode</span>(<span class="ruby-identifier">console_handle</span>, <span class="ruby-identifier">mode</span>)    
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- SetConsoleEcho-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- SetConsoleEcho-method -->
+
+    
+      <div id="method-i-SetConsoleMode" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">SetConsoleMode</span><span
+            class="method-args">( console_handle, mode )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="SetConsoleMode-source">
+            <pre><span class="ruby-comment"># File lib/highline/system_extensions.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">SetConsoleMode</span>( <span class="ruby-identifier">console_handle</span>, <span class="ruby-identifier">mode</span> )
+  <span class="ruby-identifier">@@apiSetConsoleMode</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Win32API</span>.<span class="ruby-identifier">new</span>( <span class="ruby-string">&quot;kernel32&quot;</span>, <span class="ruby-string">&quot;SetConsoleMode&quot;</span>,
+  [<span class="ruby-string">'L'</span>, <span class="ruby-string">'L'</span>], <span class="ruby-string">'I'</span> )
+
+  <span class="ruby-identifier">@@apiSetConsoleMode</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">console_handle</span>, <span class="ruby-identifier">mode</span>) <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- SetConsoleMode-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- SetConsoleMode-method -->
+
+    
+      <div id="method-i-get_character" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_character</span><span
+            class="method-args">( input = STDIN )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Windows savvy getc().</p>
+          
+
+          
+          <div class="method-source-code" id="get_character-source">
+            <pre><span class="ruby-comment"># File lib/highline/system_extensions.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_character</span>( <span class="ruby-identifier">input</span> = <span class="ruby-constant">STDIN</span> )
+  <span class="ruby-ivar">@stdin_handle</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">GetStdHandle</span>(<span class="ruby-constant">STD_INPUT_HANDLE</span>)
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">SetConsoleEcho</span>(<span class="ruby-ivar">@stdin_handle</span>, <span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getbyte</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-constant">SetConsoleEcho</span>(<span class="ruby-ivar">@stdin_handle</span>, <span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">end</span>        
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_character-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_character-method -->
+
+    
+      <div id="method-i-raw_no_echo_mode" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">raw_no_echo_mode</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Switched the input mode to raw and disables echo.</p>
+
+<p><strong>WARNING</strong>:  This method requires the external "stty"
+program!</p>
+          
+
+          
+          <div class="method-source-code" id="raw_no_echo_mode-source">
+            <pre><span class="ruby-comment"># File lib/highline/system_extensions.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">raw_no_echo_mode</span>
+  <span class="ruby-ivar">@state</span> = <span class="ruby-value">`stty -g`</span>
+  <span class="ruby-identifier">system</span> <span class="ruby-string">&quot;stty raw -echo cbreak isig&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- raw_no_echo_mode-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- raw_no_echo_mode-method -->
+
+    
+      <div id="method-i-restore_mode" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">restore_mode</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Restores a previously saved input mode.</p>
+
+<p><strong>WARNING</strong>:  This method requires the external "stty"
+program!</p>
+          
+
+          
+          <div class="method-source-code" id="restore_mode-source">
+            <pre><span class="ruby-comment"># File lib/highline/system_extensions.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">restore_mode</span>
+  <span class="ruby-identifier">system</span> <span class="ruby-node">&quot;stty #{@state}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- restore_mode-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- restore_mode-method -->
+
+    
+      <div id="method-i-terminal_size" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">terminal_size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A Windows savvy method to fetch the console columns, and rows.</p>
+          
+
+          
+          <div class="method-source-code" id="terminal_size-source">
+            <pre><span class="ruby-comment"># File lib/highline/system_extensions.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">terminal_size</span>
+  <span class="ruby-identifier">stdout_handle</span> = <span class="ruby-constant">GetStdHandle</span>(<span class="ruby-constant">STD_OUTPUT_HANDLE</span>)
+
+  <span class="ruby-identifier">bufx</span>, <span class="ruby-identifier">bufy</span>, <span class="ruby-identifier">curx</span>, <span class="ruby-identifier">cury</span>, <span class="ruby-identifier">wattr</span>, <span class="ruby-identifier">left</span>, <span class="ruby-identifier">top</span>, <span class="ruby-identifier">right</span>, <span class="ruby-identifier">bottom</span>, <span class="ruby-identifier">maxx</span>, <span class="ruby-identifier">maxy</span> =
+  <span class="ruby-constant">GetConsoleScreenBufferInfo</span>(<span class="ruby-identifier">stdout_handle</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">right</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">left</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">bottom</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">top</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- terminal_size-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- terminal_size-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Class: JSON::Editor::MainWindow</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/json/editor.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">JSON::Editor::Gtk::Window
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Gtk.html">JSON::Editor::Gtk</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-ask_for_location">#ask_for_location</a>
+    
+    <li><a href="#method-i-ask_save">#ask_save</a>
+    
+    <li><a href="#method-i-change">#change</a>
+    
+    <li><a href="#method-i-clear">#clear</a>
+    
+    <li><a href="#method-i-create_menu_bar">#create_menu_bar</a>
+    
+    <li><a href="#method-i-display_status">#display_status</a>
+    
+    <li><a href="#method-i-display_title">#display_title</a>
+    
+    <li><a href="#method-i-edit">#edit</a>
+    
+    <li><a href="#method-i-file_open">#file_open</a>
+    
+    <li><a href="#method-i-file_save">#file_save</a>
+    
+    <li><a href="#method-i-file_save_as">#file_save_as</a>
+    
+    <li><a href="#method-i-load_file">#load_file</a>
+    
+    <li><a href="#method-i-load_location">#load_location</a>
+    
+    <li><a href="#method-i-location_open">#location_open</a>
+    
+    <li><a href="#method-i-quit">#quit</a>
+    
+    <li><a href="#method-i-read_data">#read_data</a>
+    
+    <li><a href="#method-i-select_file">#select_file</a>
+    
+    <li><a href="#method-i-store_file">#store_file</a>
+    
+    <li><a href="#method-i-unchange">#unchange</a>
+    
+    <li><a href="#method-i-view_new_model">#view_new_model</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../JSON.html">JSON</a>
+  
+    <li><a href="../../JSON/Editor.html">JSON::Editor</a>
+  
+    <li><a href="../../JSON/Editor/EditMenu.html">JSON::Editor::EditMenu</a>
+  
+    <li><a href="../../JSON/Editor/FileMenu.html">JSON::Editor::FileMenu</a>
+  
+    <li><a href="../../JSON/Editor/Gtk.html">JSON::Editor::Gtk</a>
+  
+    <li><a href="../../JSON/Editor/Gtk/TreeIter.html">JSON::Editor::Gtk::TreeIter</a>
+  
+    <li><a href="../../JSON/Editor/JSONTreeView.html">JSON::Editor::JSONTreeView</a>
+  
+    <li><a href="../../JSON/Editor/MainWindow.html">JSON::Editor::MainWindow</a>
+  
+    <li><a href="../../JSON/Editor/MenuExtension.html">JSON::Editor::MenuExtension</a>
+  
+    <li><a href="../../JSON/Editor/OptionsMenu.html">JSON::Editor::OptionsMenu</a>
+  
+    <li><a href="../../JSON/Editor/PopUpMenu.html">JSON::Editor::PopUpMenu</a>
+  
+    <li><a href="../../JSON/Ext.html">JSON::Ext</a>
+  
+    <li><a href="../../JSON/GeneratorError.html">JSON::GeneratorError</a>
+  
+    <li><a href="../../JSON/JSONError.html">JSON::JSONError</a>
+  
+    <li><a href="../../JSON/MissingUnicodeSupport.html">JSON::MissingUnicodeSupport</a>
+  
+    <li><a href="../../JSON/NestingError.html">JSON::NestingError</a>
+  
+    <li><a href="../../JSON/ParserError.html">JSON::ParserError</a>
+  
+    <li><a href="../../JSON/Pure.html">JSON::Pure</a>
+  
+    <li><a href="../../JSON/Pure/Generator.html">JSON::Pure::Generator</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods.html">JSON::Pure::Generator::GeneratorMethods</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/Array.html">JSON::Pure::Generator::GeneratorMethods::Array</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/FalseClass.html">JSON::Pure::Generator::GeneratorMethods::FalseClass</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/Float.html">JSON::Pure::Generator::GeneratorMethods::Float</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/Hash.html">JSON::Pure::Generator::GeneratorMethods::Hash</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/Integer.html">JSON::Pure::Generator::GeneratorMethods::Integer</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/NilClass.html">JSON::Pure::Generator::GeneratorMethods::NilClass</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/Object.html">JSON::Pure::Generator::GeneratorMethods::Object</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/String.html">JSON::Pure::Generator::GeneratorMethods::String</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/String/Extend.html">JSON::Pure::Generator::GeneratorMethods::String::Extend</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/TrueClass.html">JSON::Pure::Generator::GeneratorMethods::TrueClass</a>
+  
+    <li><a href="../../JSON/Pure/Generator/State.html">JSON::Pure::Generator::State</a>
+  
+    <li><a href="../../JSON/Pure/Parser.html">JSON::Pure::Parser</a>
+  
+    <li><a href="../../JSON/GeneratorError.html">JSON::UnparserError</a>
+  
+    <li><a href="../../Class.html">Class</a>
+  
+    <li><a href="../../Complex.html">Complex</a>
+  
+    <li><a href="../../Date.html">Date</a>
+  
+    <li><a href="../../DateTime.html">DateTime</a>
+  
+    <li><a href="../../Exception.html">Exception</a>
+  
+    <li><a href="../../Kernel.html">Kernel</a>
+  
+    <li><a href="../../Range.html">Range</a>
+  
+    <li><a href="../../Rational.html">Rational</a>
+  
+    <li><a href="../../Regexp.html">Regexp</a>
+  
+    <li><a href="../../Struct.html">Struct</a>
+  
+    <li><a href="../../Symbol.html">Symbol</a>
+  
+    <li><a href="../../Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class JSON::Editor::MainWindow</h1>
+
+  <div id="description" class="description">
+    
+<p>The editor main window</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(encoding)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1049</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">encoding</span>)
+  <span class="ruby-ivar">@changed</span>  = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@encoding</span> = <span class="ruby-identifier">encoding</span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-constant">TOPLEVEL</span>)
+  <span class="ruby-identifier">display_title</span>
+  <span class="ruby-identifier">set_default_size</span>(<span class="ruby-value">800</span>, <span class="ruby-value">600</span>)
+  <span class="ruby-identifier">signal_connect</span>(<span class="ruby-value">:delete_event</span>) { <span class="ruby-identifier">quit</span> }
+
+  <span class="ruby-identifier">vbox</span> = <span class="ruby-constant">VBox</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">false</span>, <span class="ruby-value">0</span>)
+  <span class="ruby-identifier">add</span>(<span class="ruby-identifier">vbox</span>)
+  <span class="ruby-comment">#vbox.border_width = 0</span>
+
+  <span class="ruby-ivar">@treeview</span> = <span class="ruby-constant">JSONTreeView</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-ivar">@treeview</span>.<span class="ruby-identifier">signal_connect</span>(<span class="ruby-value">:'cursor-changed'</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">display_status</span>(<span class="ruby-string">''</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">menu_bar</span> = <span class="ruby-identifier">create_menu_bar</span>
+  <span class="ruby-identifier">vbox</span>.<span class="ruby-identifier">pack_start</span>(<span class="ruby-identifier">menu_bar</span>, <span class="ruby-keyword">false</span>, <span class="ruby-keyword">false</span>, <span class="ruby-value">0</span>)
+
+  <span class="ruby-identifier">sw</span> = <span class="ruby-constant">ScrolledWindow</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">sw</span>.<span class="ruby-identifier">shadow_type</span> = <span class="ruby-constant">SHADOW_ETCHED_IN</span>
+  <span class="ruby-identifier">sw</span>.<span class="ruby-identifier">set_policy</span>(<span class="ruby-constant">POLICY_AUTOMATIC</span>, <span class="ruby-constant">POLICY_AUTOMATIC</span>)
+  <span class="ruby-identifier">vbox</span>.<span class="ruby-identifier">pack_start</span>(<span class="ruby-identifier">sw</span>, <span class="ruby-keyword">true</span>, <span class="ruby-keyword">true</span>, <span class="ruby-value">0</span>)
+  <span class="ruby-identifier">sw</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@treeview</span>)
+
+  <span class="ruby-ivar">@status_bar</span> = <span class="ruby-constant">Statusbar</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">vbox</span>.<span class="ruby-identifier">pack_start</span>(<span class="ruby-ivar">@status_bar</span>, <span class="ruby-keyword">false</span>, <span class="ruby-keyword">false</span>, <span class="ruby-value">0</span>)
+
+  <span class="ruby-ivar">@filename</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@filename</span>
+    <span class="ruby-identifier">data</span> = <span class="ruby-identifier">read_data</span>(<span class="ruby-ivar">@filename</span>)
+    <span class="ruby-identifier">view_new_model</span> <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">data2model</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">signal_connect</span>(<span class="ruby-value">:button_release_event</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>,<span class="ruby-identifier">event</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">event</span>.<span class="ruby-identifier">button</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>
+      <span class="ruby-identifier">c</span> = <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Clipboard</span>.<span class="ruby-identifier">get</span>(<span class="ruby-constant">Gdk</span><span class="ruby-operator">::</span><span class="ruby-constant">Selection</span><span class="ruby-operator">::</span><span class="ruby-constant">PRIMARY</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">url</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">wait_for_text</span>
+        <span class="ruby-identifier">location_open</span> <span class="ruby-identifier">url</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-ask_for_location" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ask_for_location</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ask for location URI a to load data from. Returns the URI as a string.</p>
+          
+
+          
+          <div class="method-source-code" id="ask_for_location-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1318</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ask_for_location</span>
+  <span class="ruby-identifier">dialog</span> = <span class="ruby-constant">Dialog</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-string">&quot;Load data from location...&quot;</span>,
+    <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>,
+    [ <span class="ruby-constant">Stock</span><span class="ruby-operator">::</span><span class="ruby-constant">OK</span>, <span class="ruby-constant">Dialog</span><span class="ruby-operator">::</span><span class="ruby-constant">RESPONSE_ACCEPT</span> ],
+    [ <span class="ruby-constant">Stock</span><span class="ruby-operator">::</span><span class="ruby-constant">CANCEL</span>, <span class="ruby-constant">Dialog</span><span class="ruby-operator">::</span><span class="ruby-constant">RESPONSE_REJECT</span> ]
+  )
+  <span class="ruby-identifier">hbox</span> = <span class="ruby-constant">HBox</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">false</span>, <span class="ruby-value">5</span>)
+
+  <span class="ruby-identifier">hbox</span>.<span class="ruby-identifier">pack_start</span>(<span class="ruby-constant">Label</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Location:&quot;</span>), <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">hbox</span>.<span class="ruby-identifier">pack_start</span>(<span class="ruby-identifier">location_input</span> = <span class="ruby-constant">Entry</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-identifier">location_input</span>.<span class="ruby-identifier">width_chars</span> = <span class="ruby-value">60</span>
+  <span class="ruby-identifier">location_input</span>.<span class="ruby-identifier">text</span> = <span class="ruby-ivar">@location</span> <span class="ruby-operator">||</span> <span class="ruby-string">''</span>
+
+  <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">vbox</span>.<span class="ruby-identifier">pack_start</span>(<span class="ruby-identifier">hbox</span>, <span class="ruby-keyword">false</span>)
+
+  <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">signal_connect</span>(<span class="ruby-value">:'key-press-event'</span>, &amp;<span class="ruby-constant">DEFAULT_DIALOG_KEY_PRESS_HANDLER</span>)
+  <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">show_all</span>
+  <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">run</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">response</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">response</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Dialog</span><span class="ruby-operator">::</span><span class="ruby-constant">RESPONSE_ACCEPT</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location_input</span>.<span class="ruby-identifier">text</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">destroy</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">dialog</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ask_for_location-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ask_for_location-method -->
+
+    
+      <div id="method-i-ask_save" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ask_save</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Opens a dialog, asking, if changes should be saved to a file.</p>
+          
+
+          
+          <div class="method-source-code" id="ask_save-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ask_save</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">question_dialog</span>(<span class="ruby-keyword">self</span>,
+    <span class="ruby-string">&quot;Unsaved changes to JSON model. Save?&quot;</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@filename</span>
+      <span class="ruby-identifier">file_save</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">file_save_as</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ask_save-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ask_save-method -->
+
+    
+      <div id="method-i-change" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">change</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets editor status to changed, to indicate that the edited data containts
+unsaved changes.</p>
+          
+
+          
+          <div class="method-source-code" id="change-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">change</span>
+  <span class="ruby-ivar">@changed</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">display_title</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- change-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- change-method -->
+
+    
+      <div id="method-i-clear" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clear</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Clear the current model, after asking to save all unsaved changes.</p>
+          
+
+          
+          <div class="method-source-code" id="clear-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clear</span>
+  <span class="ruby-identifier">ask_save</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@changed</span>
+  <span class="ruby-ivar">@filename</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view_new_model</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- clear-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- clear-method -->
+
+    
+      <div id="method-i-create_menu_bar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_menu_bar</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates the menu bar with the pulldown menus and returns it.</p>
+          
+
+          
+          <div class="method-source-code" id="create_menu_bar-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1098</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_menu_bar</span>
+  <span class="ruby-identifier">menu_bar</span> = <span class="ruby-constant">MenuBar</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@file_menu</span> = <span class="ruby-constant">FileMenu</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@treeview</span>)
+  <span class="ruby-identifier">menu_bar</span>.<span class="ruby-identifier">append</span> <span class="ruby-ivar">@file_menu</span>.<span class="ruby-identifier">create</span>
+  <span class="ruby-ivar">@edit_menu</span> = <span class="ruby-constant">EditMenu</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@treeview</span>)
+  <span class="ruby-identifier">menu_bar</span>.<span class="ruby-identifier">append</span> <span class="ruby-ivar">@edit_menu</span>.<span class="ruby-identifier">create</span>
+  <span class="ruby-ivar">@options_menu</span> = <span class="ruby-constant">OptionsMenu</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@treeview</span>)
+  <span class="ruby-identifier">menu_bar</span>.<span class="ruby-identifier">append</span> <span class="ruby-ivar">@options_menu</span>.<span class="ruby-identifier">create</span>
+  <span class="ruby-identifier">menu_bar</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_menu_bar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_menu_bar-method -->
+
+    
+      <div id="method-i-display_status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">display_status</span><span
+            class="method-args">(text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Displays <em>text</em> in the status bar.</p>
+          
+
+          
+          <div class="method-source-code" id="display_status-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">display_status</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-ivar">@cid</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@status_bar</span>.<span class="ruby-identifier">pop</span>(<span class="ruby-ivar">@cid</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@cid</span>
+  <span class="ruby-ivar">@cid</span> = <span class="ruby-ivar">@status_bar</span>.<span class="ruby-identifier">get_context_id</span>(<span class="ruby-string">'dummy'</span>)
+  <span class="ruby-ivar">@status_bar</span>.<span class="ruby-identifier">push</span>(<span class="ruby-ivar">@cid</span>, <span class="ruby-identifier">text</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- display_status-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- display_status-method -->
+
+    
+      <div id="method-i-display_title" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">display_title</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Display the new title according to the editor's current state.</p>
+          
+
+          
+          <div class="method-source-code" id="display_title-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">display_title</span>
+  <span class="ruby-identifier">title</span> = <span class="ruby-constant">TITLE</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">title</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;: #@filename&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@filename</span>
+  <span class="ruby-identifier">title</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; *&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@changed</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">title</span> = <span class="ruby-identifier">title</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- display_title-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- display_title-method -->
+
+    
+      <div id="method-i-edit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit</span><span
+            class="method-args">(json)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Edit the string <em>json</em> in the editor.</p>
+          
+
+          
+          <div class="method-source-code" id="edit-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>(<span class="ruby-identifier">json</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">json</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:read</span>
+    <span class="ruby-identifier">json</span> = <span class="ruby-identifier">json</span>.<span class="ruby-identifier">read</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">parse_json</span> <span class="ruby-identifier">json</span>
+  <span class="ruby-identifier">view_new_model</span> <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">data2model</span>(<span class="ruby-identifier">data</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- edit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- edit-method -->
+
+    
+      <div id="method-i-file_open" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">file_open</span><span
+            class="method-args">(filename = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Open the file <em>filename</em> or call the <a
+href="MainWindow.html#method-i-select_file">#select_file</a> method to ask
+for a filename.</p>
+          
+
+          
+          <div class="method-source-code" id="file_open-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">file_open</span>(<span class="ruby-identifier">filename</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">select_file</span>(<span class="ruby-string">'Open as a JSON file'</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">load_file</span>(<span class="ruby-identifier">filename</span>) <span class="ruby-keyword">or</span> <span class="ruby-keyword">return</span>
+  <span class="ruby-identifier">view_new_model</span> <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">data2model</span>(<span class="ruby-identifier">data</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- file_open-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- file_open-method -->
+
+    
+      <div id="method-i-file_save" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">file_save</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Save the current file.</p>
+          
+
+          
+          <div class="method-source-code" id="file_save-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">file_save</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@filename</span>
+    <span class="ruby-identifier">store_file</span>(<span class="ruby-ivar">@filename</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">file_save_as</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- file_save-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- file_save-method -->
+
+    
+      <div id="method-i-file_save_as" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">file_save_as</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Save the current file as the filename</p>
+          
+
+          
+          <div class="method-source-code" id="file_save_as-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1219</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">file_save_as</span>
+  <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">select_file</span>(<span class="ruby-string">'Save as a JSON file'</span>)
+  <span class="ruby-identifier">store_file</span>(<span class="ruby-identifier">filename</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- file_save_as-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- file_save_as-method -->
+
+    
+      <div id="method-i-load_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_file</span><span
+            class="method-args">(filename)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Load the file named <em>filename</em> into the editor as a <a
+href="../../JSON.html">JSON</a> document.</p>
+          
+
+          
+          <div class="method-source-code" id="load_file-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1246</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_file</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">filename</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">filename</span>)
+      <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">error_dialog</span>(<span class="ruby-keyword">self</span>, <span class="ruby-string">&quot;Try to select a JSON file!&quot;</span>)
+      <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@filename</span> = <span class="ruby-identifier">filename</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span> = <span class="ruby-identifier">read_data</span>(<span class="ruby-identifier">filename</span>)
+        <span class="ruby-identifier">toplevel</span>.<span class="ruby-identifier">display_status</span>(<span class="ruby-node">&quot;Loaded data from '#@filename'.&quot;</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">display_title</span>
+      <span class="ruby-identifier">data</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load_file-method -->
+
+    
+      <div id="method-i-load_location" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_location</span><span
+            class="method-args">(uri)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Load the data at location <em>uri</em> into the editor as a <a
+href="../../JSON.html">JSON</a> document.</p>
+          
+
+          
+          <div class="method-source-code" id="load_location-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1263</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_location</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">read_data</span>(<span class="ruby-identifier">uri</span>) <span class="ruby-keyword">or</span> <span class="ruby-keyword">return</span>
+  <span class="ruby-ivar">@filename</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">toplevel</span>.<span class="ruby-identifier">display_status</span>(<span class="ruby-node">&quot;Loaded data from '#{uri}'.&quot;</span>)
+  <span class="ruby-identifier">display_title</span>
+  <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load_location-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load_location-method -->
+
+    
+      <div id="method-i-location_open" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">location_open</span><span
+            class="method-args">(uri = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Open the data at the location <em>uri</em>, if given. Otherwise open a
+dialog to ask for the <em>uri</em>.</p>
+          
+
+          
+          <div class="method-source-code" id="location_open-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">location_open</span>(<span class="ruby-identifier">uri</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">uri</span> = <span class="ruby-identifier">ask_for_location</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">uri</span>
+  <span class="ruby-identifier">uri</span> <span class="ruby-keyword">or</span> <span class="ruby-keyword">return</span>
+  <span class="ruby-identifier">ask_save</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@changed</span>
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">load_location</span>(<span class="ruby-identifier">uri</span>) <span class="ruby-keyword">or</span> <span class="ruby-keyword">return</span>
+  <span class="ruby-identifier">view_new_model</span> <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">data2model</span>(<span class="ruby-identifier">data</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- location_open-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- location_open-method -->
+
+    
+      <div id="method-i-quit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">quit</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Quit this editor, that is, leave this editor's main loop.</p>
+          
+
+          
+          <div class="method-source-code" id="quit-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">quit</span>
+  <span class="ruby-identifier">ask_save</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@changed</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Gtk</span>.<span class="ruby-identifier">main_level</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">destroy</span>
+    <span class="ruby-constant">Gtk</span>.<span class="ruby-identifier">main_quit</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- quit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- quit-method -->
+
+    
+      <div id="method-i-read_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read_data</span><span
+            class="method-args">(filename)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Read a <a href="../../JSON.html">JSON</a> document from the file named
+<em>filename</em>, parse it into a ruby data structure, and return the
+data.</p>
+          
+
+          
+          <div class="method-source-code" id="read_data-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1282</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">read_data</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">json</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">parse_json</span>(<span class="ruby-identifier">json</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">error_dialog</span>(<span class="ruby-keyword">self</span>, <span class="ruby-node">&quot;Failed to parse JSON file: #{e}!&quot;</span>)
+  <span class="ruby-keyword">return</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- read_data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- read_data-method -->
+
+    
+      <div id="method-i-select_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">select_file</span><span
+            class="method-args">(message)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Open a file selecton dialog, displaying <em>message</em>, and return the
+selected filename or nil, if no file was selected.</p>
+          
+
+          
+          <div class="method-source-code" id="select_file-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1294</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">select_file</span>(<span class="ruby-identifier">message</span>)
+  <span class="ruby-identifier">filename</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">fs</span> = <span class="ruby-constant">FileSelection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">message</span>)
+  <span class="ruby-identifier">fs</span>.<span class="ruby-identifier">set_modal</span>(<span class="ruby-keyword">true</span>)
+  <span class="ruby-ivar">@default_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>, <span class="ruby-string">''</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@default_dir</span>
+  <span class="ruby-identifier">fs</span>.<span class="ruby-identifier">set_filename</span>(<span class="ruby-ivar">@default_dir</span>)
+  <span class="ruby-identifier">fs</span>.<span class="ruby-identifier">set_transient_for</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">fs</span>.<span class="ruby-identifier">signal_connect</span>(<span class="ruby-value">:destroy</span>) { <span class="ruby-constant">Gtk</span>.<span class="ruby-identifier">main_quit</span> }
+  <span class="ruby-identifier">fs</span>.<span class="ruby-identifier">ok_button</span>.<span class="ruby-identifier">signal_connect</span>(<span class="ruby-value">:clicked</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">fs</span>.<span class="ruby-identifier">filename</span>
+    <span class="ruby-ivar">@default_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">filename</span>), <span class="ruby-string">''</span>)
+    <span class="ruby-identifier">fs</span>.<span class="ruby-identifier">destroy</span>
+    <span class="ruby-constant">Gtk</span>.<span class="ruby-identifier">main_quit</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">fs</span>.<span class="ruby-identifier">cancel_button</span>.<span class="ruby-identifier">signal_connect</span>(<span class="ruby-value">:clicked</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">fs</span>.<span class="ruby-identifier">destroy</span>
+    <span class="ruby-constant">Gtk</span>.<span class="ruby-identifier">main_quit</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">fs</span>.<span class="ruby-identifier">show_all</span>
+  <span class="ruby-constant">Gtk</span>.<span class="ruby-identifier">main</span>
+  <span class="ruby-identifier">filename</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- select_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- select_file-method -->
+
+    
+      <div id="method-i-store_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">store_file</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Store the current <a href="../../JSON.html">JSON</a> document to
+<em>path</em>.</p>
+          
+
+          
+          <div class="method-source-code" id="store_file-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1225</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">store_file</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span>
+    <span class="ruby-identifier">data</span> = <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">model2data</span>(<span class="ruby-ivar">@treeview</span>.<span class="ruby-identifier">model</span>.<span class="ruby-identifier">iter_first</span>)
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span> <span class="ruby-operator">+</span> <span class="ruby-string">'.tmp'</span>, <span class="ruby-string">'wb'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">output</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">data</span> <span class="ruby-keyword">or</span> <span class="ruby-keyword">break</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options_menu</span>.<span class="ruby-identifier">pretty_item</span>.<span class="ruby-identifier">active?</span>
+        <span class="ruby-identifier">output</span>.<span class="ruby-identifier">puts</span> <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">pretty_generate</span>(<span class="ruby-identifier">data</span>, <span class="ruby-value">:max_nesting</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">output</span>.<span class="ruby-identifier">write</span> <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">generate</span>(<span class="ruby-identifier">data</span>, <span class="ruby-value">:max_nesting</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">rename</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">+</span> <span class="ruby-string">'.tmp'</span>, <span class="ruby-identifier">path</span>
+    <span class="ruby-ivar">@filename</span> = <span class="ruby-identifier">path</span>
+    <span class="ruby-identifier">toplevel</span>.<span class="ruby-identifier">display_status</span>(<span class="ruby-node">&quot;Saved data to '#@filename'.&quot;</span>)
+    <span class="ruby-identifier">unchange</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">SystemCallError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">error_dialog</span>(<span class="ruby-keyword">self</span>, <span class="ruby-node">&quot;Failed to store JSON file: #{e}!&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- store_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- store_file-method -->
+
+    
+      <div id="method-i-unchange" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unchange</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets editor status to unchanged, to indicate that the edited data doesn't
+containt unsaved changes.</p>
+          
+
+          
+          <div class="method-source-code" id="unchange-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unchange</span>
+  <span class="ruby-ivar">@changed</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">display_title</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unchange-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unchange-method -->
+
+    
+      <div id="method-i-view_new_model" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">view_new_model</span><span
+            class="method-args">(model)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Puts a new model <em>model</em> into the Gtk::TreeView to be edited.</p>
+          
+
+          
+          <div class="method-source-code" id="view_new_model-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">view_new_model</span>(<span class="ruby-identifier">model</span>)
+  <span class="ruby-ivar">@treeview</span>.<span class="ruby-identifier">model</span>     = <span class="ruby-identifier">model</span>
+  <span class="ruby-ivar">@treeview</span>.<span class="ruby-identifier">expanded</span>  = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@treeview</span>.<span class="ruby-identifier">expand_all</span>
+  <span class="ruby-identifier">unchange</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- view_new_model-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- view_new_model-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

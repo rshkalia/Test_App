@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"proxy_port:EFI"'Net::SSH::Proxy::SOCKS4#proxy_port;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"The proxy's port number.:encoding"IBM437:
+@fileI" lib/net/ssh/proxy/socks4.rb;@F@

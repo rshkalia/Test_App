@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>class Heroku::Command::BaseWithApp - heroku-2.19.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/heroku/command/base.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="../Helpers.html">Heroku::Helpers</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-alias_command">::alias_command</a>
+    
+    <li><a href="#method-c-extract_banner">::extract_banner</a>
+    
+    <li><a href="#method-c-extract_description">::extract_description</a>
+    
+    <li><a href="#method-c-extract_help">::extract_help</a>
+    
+    <li><a href="#method-c-extract_help_from_caller">::extract_help_from_caller</a>
+    
+    <li><a href="#method-c-extract_options">::extract_options</a>
+    
+    <li><a href="#method-c-extract_summary">::extract_summary</a>
+    
+    <li><a href="#method-c-inherited">::inherited</a>
+    
+    <li><a href="#method-c-method_added">::method_added</a>
+    
+    <li><a href="#method-c-namespace">::namespace</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-app">#app</a>
+    
+    <li><a href="#method-i-confirm_mismatch-3F">#confirm_mismatch?</a>
+    
+    <li><a href="#method-i-escape">#escape</a>
+    
+    <li><a href="#method-i-extract_app">#extract_app</a>
+    
+    <li><a href="#method-i-extract_app_from_git_config">#extract_app_from_git_config</a>
+    
+    <li><a href="#method-i-extract_app_in_dir">#extract_app_in_dir</a>
+    
+    <li><a href="#method-i-extract_option">#extract_option</a>
+    
+    <li><a href="#method-i-git_remotes">#git_remotes</a>
+    
+    <li><a href="#method-i-heroku">#heroku</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Heroku.html">Heroku</a>
+  
+    <li><a href="../../Heroku/Auth.html">Heroku::Auth</a>
+  
+    <li><a href="../../Heroku/BuiltinPlugin.html">Heroku::BuiltinPlugin</a>
+  
+    <li><a href="../../Heroku/CLI.html">Heroku::CLI</a>
+  
+    <li><a href="../../Heroku/Client.html">Heroku::Client</a>
+  
+    <li><a href="../../Heroku/Client/AppCrashed.html">Heroku::Client::AppCrashed</a>
+  
+    <li><a href="../../Heroku/Client/ConsoleSession.html">Heroku::Client::ConsoleSession</a>
+  
+    <li><a href="../../Heroku/Client/JSON.html">Heroku::Client::JSON</a>
+  
+    <li><a href="../../Heroku/Client/Rendezvous.html">Heroku::Client::Rendezvous</a>
+  
+    <li><a href="../../Heroku/Client/Service.html">Heroku::Client::Service</a>
+  
+    <li><a href="../../Heroku/Command.html">Heroku::Command</a>
+  
+    <li><a href="../../Heroku/Command/Account.html">Heroku::Command::Account</a>
+  
+    <li><a href="../../Heroku/Command/Addons.html">Heroku::Command::Addons</a>
+  
+    <li><a href="../../Heroku/Command/Apps.html">Heroku::Command::Apps</a>
+  
+    <li><a href="../../Heroku/Command/Auth.html">Heroku::Command::Auth</a>
+  
+    <li><a href="../../Heroku/Command/Base.html">Heroku::Command::Base</a>
+  
+    <li><a href="../../Heroku/Command/Base.html">Heroku::Command::BaseWithApp</a>
+  
+    <li><a href="../../Heroku/Command/CommandFailed.html">Heroku::Command::CommandFailed</a>
+  
+    <li><a href="../../Heroku/Command/Config.html">Heroku::Command::Config</a>
+  
+    <li><a href="../../Heroku/Command/Db.html">Heroku::Command::Db</a>
+  
+    <li><a href="../../Heroku/Command/Domains.html">Heroku::Command::Domains</a>
+  
+    <li><a href="../../Heroku/Command/Drains.html">Heroku::Command::Drains</a>
+  
+    <li><a href="../../Heroku/Command/Help.html">Heroku::Command::Help</a>
+  
+    <li><a href="../../Heroku/Command/Keys.html">Heroku::Command::Keys</a>
+  
+    <li><a href="../../Heroku/Command/Logs.html">Heroku::Command::Logs</a>
+  
+    <li><a href="../../Heroku/Command/Maintenance.html">Heroku::Command::Maintenance</a>
+  
+    <li><a href="../../Heroku/Command/Pg.html">Heroku::Command::Pg</a>
+  
+    <li><a href="../../Heroku/Command/Pgbackups.html">Heroku::Command::Pgbackups</a>
+  
+    <li><a href="../../Heroku/Command/Pgbackups/Display.html">Heroku::Command::Pgbackups::Display</a>
+  
+    <li><a href="../../Heroku/Command/Pgbackups/Display/DataSource.html">Heroku::Command::Pgbackups::Display::DataSource</a>
+  
+    <li><a href="../../Heroku/Command/Plugins.html">Heroku::Command::Plugins</a>
+  
+    <li><a href="../../Heroku/Command/Ps.html">Heroku::Command::Ps</a>
+  
+    <li><a href="../../Heroku/Command/Releases.html">Heroku::Command::Releases</a>
+  
+    <li><a href="../../Heroku/Command/Run.html">Heroku::Command::Run</a>
+  
+    <li><a href="../../Heroku/Command/Sharing.html">Heroku::Command::Sharing</a>
+  
+    <li><a href="../../Heroku/Command/Ssl.html">Heroku::Command::Ssl</a>
+  
+    <li><a href="../../Heroku/Command/Stack.html">Heroku::Command::Stack</a>
+  
+    <li><a href="../../Heroku/Command/Status.html">Heroku::Command::Status</a>
+  
+    <li><a href="../../Heroku/Command/Update.html">Heroku::Command::Update</a>
+  
+    <li><a href="../../Heroku/Command/Version.html">Heroku::Command::Version</a>
+  
+    <li><a href="../../Heroku/Deprecated.html">Heroku::Deprecated</a>
+  
+    <li><a href="../../Heroku/Deprecated/Help.html">Heroku::Deprecated::Help</a>
+  
+    <li><a href="../../Heroku/Deprecated/Help/ClassMethods.html">Heroku::Deprecated::Help::ClassMethods</a>
+  
+    <li><a href="../../Heroku/Deprecated/Help/HelpGroup.html">Heroku::Deprecated::Help::HelpGroup</a>
+  
+    <li><a href="../../Heroku/Distribution.html">Heroku::Distribution</a>
+  
+    <li><a href="../../Heroku/Helpers.html">Heroku::Helpers</a>
+  
+    <li><a href="../../Heroku/OkJson.html">Heroku::OkJson</a>
+  
+    <li><a href="../../Heroku/OkJson/ParserError.html">Heroku::OkJson::ParserError</a>
+  
+    <li><a href="../../Heroku/Plugin.html">Heroku::Plugin</a>
+  
+    <li><a href="../../Heroku/Updater.html">Heroku::Updater</a>
+  
+    <li><a href="../../HerokuPostgresql.html">HerokuPostgresql</a>
+  
+    <li><a href="../../HerokuPostgresql/Client.html">HerokuPostgresql::Client</a>
+  
+    <li><a href="../../HerokuSharedPostgresql.html">HerokuSharedPostgresql</a>
+  
+    <li><a href="../../HerokuSharedPostgresql/Client.html">HerokuSharedPostgresql::Client</a>
+  
+    <li><a href="../../PGBackups.html">PGBackups</a>
+  
+    <li><a href="../../PGBackups/Client.html">PGBackups::Client</a>
+  
+    <li><a href="../../PGResolver.html">PGResolver</a>
+  
+    <li><a href="../../PGResolver/Resolver.html">PGResolver::Resolver</a>
+  
+    <li><a href="../../PgUtils.html">PgUtils</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Heroku::Command::BaseWithApp</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-args" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">args</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">options</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-namespace" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">namespace</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="namespace-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">namespace</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;::&quot;</span>).<span class="ruby-identifier">last</span>.<span class="ruby-identifier">downcase</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- namespace-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- namespace-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(args=[], options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">args</span>=[], <span class="ruby-identifier">options</span>={})
+  <span class="ruby-ivar">@args</span> = <span class="ruby-identifier">args</span>
+  <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="protected-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Class Methods</h3>
+
+    
+      <div id="method-c-alias_command" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">alias_command</span><span
+            class="method-args">(new, old)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="alias_command-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">alias_command</span>(<span class="ruby-identifier">new</span>, <span class="ruby-identifier">old</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;no such command: #{old}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Heroku</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span>.<span class="ruby-identifier">commands</span>[<span class="ruby-identifier">old</span>]
+  <span class="ruby-constant">Heroku</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span>.<span class="ruby-identifier">command_aliases</span>[<span class="ruby-identifier">new</span>] = <span class="ruby-identifier">old</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- alias_command-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- alias_command-method -->
+
+    
+      <div id="method-c-extract_banner" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_banner</span><span
+            class="method-args">(help)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="extract_banner-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">extract_banner</span>(<span class="ruby-identifier">help</span>)
+  <span class="ruby-identifier">help</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extract_banner-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extract_banner-method -->
+
+    
+      <div id="method-c-extract_description" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_description</span><span
+            class="method-args">(help)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="extract_description-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">extract_description</span>(<span class="ruby-identifier">help</span>)
+  <span class="ruby-identifier">lines</span> = <span class="ruby-identifier">help</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span>.<span class="ruby-identifier">strip</span> }
+  <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">shift</span>
+  <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">reject</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r^-(.+)#(.+)/</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">strip</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extract_description-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extract_description-method -->
+
+    
+      <div id="method-c-extract_help" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_help</span><span
+            class="method-args">(file, line)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="extract_help-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">extract_help</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">buffer</span> = []
+  <span class="ruby-identifier">lines</span>  = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">file</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+
+  <span class="ruby-identifier">catch</span>(<span class="ruby-value">:done</span>) <span class="ruby-keyword">do</span>
+    (<span class="ruby-identifier">line</span>.<span class="ruby-identifier">to_i</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>).<span class="ruby-identifier">downto</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">lines</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">strip</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">0</span>]
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-node">&quot;#&quot;</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">buffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">lines</span>[<span class="ruby-identifier">i</span>]
+        <span class="ruby-keyword">else</span> <span class="ruby-identifier">throw</span>(<span class="ruby-value">:done</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">map!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">line</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">%r^#/</span>, <span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">strip</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extract_help-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extract_help-method -->
+
+    
+      <div id="method-c-extract_help_from_caller" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_help_from_caller</span><span
+            class="method-args">(line)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Parse the caller format and identify the file and line number as identified
+in : <a
+href="http://www.ruby-doc.org/core/classes/Kernel.html#M001397">www.ruby-doc.org/core/classes/Kernel.html#M001397</a>.
+This will look for a colon followed by a digit as the delimiter.  The
+biggest complication is windows paths, which have a color after the drive
+letter. This regex will match paths as anything from the beginning to a
+colon directly followed by a number (the line number).</p>
+
+<p>Examples of the caller format :</p>
+<ul><li>
+<p>c:/Ruby192/lib/.../lib/heroku/command/addons.rb:8:in
+`&lt;module:Command&gt;'</p>
+</li><li>
+<p>c:/Ruby192/lib/.../heroku-2.0.1/lib/heroku/command/pg.rb:96:in
+`&lt;class:Pg&gt;'</p>
+</li><li>
+<p>/Users/ph7/...../xray-1.1/lib/xray/thread_dump_signal_handler.rb:9</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="extract_help_from_caller-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">extract_help_from_caller</span>(<span class="ruby-identifier">line</span>)
+  <span class="ruby-comment"># pull out of the caller the information for the file path and line number</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^(.+?):(\d+)/</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">extract_help</span>(<span class="ruby-node">$1</span>, <span class="ruby-node">$2</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;unable to extract help from caller: #{line}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extract_help_from_caller-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extract_help_from_caller-method -->
+
+    
+      <div id="method-c-extract_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_options</span><span
+            class="method-args">(help)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="extract_options-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">extract_options</span>(<span class="ruby-identifier">help</span>)
+  <span class="ruby-identifier">help</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span>.<span class="ruby-identifier">strip</span> }.<span class="ruby-identifier">select</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r^-(.+)#(.+)/</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, <span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">description</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-node">&quot;#&quot;</span>, <span class="ruby-value">2</span>).<span class="ruby-identifier">last</span>.<span class="ruby-identifier">strip</span>
+    <span class="ruby-identifier">long</span>  = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">%r--([A-Za-z\- ]+)/</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">strip</span>
+    <span class="ruby-identifier">short</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">%r-([A-Za-z ])/</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">strip</span>
+    <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">long</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>).<span class="ruby-identifier">first</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:desc</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">description</span>, <span class="ruby-value">:short</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">short</span>, <span class="ruby-value">:long</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">long</span> })
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extract_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extract_options-method -->
+
+    
+      <div id="method-c-extract_summary" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_summary</span><span
+            class="method-args">(help)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="extract_summary-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">extract_summary</span>(<span class="ruby-identifier">help</span>)
+  <span class="ruby-identifier">extract_description</span>(<span class="ruby-identifier">help</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extract_summary-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extract_summary-method -->
+
+    
+      <div id="method-c-inherited" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inherited</span><span
+            class="method-args">(klass)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inherited-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inherited</span>(<span class="ruby-identifier">klass</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Heroku</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+
+  <span class="ruby-identifier">help</span> = <span class="ruby-identifier">extract_help_from_caller</span>(<span class="ruby-identifier">caller</span>.<span class="ruby-identifier">first</span>)
+
+  <span class="ruby-constant">Heroku</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span>.<span class="ruby-identifier">register_namespace</span>(
+    <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">namespace</span>,
+    <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">help</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">first</span>
+  )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inherited-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inherited-method -->
+
+    
+      <div id="method-c-method_added" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">method_added</span><span
+            class="method-args">(method)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="method_added-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">method_added</span>(<span class="ruby-identifier">method</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Heroku</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">private_method_defined?</span>(<span class="ruby-identifier">method</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">protected_method_defined?</span>(<span class="ruby-identifier">method</span>)
+
+  <span class="ruby-identifier">help</span> = <span class="ruby-identifier">extract_help_from_caller</span>(<span class="ruby-identifier">caller</span>.<span class="ruby-identifier">first</span>)
+  <span class="ruby-identifier">resolved_method</span> = (<span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;index&quot;</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">command</span> = [ <span class="ruby-keyword">self</span>.<span class="ruby-identifier">namespace</span>, <span class="ruby-identifier">resolved_method</span> ].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;:&quot;</span>)
+  <span class="ruby-identifier">banner</span> = <span class="ruby-identifier">extract_banner</span>(<span class="ruby-identifier">help</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">command</span>
+  <span class="ruby-identifier">permute</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">banner</span>.<span class="ruby-identifier">index</span>(<span class="ruby-string">&quot;*&quot;</span>)
+  <span class="ruby-identifier">banner</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-string">&quot;*&quot;</span>, <span class="ruby-string">&quot;&quot;</span>)
+
+  <span class="ruby-constant">Heroku</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span>.<span class="ruby-identifier">register_command</span>(
+    <span class="ruby-value">:klass</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>,
+    <span class="ruby-value">:method</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span>,
+    <span class="ruby-value">:namespace</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">namespace</span>,
+    <span class="ruby-value">:command</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span>,
+    <span class="ruby-value">:banner</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">banner</span>,
+    <span class="ruby-value">:help</span>        =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">help</span>,
+    <span class="ruby-value">:summary</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">extract_summary</span>(<span class="ruby-identifier">help</span>),
+    <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">extract_description</span>(<span class="ruby-identifier">help</span>),
+    <span class="ruby-value">:options</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">extract_options</span>(<span class="ruby-identifier">help</span>),
+    <span class="ruby-value">:permute</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">permute</span>
+  )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- method_added-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- method_added-method -->
+
+    
+    </section><!-- protected-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-app" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">app</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="app-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">app</span>
+  <span class="ruby-ivar">@app</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:app</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">confirm_mismatch?</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Heroku</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span><span class="ruby-operator">::</span><span class="ruby-constant">CommandFailed</span>, <span class="ruby-string">&quot;Mismatch between --app and --confirm&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:app</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:confirm</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:confirm</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">app_from_dir</span> = <span class="ruby-identifier">extract_app_in_dir</span>(<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>)
+    <span class="ruby-identifier">app_from_dir</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Heroku</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span><span class="ruby-operator">::</span><span class="ruby-constant">CommandFailed</span>, <span class="ruby-string">&quot;No app specified.\nRun this command from an app folder or specify which app to use with --app &lt;app name&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- app-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- app-method -->
+
+    
+      <div id="method-i-heroku" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">heroku</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="heroku-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">heroku</span>
+  <span class="ruby-constant">Heroku</span><span class="ruby-operator">::</span><span class="ruby-constant">Auth</span>.<span class="ruby-identifier">client</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- heroku-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- heroku-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-confirm_mismatch-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">confirm_mismatch?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="confirm_mismatch-3F-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">confirm_mismatch?</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:confirm</span>] <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">options</span>[<span class="ruby-value">:confirm</span>] <span class="ruby-operator">!=</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:app</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- confirm_mismatch-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- confirm_mismatch-3F-method -->
+
+    
+      <div id="method-i-escape" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">escape</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="escape-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">escape</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">heroku</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- escape-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- escape-method -->
+
+    
+      <div id="method-i-extract_app" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_app</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="extract_app-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">extract_app</span>
+  <span class="ruby-identifier">output_with_bang</span> <span class="ruby-node">&quot;Command::Base#extract_app has been deprecated. Please use Command::Base#app instead.  #{caller.first}&quot;</span>
+  <span class="ruby-identifier">app</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extract_app-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extract_app-method -->
+
+    
+      <div id="method-i-extract_app_from_git_config" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_app_from_git_config</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="extract_app_from_git_config-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 182</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">extract_app_from_git_config</span>
+  <span class="ruby-identifier">remote</span> = <span class="ruby-identifier">git</span>(<span class="ruby-string">&quot;config heroku.remote&quot;</span>)
+  <span class="ruby-identifier">remote</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">remote</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extract_app_from_git_config-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extract_app_from_git_config-method -->
+
+    
+      <div id="method-i-extract_app_in_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_app_in_dir</span><span
+            class="method-args">(dir)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="extract_app_in_dir-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">extract_app_in_dir</span>(<span class="ruby-identifier">dir</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">remotes</span> = <span class="ruby-identifier">git_remotes</span>(<span class="ruby-identifier">dir</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">remote</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:remote</span>]
+    <span class="ruby-identifier">remotes</span>[<span class="ruby-identifier">remote</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">remote</span> = <span class="ruby-identifier">extract_app_from_git_config</span>
+    <span class="ruby-identifier">remotes</span>[<span class="ruby-identifier">remote</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">apps</span> = <span class="ruby-identifier">remotes</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">uniq</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">apps</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">apps</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extract_app_in_dir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extract_app_in_dir-method -->
+
+    
+      <div id="method-i-extract_option" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_option</span><span
+            class="method-args">(name, default=true) { |value| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="extract_option-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">extract_option</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">default</span>=<span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;--&quot;</span>, <span class="ruby-string">&quot;&quot;</span>).<span class="ruby-identifier">to_sym</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">key</span>]
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">default</span>
+  <span class="ruby-identifier">block_given?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">value</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extract_option-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extract_option-method -->
+
+    
+      <div id="method-i-git_remotes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">git_remotes</span><span
+            class="method-args">(base_dir=Dir.pwd)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="git_remotes-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/base.rb, line 187</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">git_remotes</span>(<span class="ruby-identifier">base_dir</span>=<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>)
+  <span class="ruby-identifier">remotes</span> = {}
+  <span class="ruby-identifier">original_dir</span> = <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">base_dir</span>)
+
+  <span class="ruby-identifier">git</span>(<span class="ruby-string">&quot;remote -v&quot;</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">remote</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">name</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">method</span> = <span class="ruby-identifier">remote</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r\s/</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">url</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r^git@#{heroku.host}:([\w\d-]+)\.git$/</span>
+      <span class="ruby-identifier">remotes</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-node">$1</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">original_dir</span>)
+  <span class="ruby-identifier">remotes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- git_remotes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- git_remotes-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>class Heroku::Command::Logs - heroku-2.19.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/heroku/command/logs.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Base.html">Heroku::Command::Base</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-cron">#cron</a>
+    
+    <li><a href="#method-i-drains">#drains</a>
+    
+    <li><a href="#method-i-format_with_colors">#format_with_colors</a>
+    
+    <li><a href="#method-i-index">#index</a>
+    
+    <li><a href="#method-i-init_colors">#init_colors</a>
+    
+    <li><a href="#method-i-parse_log">#parse_log</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Heroku.html">Heroku</a>
+  
+    <li><a href="../../Heroku/Auth.html">Heroku::Auth</a>
+  
+    <li><a href="../../Heroku/BuiltinPlugin.html">Heroku::BuiltinPlugin</a>
+  
+    <li><a href="../../Heroku/CLI.html">Heroku::CLI</a>
+  
+    <li><a href="../../Heroku/Client.html">Heroku::Client</a>
+  
+    <li><a href="../../Heroku/Client/AppCrashed.html">Heroku::Client::AppCrashed</a>
+  
+    <li><a href="../../Heroku/Client/ConsoleSession.html">Heroku::Client::ConsoleSession</a>
+  
+    <li><a href="../../Heroku/Client/JSON.html">Heroku::Client::JSON</a>
+  
+    <li><a href="../../Heroku/Client/Rendezvous.html">Heroku::Client::Rendezvous</a>
+  
+    <li><a href="../../Heroku/Client/Service.html">Heroku::Client::Service</a>
+  
+    <li><a href="../../Heroku/Command.html">Heroku::Command</a>
+  
+    <li><a href="../../Heroku/Command/Account.html">Heroku::Command::Account</a>
+  
+    <li><a href="../../Heroku/Command/Addons.html">Heroku::Command::Addons</a>
+  
+    <li><a href="../../Heroku/Command/Apps.html">Heroku::Command::Apps</a>
+  
+    <li><a href="../../Heroku/Command/Auth.html">Heroku::Command::Auth</a>
+  
+    <li><a href="../../Heroku/Command/Base.html">Heroku::Command::Base</a>
+  
+    <li><a href="../../Heroku/Command/Base.html">Heroku::Command::BaseWithApp</a>
+  
+    <li><a href="../../Heroku/Command/CommandFailed.html">Heroku::Command::CommandFailed</a>
+  
+    <li><a href="../../Heroku/Command/Config.html">Heroku::Command::Config</a>
+  
+    <li><a href="../../Heroku/Command/Db.html">Heroku::Command::Db</a>
+  
+    <li><a href="../../Heroku/Command/Domains.html">Heroku::Command::Domains</a>
+  
+    <li><a href="../../Heroku/Command/Drains.html">Heroku::Command::Drains</a>
+  
+    <li><a href="../../Heroku/Command/Help.html">Heroku::Command::Help</a>
+  
+    <li><a href="../../Heroku/Command/Keys.html">Heroku::Command::Keys</a>
+  
+    <li><a href="../../Heroku/Command/Logs.html">Heroku::Command::Logs</a>
+  
+    <li><a href="../../Heroku/Command/Maintenance.html">Heroku::Command::Maintenance</a>
+  
+    <li><a href="../../Heroku/Command/Pg.html">Heroku::Command::Pg</a>
+  
+    <li><a href="../../Heroku/Command/Pgbackups.html">Heroku::Command::Pgbackups</a>
+  
+    <li><a href="../../Heroku/Command/Pgbackups/Display.html">Heroku::Command::Pgbackups::Display</a>
+  
+    <li><a href="../../Heroku/Command/Pgbackups/Display/DataSource.html">Heroku::Command::Pgbackups::Display::DataSource</a>
+  
+    <li><a href="../../Heroku/Command/Plugins.html">Heroku::Command::Plugins</a>
+  
+    <li><a href="../../Heroku/Command/Ps.html">Heroku::Command::Ps</a>
+  
+    <li><a href="../../Heroku/Command/Releases.html">Heroku::Command::Releases</a>
+  
+    <li><a href="../../Heroku/Command/Run.html">Heroku::Command::Run</a>
+  
+    <li><a href="../../Heroku/Command/Sharing.html">Heroku::Command::Sharing</a>
+  
+    <li><a href="../../Heroku/Command/Ssl.html">Heroku::Command::Ssl</a>
+  
+    <li><a href="../../Heroku/Command/Stack.html">Heroku::Command::Stack</a>
+  
+    <li><a href="../../Heroku/Command/Status.html">Heroku::Command::Status</a>
+  
+    <li><a href="../../Heroku/Command/Update.html">Heroku::Command::Update</a>
+  
+    <li><a href="../../Heroku/Command/Version.html">Heroku::Command::Version</a>
+  
+    <li><a href="../../Heroku/Deprecated.html">Heroku::Deprecated</a>
+  
+    <li><a href="../../Heroku/Deprecated/Help.html">Heroku::Deprecated::Help</a>
+  
+    <li><a href="../../Heroku/Deprecated/Help/ClassMethods.html">Heroku::Deprecated::Help::ClassMethods</a>
+  
+    <li><a href="../../Heroku/Deprecated/Help/HelpGroup.html">Heroku::Deprecated::Help::HelpGroup</a>
+  
+    <li><a href="../../Heroku/Distribution.html">Heroku::Distribution</a>
+  
+    <li><a href="../../Heroku/Helpers.html">Heroku::Helpers</a>
+  
+    <li><a href="../../Heroku/OkJson.html">Heroku::OkJson</a>
+  
+    <li><a href="../../Heroku/OkJson/ParserError.html">Heroku::OkJson::ParserError</a>
+  
+    <li><a href="../../Heroku/Plugin.html">Heroku::Plugin</a>
+  
+    <li><a href="../../Heroku/Updater.html">Heroku::Updater</a>
+  
+    <li><a href="../../HerokuPostgresql.html">HerokuPostgresql</a>
+  
+    <li><a href="../../HerokuPostgresql/Client.html">HerokuPostgresql::Client</a>
+  
+    <li><a href="../../HerokuSharedPostgresql.html">HerokuSharedPostgresql</a>
+  
+    <li><a href="../../HerokuSharedPostgresql/Client.html">HerokuSharedPostgresql::Client</a>
+  
+    <li><a href="../../PGBackups.html">PGBackups</a>
+  
+    <li><a href="../../PGBackups/Client.html">PGBackups::Client</a>
+  
+    <li><a href="../../PGResolver.html">PGResolver</a>
+  
+    <li><a href="../../PGResolver/Resolver.html">PGResolver::Resolver</a>
+  
+    <li><a href="../../PgUtils.html">PgUtils</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Heroku::Command::Logs</h1>
+
+  <div id="description" class="description">
+    
+<p>display logs for an app</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="COLORS">COLORS
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-cron" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cron</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>logs:cron</p>
+
+<p>DEPRECATED: display cron logs from legacy logging</p>
+          
+
+          
+          <div class="method-source-code" id="cron-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/logs.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cron</span>
+  <span class="ruby-identifier">display</span> <span class="ruby-identifier">heroku</span>.<span class="ruby-identifier">cron_logs</span>(<span class="ruby-identifier">app</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cron-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cron-method -->
+
+    
+      <div id="method-i-drains" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">drains</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>logs:drains</p>
+
+<p>DEPRECATED: use `heroku drains`</p>
+          
+
+          
+          <div class="method-source-code" id="drains-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/logs.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">drains</span>
+  <span class="ruby-identifier">output_with_bang</span> <span class="ruby-string">&quot;The logs:drain command has been deprecated. Please use drains&quot;</span>
+  <span class="ruby-identifier">usage</span> = <span class="ruby-constant">Heroku</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span><span class="ruby-operator">::</span><span class="ruby-constant">Help</span>.<span class="ruby-identifier">usage_for_command</span>(<span class="ruby-string">&quot;drains&quot;</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">usage</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- drains-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- drains-method -->
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>logs</p>
+
+<p>display recent log output</p>
+
+<p>-n, --num NUM        # the number of lines to display -p, --ps PS         
+# only display logs from the given process -s, --source SOURCE  # only
+display logs from the given source -t, --tail           # continually
+stream logs</p>
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/logs.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-identifier">init_colors</span>
+
+  <span class="ruby-identifier">opts</span> = []
+  <span class="ruby-identifier">opts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;tail=1&quot;</span>                                 <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:tail</span>]
+  <span class="ruby-identifier">opts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;num=#{options[:num]}&quot;</span>                   <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:num</span>]
+  <span class="ruby-identifier">opts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;ps=#{URI.encode(options[:ps])}&quot;</span>         <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:ps</span>]
+  <span class="ruby-identifier">opts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;source=#{URI.encode(options[:source])}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:source</span>]
+
+  <span class="ruby-ivar">@line_start</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@token</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">heroku</span>.<span class="ruby-identifier">read_logs</span>(<span class="ruby-identifier">app</span>, <span class="ruby-identifier">opts</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">chk</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">output</span> = <span class="ruby-identifier">format_with_colors</span>(<span class="ruby-identifier">chk</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">output</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EPIPE</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-format_with_colors" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">format_with_colors</span><span
+            class="method-args">(chunk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="format_with_colors-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/logs.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">format_with_colors</span>(<span class="ruby-identifier">chunk</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">chunk</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">chunk</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@colorizer</span>
+
+  <span class="ruby-identifier">chunk</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">header</span>, <span class="ruby-identifier">identifier</span>, <span class="ruby-identifier">body</span> = <span class="ruby-identifier">parse_log</span>(<span class="ruby-identifier">line</span>)
+    <span class="ruby-ivar">@assigned_colors</span>[<span class="ruby-identifier">identifier</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">COLORS</span>[<span class="ruby-ivar">@assigned_colors</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">%</span> <span class="ruby-constant">COLORS</span>.<span class="ruby-identifier">size</span>]
+    [
+      <span class="ruby-ivar">@colorizer</span>.<span class="ruby-identifier">send</span>(<span class="ruby-ivar">@assigned_colors</span>[<span class="ruby-identifier">identifier</span>]),
+      <span class="ruby-identifier">header</span>,
+      <span class="ruby-ivar">@colorizer</span>.<span class="ruby-identifier">reset</span>,
+      <span class="ruby-identifier">body</span>,
+    ].<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- format_with_colors-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- format_with_colors-method -->
+
+    
+      <div id="method-i-init_colors" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">init_colors</span><span
+            class="method-args">(colorizer=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="init_colors-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/logs.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">init_colors</span>(<span class="ruby-identifier">colorizer</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">colorizer</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">isatty</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;TERM&quot;</span>)
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'term/ansicolor'</span>
+    <span class="ruby-ivar">@colorizer</span> = <span class="ruby-constant">Term</span><span class="ruby-operator">::</span><span class="ruby-constant">ANSIColor</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@colorizer</span> = <span class="ruby-identifier">colorizer</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@assigned_colors</span> = {}
+
+  <span class="ruby-identifier">trap</span>(<span class="ruby-string">&quot;INT&quot;</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-ivar">@colorizer</span>.<span class="ruby-identifier">reset</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@colorizer</span>
+    <span class="ruby-identifier">exit</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">LoadError</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- init_colors-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- init_colors-method -->
+
+    
+      <div id="method-i-parse_log" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_log</span><span
+            class="method-args">(log)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse_log-source">
+            <pre><span class="ruby-comment"># File lib/heroku/command/logs.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_log</span>(<span class="ruby-identifier">log</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">parsed</span> = <span class="ruby-identifier">log</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">%r^(.*\[(\w+)([\d\.]+)?\]:)(.*)?$/</span>)
+  [<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">4</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">parsed</span>[<span class="ruby-identifier">i</span>] }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_log-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_log-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

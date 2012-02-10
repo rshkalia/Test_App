@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"answer_type:EFI"#HighLine::Question#answer_type;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"7The type that will be used to convert this answer.:encoding"IBM437:
+@fileI"lib/highline/question.rb;@F@

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"compression_client:EFI"7Net::SSH::Transport::Algorithms#compression_client;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"QThe type of compression to use to compress packets being sent by the client.:encoding"IBM437:
+@fileI"(lib/net/ssh/transport/algorithms.rb;@F@

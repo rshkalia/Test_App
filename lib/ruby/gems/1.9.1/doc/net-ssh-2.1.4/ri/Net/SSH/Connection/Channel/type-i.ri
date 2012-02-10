@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	type:EFI"'Net::SSH::Connection::Channel#type;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"1The type of this channel, usually "session".:encoding"IBM437:
+@fileI"&lib/net/ssh/connection/channel.rb;@F@

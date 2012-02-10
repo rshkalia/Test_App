@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Changelog</title>
+
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../Changelog.html">Changelog</a>
+  
+    <li class="file"><a href="../../../Install.html">Install</a>
+  
+    <li class="file"><a href="../../../README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../Text.html">Text</a>
+  
+    <li><a href="../../../Text/Format.html">Text::Format</a>
+  
+    <li><a href="../../../Text/Format/Alpha.html">Text::Format::Alpha</a>
+  
+    <li><a href="../../../Text/Format/Number.html">Text::Format::Number</a>
+  
+    <li><a href="../../../Text/Format/Roman.html">Text::Format::Roman</a>
+  
+    <li><a href="../../../Text/Format/SplitWord.html">Text::Format::SplitWord</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>Provides a numbering object that will produce letters. Accepts four options
+for numbering that will control how the letters are presented when given as
+#[](index). This numbering object will only provide 26 values ("a" .. "z")
+unless :wrap is <code>true</code>.</p>
+<dl class="rdoc-list note-list"><dt>:transform
+<dd>
+<p>The symbol representing the method to be called on the letter. This must be
+a method that does not require any arguments.</p>
+</dd><dt>:postfix
+<dd>
+<p>The value that will be appended to the letter presented by #[]. Defaults to
+<code>nil</code>.</p>
+</dd><dt>:prefix
+<dd>
+<p>The value that will be prepended to the letter presented by #[]. Defaults
+to <code>nil</code>.</p>
+</dd><dt>:wrap
+<dd>
+<p>If <code>true</code>, then indexes will be wrapped from "z" to "a".</p>
+</dd></dl>
+
+<pre class="ruby"><span class="ruby-identifier">a1</span> = <span class="ruby-constant">Text</span><span class="ruby-operator">::</span><span class="ruby-constant">Format</span><span class="ruby-operator">::</span><span class="ruby-constant">Alpha</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">postfix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;.&quot;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">a1</span>[<span class="ruby-value">0</span>]  <span class="ruby-comment"># =&gt; &quot;a.&quot;</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">a1</span>[<span class="ruby-value">1</span>]  <span class="ruby-comment"># =&gt; &quot;b.</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">a1</span>[<span class="ruby-value">27</span>] <span class="ruby-comment"># =&gt; &quot;&quot;</span>
+
+<span class="ruby-identifier">a2</span> = <span class="ruby-constant">Text</span><span class="ruby-operator">::</span><span class="ruby-constant">Format</span><span class="ruby-operator">::</span><span class="ruby-constant">Alpha</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;A.&quot;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">a2</span>[<span class="ruby-value">0</span>]  <span class="ruby-comment"># =&gt; &quot;A.a&quot;</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">a2</span>[<span class="ruby-value">1</span>]  <span class="ruby-comment"># =&gt; &quot;A.b&quot;</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">a2</span>[<span class="ruby-value">27</span>] <span class="ruby-comment"># =&gt; &quot;&quot;</span>
+
+<span class="ruby-identifier">a3</span> = <span class="ruby-constant">Text</span><span class="ruby-operator">::</span><span class="ruby-constant">Format</span><span class="ruby-operator">::</span><span class="ruby-constant">Alpha</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">transform</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">upcase</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">a3</span>[<span class="ruby-value">0</span>]  <span class="ruby-comment"># =&gt; &quot;A&quot;</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">a3</span>[<span class="ruby-value">1</span>]  <span class="ruby-comment"># =&gt; &quot;B&quot;</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">a3</span>[<span class="ruby-value">27</span>] <span class="ruby-comment"># =&gt; &quot;&quot;</span>
+
+<span class="ruby-identifier">a4</span> = <span class="ruby-constant">Text</span><span class="ruby-operator">::</span><span class="ruby-constant">Format</span><span class="ruby-operator">::</span><span class="ruby-constant">Alpha</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">wrap</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">a4</span>[<span class="ruby-value">0</span>]  <span class="ruby-comment"># =&gt; &quot;a&quot;</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">a4</span>[<span class="ruby-value">27</span>] <span class="ruby-comment"># =&gt; &quot;b&quot;</span>
+</pre>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

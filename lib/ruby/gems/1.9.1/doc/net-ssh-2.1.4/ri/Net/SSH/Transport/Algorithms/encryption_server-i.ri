@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"encryption_server:EFI"6Net::SSH::Transport::Algorithms#encryption_server;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"OThe type of the cipher to use to decrypt packets arriving from the server.:encoding"IBM437:
+@fileI"(lib/net/ssh/transport/algorithms.rb;@F@

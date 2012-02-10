@@ -1,0 +1,11 @@
+{:ancestors{I"Object:EF[I"BasicObject;FI"GitHub::Command;F[I"FileUtils;FI"Object;FI"GitHub::Command::Shell;F[I"String;FI"GitHub::GitCommand;F[I"GitHub::Command;FI"NilClass;F[@I"GitHub::Helper;F[@:attributes{@[I"attr_reader error;FI"attr_reader out;F:class_methods{	@
+[I"new;F@[I"new;F@[I"new;FI"
+Color;F[I"
+color;FI"method_missing;F:encodingIu:EncodingIBM437;F:instance_methods{I"Object;F[I"tap;FI"try;F@
+[I"	call;FI"current_user?;FI"die;FI"git;FI"git_exec;FI"github_token;FI"github_user;FI"helper;FI"highline;FI"options;FI"	pgit;FI"request_github_credentials;FI"run;FI"sh;FI"shell_user;F@[I"command;FI"
+error;FI"error?;FI"out;FI"	out?;FI"run;F@[I"command;FI"NilClass;F[I"method_missing;FI"try;FI"GitHub;F[I"activate;FI"command;FI"commands;FI"
+debug;FI"debug?;FI"	desc;FI"descriptions;FI"find_command;FI"flag_descriptions;FI"
+flags;FI"helper;FI"invoke;FI"
+learn;FI"learn?;FI"	load;FI"options;FI"original_args;FI"parse_options;FI"
+usage;FI"usage_descriptions;FI"GitHub::UI;F[I"display_select_list;F:modules[I"
+Color;FI"GitHub;F@I"GitHub::Command::Shell;FI"GitHub::GitCommand;FI"GitHub::Helper;FI"GitHub::UI;FI"NilClass;F@

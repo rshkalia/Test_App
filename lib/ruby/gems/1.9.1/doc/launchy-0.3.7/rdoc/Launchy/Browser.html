@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Class: Launchy::Browser</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/launchy/browser.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Application.html">Launchy::Application</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-desktop_environment_browser_launchers">::desktop_environment_browser_launchers</a>
+    
+    <li><a href="#method-c-fallback_browsers">::fallback_browsers</a>
+    
+    <li><a href="#method-c-handle-3F">::handle?</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-run">::run</a>
+    
+    <li><a href="#method-i-browser">#browser</a>
+    
+    <li><a href="#method-i-desktop_environment_browser_launchers">#desktop_environment_browser_launchers</a>
+    
+    <li><a href="#method-i-fallback_browsers">#fallback_browsers</a>
+    
+    <li><a href="#method-i-nix_app_list">#nix_app_list</a>
+    
+    <li><a href="#method-i-visit">#visit</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../HISTORY.html">HISTORY</a>
+  
+    <li class="file"><a href="../LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Launchy.html">Launchy</a>
+  
+    <li><a href="../Launchy/Application.html">Launchy::Application</a>
+  
+    <li><a href="../Launchy/Browser.html">Launchy::Browser</a>
+  
+    <li><a href="../Launchy/CommandLine.html">Launchy::CommandLine</a>
+  
+    <li><a href="../Launchy/Paths.html">Launchy::Paths</a>
+  
+    <li><a href="../Launchy/Version.html">Launchy::Version</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Launchy::Browser</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-desktop_environment_browser_launchers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">desktop_environment_browser_launchers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="desktop_environment_browser_launchers-source">
+            <pre><span class="ruby-comment"># File lib/launchy/browser.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">desktop_environment_browser_launchers</span>
+  <span class="ruby-ivar">@desktop_environment_browser_launchers</span> <span class="ruby-operator">||=</span> {
+    <span class="ruby-value">:kde</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;kfmclient&quot;</span>,
+    <span class="ruby-value">:gnome</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;gnome-open&quot;</span>,
+    <span class="ruby-value">:xfce</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;exo-open&quot;</span>,
+    <span class="ruby-value">:generic</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;htmlview&quot;</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- desktop_environment_browser_launchers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- desktop_environment_browser_launchers-method -->
+
+    
+      <div id="method-c-fallback_browsers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fallback_browsers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fallback_browsers-source">
+            <pre><span class="ruby-comment"># File lib/launchy/browser.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fallback_browsers</span>
+  <span class="ruby-ivar">@fallback_browsers</span> <span class="ruby-operator">||=</span>  <span class="ruby-node">] firefox seamonkey opera mozilla netscape galeon ]</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fallback_browsers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fallback_browsers-method -->
+
+    
+      <div id="method-c-handle-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle?</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>return true if this class can handle the given parameter(s)</p>
+          
+
+          
+          <div class="method-source-code" id="handle-3F-source">
+            <pre><span class="ruby-comment"># File lib/launchy/browser.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle?</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">Launchy</span>.<span class="ruby-identifier">log</span> <span class="ruby-node">&quot;#{self.name} : testing if [#{args[0]}] (#{args[0].class}) is a url.&quot;</span>
+    <span class="ruby-identifier">uri</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>])
+    <span class="ruby-identifier">result</span> =  [<span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>, <span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPS</span>, <span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">FTP</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">uri</span>.<span class="ruby-identifier">class</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-comment"># hmm... why does rcov not see that this is executed ?</span>
+    <span class="ruby-constant">Launchy</span>.<span class="ruby-identifier">log</span> <span class="ruby-node">&quot;#{self.name} : not a url, #{e}&quot;</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle-3F-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/launchy/browser.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-ivar">@browser</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@nix_app_list</span> = []
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Unable to find browser to launch for os family '#{my_os_family}'.&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">browser</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/launchy/browser.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-constant">Browser</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">visit</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-browser" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">browser</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>return the full command line path to the browser or nil</p>
+          
+
+          
+          <div class="method-source-code" id="browser-source">
+            <pre><span class="ruby-comment"># File lib/launchy/browser.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">browser</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@browser</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'LAUNCHY_BROWSER'</span>] <span class="ruby-keyword">and</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-string">'LAUNCHY_BROWSER'</span>]) <span class="ruby-keyword">then</span>
+      <span class="ruby-constant">Launchy</span>.<span class="ruby-identifier">log</span> <span class="ruby-node">&quot;#{self.class.name} : Using LAUNCHY_BROWSER environment variable : #{ENV['LAUNCHY_BROWSER']}&quot;</span>
+      <span class="ruby-ivar">@browser</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-string">'LAUNCHY_BROWSER'</span>]
+    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'BROWSER'</span>] <span class="ruby-keyword">and</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-string">'BROWSER'</span>]) <span class="ruby-keyword">then</span>
+      <span class="ruby-constant">Launchy</span>.<span class="ruby-identifier">log</span> <span class="ruby-node">&quot;#{self.class.name} : Using BROWSER environment variable : #{ENV['BROWSER']}&quot;</span>
+      <span class="ruby-ivar">@browser</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-string">'BROWSER'</span>]
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">app_list</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-ivar">@browser</span> = <span class="ruby-identifier">app_list</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-constant">Launchy</span>.<span class="ruby-identifier">log</span> <span class="ruby-node">&quot;#{self.class.name} : Using application list : #{@browser}&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">msg</span> = <span class="ruby-string">&quot;Unable to launch. No Browser application found.&quot;</span>
+      <span class="ruby-constant">Launchy</span>.<span class="ruby-identifier">log</span> <span class="ruby-node">&quot;#{self.class.name} : #{msg}&quot;</span>
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">msg</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@browser</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- browser-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- browser-method -->
+
+    
+      <div id="method-i-desktop_environment_browser_launchers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">desktop_environment_browser_launchers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="desktop_environment_browser_launchers-source">
+            <pre><span class="ruby-comment"># File lib/launchy/browser.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">desktop_environment_browser_launchers</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">desktop_environment_browser_launchers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- desktop_environment_browser_launchers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- desktop_environment_browser_launchers-method -->
+
+    
+      <div id="method-i-fallback_browsers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fallback_browsers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fallback_browsers-source">
+            <pre><span class="ruby-comment"># File lib/launchy/browser.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fallback_browsers</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">fallback_browsers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fallback_browsers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fallback_browsers-method -->
+
+    
+      <div id="method-i-nix_app_list" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nix_app_list</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a list of potential browser applications to run on *nix machines. The
+order is:</p>
+
+<pre>1) What is in ENV['LAUNCHY_BROWSER'] or ENV['BROWSER']
+2) xdg-open
+3) desktop environment launcher program
+4) a list of fallback browsers</pre>
+          
+
+          
+          <div class="method-source-code" id="nix_app_list-source">
+            <pre><span class="ruby-comment"># File lib/launchy/browser.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nix_app_list</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@nix_app_list</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">browser_cmds</span> = [<span class="ruby-string">'xdg-open'</span>]
+    <span class="ruby-identifier">browser_cmds</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">desktop_environment_browser_launchers</span>[<span class="ruby-identifier">nix_desktop_environment</span>]
+    <span class="ruby-identifier">browser_cmds</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">fallback_browsers</span>
+    <span class="ruby-identifier">browser_cmds</span>.<span class="ruby-identifier">flatten!</span>
+    <span class="ruby-identifier">browser_cmds</span>.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">b</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>) }
+    <span class="ruby-constant">Launchy</span>.<span class="ruby-identifier">log</span> <span class="ruby-node">&quot;#{self.class.name} : Initial *Nix Browser List: #{browser_cmds.join(', ')}&quot;</span>
+    <span class="ruby-ivar">@nix_app_list</span> = <span class="ruby-identifier">browser_cmds</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">bin</span><span class="ruby-operator">|</span> <span class="ruby-identifier">find_executable</span>(<span class="ruby-identifier">bin</span>) }.<span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">nil?</span> }
+    <span class="ruby-constant">Launchy</span>.<span class="ruby-identifier">log</span> <span class="ruby-node">&quot;#{self.class.name} : Filtered *Nix Browser List: #{@nix_app_list.join(', ')}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@nix_app_list</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nix_app_list-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nix_app_list-method -->
+
+    
+      <div id="method-i-visit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit</span><span
+            class="method-args">(url)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>launch the browser at the appointed url</p>
+          
+
+          
+          <div class="method-source-code" id="visit-source">
+            <pre><span class="ruby-comment"># File lib/launchy/browser.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">url</span>)
+  <span class="ruby-identifier">run</span>(<span class="ruby-identifier">browser</span>,<span class="ruby-identifier">url</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- visit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- visit-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

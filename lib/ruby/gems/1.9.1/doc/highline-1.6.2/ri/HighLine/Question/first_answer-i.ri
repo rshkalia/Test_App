@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"first_answer:EFI"$HighLine::Question#first_answer;FI"W;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[	I"JWhen set to a non *nil* value, this will be tried as an answer to the:encoding"IBM437I"Lquestion.  If this answer passes validations, it will become the result;@I"Owithout the user ever being prompted.  Otherwise this value is discarded, ;@I"Fand this Question is resolved as a normal call to HighLine.ask().;@:
+@fileI"lib/highline/question.rb;@F@

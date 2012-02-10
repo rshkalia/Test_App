@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"allowed_auth_methods:EFI";Net::SSH::Authentication::Session#allowed_auth_methods;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"8the list of authentication methods that are allowed:encoding"IBM437:
+@fileI"*lib/net/ssh/authentication/session.rb;@F@

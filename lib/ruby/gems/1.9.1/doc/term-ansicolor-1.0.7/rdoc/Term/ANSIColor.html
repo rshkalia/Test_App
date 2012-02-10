@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>module Term::ANSIColor - term-ansicolor-1.0.7 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/term/ansicolor/version.rb
+    <li>lib/term/ansicolor.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-coloring-3D">::coloring=</a>
+    
+    <li><a href="#method-c-coloring-3F">::coloring?</a>
+    
+    <li><a href="#method-i-attributes">#attributes</a>
+    
+    <li><a href="#method-i-support-3F">#support?</a>
+    
+    <li><a href="#method-i-uncolored">#uncolored</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Term.html">Term</a>
+  
+    <li><a href="../Term/ANSIColor.html">Term::ANSIColor</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Term::ANSIColor</h1>
+
+  <div id="description" class="description">
+    
+<p>The <a href="ANSIColor.html">ANSIColor</a> module can be used for
+namespacing and mixed into your own classes.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="COLORED_REGEXP">COLORED_REGEXP
+        
+        <dd class="description"><p>Regular expression that is used to scan for ANSI-sequences while uncoloring
+strings.</p>
+        
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description"><p><a href="ANSIColor.html">Term::ANSIColor</a> version</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-coloring-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">coloring=</span><span
+            class="method-args">(val)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Turns the coloring on or off globally, so you can easily do this for
+example:</p>
+
+<pre>Term::ANSIColor::coloring = STDOUT.isatty</pre>
+          
+
+          
+          <div class="method-source-code" id="coloring-3D-source">
+            <pre><span class="ruby-comment"># File lib/term/ansicolor.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">coloring=</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-ivar">@coloring</span> = <span class="ruby-identifier">val</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- coloring-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- coloring-3D-method -->
+
+    
+      <div id="method-c-coloring-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">coloring?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true, if the coloring function of this module is switched on, false
+otherwise.</p>
+          
+
+          
+          <div class="method-source-code" id="coloring-3F-source">
+            <pre><span class="ruby-comment"># File lib/term/ansicolor.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">coloring?</span>
+  <span class="ruby-ivar">@coloring</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- coloring-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- coloring-3F-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-attributes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">attributes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array of all <a href="ANSIColor.html">Term::ANSIColor</a>
+attributes as symbols.</p>
+          
+
+          
+          <div class="method-source-code" id="attributes-source">
+            <pre><span class="ruby-comment"># File lib/term/ansicolor.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attributes</span>
+  <span class="ruby-constant">ATTRIBUTE_NAMES</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- attributes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- attributes-method -->
+
+    
+      <div id="method-i-support-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">support?</span><span
+            class="method-args">(feature)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if <a href="ANSIColor.html">Term::ANSIColor</a> supports the
+<code>feature</code>.</p>
+
+<p>The feature :clear, that is mixing the clear color attribute into String,
+is only supported on ruby implementations, that do <strong>not</strong>
+already implement the String#clear method. It's better to use the reset
+color attribute instead.</p>
+          
+
+          
+          <div class="method-source-code" id="support-3F-source">
+            <pre><span class="ruby-comment"># File lib/term/ansicolor.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">support?</span>(<span class="ruby-identifier">feature</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">feature</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:clear</span>
+    <span class="ruby-operator">!</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">instance_methods</span>(<span class="ruby-keyword">false</span>).<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:to_sym</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-value">:clear</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- support-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- support-3F-method -->
+
+    
+      <div id="method-i-uncolored" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">uncolored</span><span
+            class="method-args">(string = nil) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an uncolored version of the string, that is all ANSI-sequences are
+stripped from the string.</p>
+          
+
+          
+          <div class="method-source-code" id="uncolored-source">
+            <pre><span class="ruby-comment"># File lib/term/ansicolor.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">uncolored</span>(<span class="ruby-identifier">string</span> = <span class="ruby-keyword">nil</span>) <span class="ruby-comment"># :yields:</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-keyword">yield</span>.<span class="ruby-identifier">to_str</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">COLORED_REGEXP</span>, <span class="ruby-string">''</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_str</span>)
+    <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_str</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">COLORED_REGEXP</span>, <span class="ruby-string">''</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_str</span>)
+    <span class="ruby-identifier">to_str</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">COLORED_REGEXP</span>, <span class="ruby-string">''</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-string">''</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- uncolored-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- uncolored-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

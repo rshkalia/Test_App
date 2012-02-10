@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>highline-1.5.2 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body>
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="./INSTALL.html">INSTALL</a>
+  
+    <li class="file"><a href="./LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+    <li class="file"><a href="./TODO.html">TODO</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./HighLine.html">HighLine</a>
+  
+    <li><a href="./HighLine/ColorScheme.html">HighLine::ColorScheme</a>
+  
+    <li><a href="./HighLine/Menu.html">HighLine::Menu</a>
+  
+    <li><a href="./HighLine/Question.html">HighLine::Question</a>
+  
+    <li><a href="./HighLine/Question/NoAutoCompleteMatch.html">HighLine::Question::NoAutoCompleteMatch</a>
+  
+    <li><a href="./HighLine/QuestionError.html">HighLine::QuestionError</a>
+  
+    <li><a href="./HighLine/SampleColorScheme.html">HighLine::SampleColorScheme</a>
+  
+    <li><a href="./HighLine/SystemExtensions.html">HighLine::SystemExtensions</a>
+  
+    <li><a href="./IO.html">IO</a>
+  
+    <li><a href="./Kernel.html">Kernel</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./StringIO.html">StringIO</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Read+Me">Read Me</h1>
+
+<p>by James Edward Gray II</p>
+
+<h2 id="label-Description">Description</h2>
+
+<p>Welcome to <a href="HighLine.html">HighLine</a>.</p>
+
+<p><a href="HighLine.html">HighLine</a> was designed to ease the tedious tasks
+of doing console input and output with low-level methods like gets() and
+puts().  <a href="HighLine.html">HighLine</a> provides a robust system for
+requesting data from a user, without needing to code all the error checking
+and validation rules and without needing to convert the typed Strings into
+what your program really needs.  Just tell <a
+href="HighLine.html">HighLine</a> what you're after, and let it do all the
+work.</p>
+
+<h2 id="label-Documentation">Documentation</h2>
+
+<p>See <a href="HighLine.html">HighLine</a> and <a
+href="HighLine/Question.html">HighLine::Question</a> for documentation.</p>
+
+<h2 id="label-Examples">Examples</h2>
+
+<p>Basic usage:</p>
+
+<pre class="ruby"><span class="ruby-identifier">ask</span>(<span class="ruby-string">&quot;Company?  &quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">q</span><span class="ruby-operator">|</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">default</span> = <span class="ruby-string">&quot;none&quot;</span> }
+</pre>
+
+<p>Validation:</p>
+
+<pre class="ruby"><span class="ruby-identifier">ask</span>(<span class="ruby-string">&quot;Age?  &quot;</span>, <span class="ruby-constant">Integer</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">q</span><span class="ruby-operator">|</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">in</span> = <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">105</span> }
+<span class="ruby-identifier">ask</span>(<span class="ruby-string">&quot;Name?  (last, first)  &quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">q</span><span class="ruby-operator">|</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">validate</span> = <span class="ruby-regexp">/\A\w+, ?\w+\Z/</span> }
+</pre>
+
+<p>Type conversion for answers:</p>
+
+<pre class="ruby"><span class="ruby-identifier">ask</span>(<span class="ruby-string">&quot;Birthday?  &quot;</span>, <span class="ruby-constant">Date</span>)
+<span class="ruby-identifier">ask</span>(<span class="ruby-string">&quot;Interests?  (comma sep list)  &quot;</span>, <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">str</span><span class="ruby-operator">|</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/,\s*/</span>) })
+</pre>
+
+<p>Reading passwords:</p>
+
+<pre class="ruby"><span class="ruby-identifier">ask</span>(<span class="ruby-string">&quot;Enter your password:  &quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">q</span><span class="ruby-operator">|</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">echo</span> = <span class="ruby-keyword">false</span> }
+<span class="ruby-identifier">ask</span>(<span class="ruby-string">&quot;Enter your password:  &quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">q</span><span class="ruby-operator">|</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">echo</span> = <span class="ruby-string">&quot;x&quot;</span> }
+</pre>
+
+<p>ERb based output (with HighLine's ANSI color tools):</p>
+
+<pre>say(&quot;This should be &lt;%= color('bold', BOLD) %&gt;!&quot;)</pre>
+
+<p>Menus:</p>
+
+<pre class="ruby"><span class="ruby-identifier">choose</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">menu</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">menu</span>.<span class="ruby-identifier">prompt</span> = <span class="ruby-string">&quot;Please choose your favorite programming language?  &quot;</span>
+
+  <span class="ruby-identifier">menu</span>.<span class="ruby-identifier">choice</span>(:<span class="ruby-identifier">ruby</span>) { <span class="ruby-identifier">say</span>(<span class="ruby-string">&quot;Good choice!&quot;</span>) }
+  <span class="ruby-identifier">menu</span>.<span class="ruby-identifier">choices</span>(:<span class="ruby-identifier">python</span>, :<span class="ruby-identifier">perl</span>) { <span class="ruby-identifier">say</span>(<span class="ruby-string">&quot;Not from around here, are you?&quot;</span>) }
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>For more examples see the examples/ directory of this project.</p>
+
+<h2 id="label-Installing">Installing</h2>
+
+<p>See the <a href="INSTALL.html">INSTALL</a> file for instructions.</p>
+
+<h2 id="label-Questions+and%2For+Comments">Questions and/or Comments</h2>
+
+<p>Feel free to email <a href="mailto:james@grayproductions.net">James Edward
+Gray II</a> or <a href="mailto:gregory.t.brown@gmail.com">Gregory Brown</a>
+with any questions.</p>
+
+</div>
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

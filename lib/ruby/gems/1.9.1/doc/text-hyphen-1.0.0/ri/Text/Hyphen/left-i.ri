@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	left:EFI"Text::Hyphen#left;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"INo fewer than this number of letters will show up to the left of the:encoding"IBM437I"Bhyphen. This overrides the default specified in the language.;@:
+@fileI"lib/text/hyphen.rb;@F@

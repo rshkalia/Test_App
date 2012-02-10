@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"content:EFI"Net::SSH::Buffer#content;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"*exposes the raw content of the buffer:encoding"IBM437:
+@fileI"lib/net/ssh/buffer.rb;@F@

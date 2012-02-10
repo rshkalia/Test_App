@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Module: Launchy</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/launchy/application.rb
+    <li>lib/launchy/browser.rb
+    <li>lib/launchy/command_line.rb
+    <li>lib/launchy/paths.rb
+    <li>lib/launchy/version.rb
+    <li>lib/launchy.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-command_line">::command_line</a>
+    
+    <li><a href="#method-c-log">::log</a>
+    
+    <li><a href="#method-c-open">::open</a>
+    
+    <li><a href="#method-c-require_all_libs_relative_to">::require_all_libs_relative_to</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./HISTORY.html">HISTORY</a>
+  
+    <li class="file"><a href="./LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Launchy.html">Launchy</a>
+  
+    <li><a href="./Launchy/Application.html">Launchy::Application</a>
+  
+    <li><a href="./Launchy/Browser.html">Launchy::Browser</a>
+  
+    <li><a href="./Launchy/CommandLine.html">Launchy::CommandLine</a>
+  
+    <li><a href="./Launchy/Paths.html">Launchy::Paths</a>
+  
+    <li><a href="./Launchy/Version.html">Launchy::Version</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Launchy</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-command_line" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">command_line</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create an instance of the commandline application of launchy</p>
+          
+
+          
+          <div class="method-source-code" id="command_line-source">
+            <pre><span class="ruby-comment"># File lib/launchy.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">command_line</span>
+  <span class="ruby-constant">Launchy</span><span class="ruby-operator">::</span><span class="ruby-constant">CommandLine</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- command_line-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- command_line-method -->
+
+    
+      <div id="method-c-log" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">log</span><span
+            class="method-args">(msg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Setting the LAUNCHY_DEBUG environment variable to 'true' will spew debug
+information to $stderr</p>
+          
+
+          
+          <div class="method-source-code" id="log-source">
+            <pre><span class="ruby-comment"># File lib/launchy.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">log</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'LAUNCHY_DEBUG'</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'true'</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;LAUNCHY_DEBUG: #{msg}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- log-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- log-method -->
+
+    
+      <div id="method-c-open" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">open</span><span
+            class="method-args">(*params)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convenience method to launch an item</p>
+          
+
+          
+          <div class="method-source-code" id="open-source">
+            <pre><span class="ruby-comment"># File lib/launchy.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">open</span>(*<span class="ruby-identifier">params</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">klass</span> = <span class="ruby-constant">Launchy</span><span class="ruby-operator">::</span><span class="ruby-constant">Application</span>.<span class="ruby-identifier">find_application_class_for</span>(*<span class="ruby-identifier">params</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">run</span>(*<span class="ruby-identifier">params</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">msg</span> = <span class="ruby-node">&quot;Unable to launch #{params.join(' ')}&quot;</span>
+      <span class="ruby-constant">Launchy</span>.<span class="ruby-identifier">log</span> <span class="ruby-node">&quot;#{self.name} : #{msg}&quot;</span>
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">msg</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">msg</span> = <span class="ruby-node">&quot;Failure in opening #{params.join(' ')} : #{e}&quot;</span>
+    <span class="ruby-constant">Launchy</span>.<span class="ruby-identifier">log</span> <span class="ruby-node">&quot;#{self.name} : #{msg}&quot;</span>
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">msg</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- open-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- open-method -->
+
+    
+      <div id="method-c-require_all_libs_relative_to" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">require_all_libs_relative_to</span><span
+            class="method-args">(fname)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Utility method to require all files ending in .rb in the directory with the
+same name as this file minus .rb</p>
+          
+
+          
+          <div class="method-source-code" id="require_all_libs_relative_to-source">
+            <pre><span class="ruby-comment"># File lib/launchy.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">require_all_libs_relative_to</span>(<span class="ruby-identifier">fname</span>)
+  <span class="ruby-identifier">prepend</span>   = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">fname</span>,<span class="ruby-string">&quot;.rb&quot;</span>)
+  <span class="ruby-identifier">search_me</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">fname</span>),<span class="ruby-identifier">prepend</span>)
+
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">entries</span>(<span class="ruby-identifier">search_me</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rb</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-identifier">rb</span>) <span class="ruby-operator">==</span> <span class="ruby-string">&quot;.rb&quot;</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">require</span> <span class="ruby-node">&quot;#{prepend}/#{File.basename(rb,&quot;.rb&quot;)}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- require_all_libs_relative_to-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- require_all_libs_relative_to-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

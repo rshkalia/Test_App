@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Class: RestClient::Resource</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/restclient/resource.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-delete">#delete</a>
+    
+    <li><a href="#method-i-get">#get</a>
+    
+    <li><a href="#method-i-head">#head</a>
+    
+    <li><a href="#method-i-headers">#headers</a>
+    
+    <li><a href="#method-i-open_timeout">#open_timeout</a>
+    
+    <li><a href="#method-i-password">#password</a>
+    
+    <li><a href="#method-i-patch">#patch</a>
+    
+    <li><a href="#method-i-post">#post</a>
+    
+    <li><a href="#method-i-put">#put</a>
+    
+    <li><a href="#method-i-timeout">#timeout</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+    <li><a href="#method-i-user">#user</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../RestClient.html">RestClient</a>
+  
+    <li><a href="../RestClient/AbstractResponse.html">RestClient::AbstractResponse</a>
+  
+    <li><a href="../RestClient/Exception.html">RestClient::Exception</a>
+  
+    <li><a href="../RestClient/ExceptionWithResponse.html">RestClient::ExceptionWithResponse</a>
+  
+    <li><a href="../RestClient/Exceptions.html">RestClient::Exceptions</a>
+  
+    <li><a href="../RestClient/MaxRedirectsReached.html">RestClient::MaxRedirectsReached</a>
+  
+    <li><a href="../RestClient/Payload.html">RestClient::Payload</a>
+  
+    <li><a href="../RestClient/Payload/Base.html">RestClient::Payload::Base</a>
+  
+    <li><a href="../RestClient/Payload/Multipart.html">RestClient::Payload::Multipart</a>
+  
+    <li><a href="../RestClient/Payload/Streamed.html">RestClient::Payload::Streamed</a>
+  
+    <li><a href="../RestClient/Payload/UrlEncoded.html">RestClient::Payload::UrlEncoded</a>
+  
+    <li><a href="../RestClient/RawResponse.html">RestClient::RawResponse</a>
+  
+    <li><a href="../RestClient/Redirect.html">RestClient::Redirect</a>
+  
+    <li><a href="../RestClient/Request.html">RestClient::Request</a>
+  
+    <li><a href="../RestClient/Redirect.html">RestClient::Request::Redirect</a>
+  
+    <li><a href="../RestClient/RequestFailed.html">RestClient::Request::RequestFailed</a>
+  
+    <li><a href="../RestClient/RequestFailed.html">RestClient::RequestFailed</a>
+  
+    <li><a href="../RestClient/Resource.html">RestClient::Resource</a>
+  
+    <li><a href="../RestClient/Response.html">RestClient::Response</a>
+  
+    <li><a href="../RestClient/ResponseForException.html">RestClient::ResponseForException</a>
+  
+    <li><a href="../RestClient/SSLCertificateNotVerified.html">RestClient::SSLCertificateNotVerified</a>
+  
+    <li><a href="../RestClient/ServerBrokeConnection.html">RestClient::ServerBrokeConnection</a>
+  
+    <li><a href="../Net.html">Net</a>
+  
+    <li><a href="../Net/HTTP.html">Net::HTTP</a>
+  
+    <li><a href="../Net/HTTP/Patch.html">Net::HTTP::Patch</a>
+  
+    <li><a href="../Net/HTTP/Protocol.html">Net::HTTP::Protocol</a>
+  
+    <li><a href="../MIME.html">MIME</a>
+  
+    <li><a href="../MIME/Types.html">MIME::Types</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class RestClient::Resource</h1>
+
+  <div id="description" class="description">
+    
+<p>A class that can be instantiated for access to a RESTful resource,
+including authentication.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">resource</span> = <span class="ruby-constant">RestClient</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'http://some/resource'</span>)
+<span class="ruby-identifier">jpg</span> = <span class="ruby-identifier">resource</span>.<span class="ruby-identifier">get</span>(:<span class="ruby-identifier">accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'image/jpg'</span>)
+</pre>
+
+<p>With HTTP basic authentication:</p>
+
+<pre class="ruby"><span class="ruby-identifier">resource</span> = <span class="ruby-constant">RestClient</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'http://protected/resource'</span>, :<span class="ruby-identifier">user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'user'</span>, :<span class="ruby-identifier">password</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'password'</span>)
+<span class="ruby-identifier">resource</span>.<span class="ruby-identifier">delete</span>
+</pre>
+
+<p>With a timeout (seconds):</p>
+
+<pre class="ruby"><span class="ruby-constant">RestClient</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'http://slow'</span>, :<span class="ruby-identifier">timeout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>)
+</pre>
+
+<p>With an open timeout (seconds):</p>
+
+<pre class="ruby"><span class="ruby-constant">RestClient</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'http://behindfirewall'</span>, :<span class="ruby-identifier">open_timeout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>)
+</pre>
+
+<p>You can also use resources to share common headers. For headers keys,
+symbols are converted to strings. Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">resource</span> = <span class="ruby-constant">RestClient</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'http://some/resource'</span>, :<span class="ruby-identifier">headers</span> =<span class="ruby-operator">&gt;</span> { :<span class="ruby-identifier">client_version</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> })
+</pre>
+
+<p>This header will be transported as X-Client-Version (notice the X prefix,
+capitalization and hyphens)</p>
+
+<p>Use the [] syntax to allocate subresources:</p>
+
+<pre class="ruby"><span class="ruby-identifier">site</span> = <span class="ruby-constant">RestClient</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'http://example.com'</span>, :<span class="ruby-identifier">user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'adam'</span>, :<span class="ruby-identifier">password</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'mypasswd'</span>)
+<span class="ruby-identifier">site</span>[<span class="ruby-string">'posts/1/comments'</span>].<span class="ruby-identifier">post</span> <span class="ruby-string">'Good article.'</span>, :<span class="ruby-identifier">content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'text/plain'</span>
+</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-block" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">block</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">options</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-url" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">url</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(url, options={}, backwards_compatibility=nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/restclient/resource.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-identifier">backwards_compatibility</span>=<span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@url</span> = <span class="ruby-identifier">url</span>
+  <span class="ruby-ivar">@block</span> = <span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Hash</span>
+    <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
+  <span class="ruby-keyword">else</span> <span class="ruby-comment"># compatibility with previous versions</span>
+    <span class="ruby-ivar">@options</span> = { <span class="ruby-value">:user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>, <span class="ruby-value">:password</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">backwards_compatibility</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(suburl, &new_block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Construct a subresource, preserving authentication.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">site</span> = <span class="ruby-constant">RestClient</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'http://example.com'</span>, <span class="ruby-string">'adam'</span>, <span class="ruby-string">'mypasswd'</span>)
+<span class="ruby-identifier">site</span>[<span class="ruby-string">'posts/1/comments'</span>].<span class="ruby-identifier">post</span> <span class="ruby-string">'Good article.'</span>, :<span class="ruby-identifier">content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'text/plain'</span>
+</pre>
+
+<p>This is especially useful if you wish to define your site in one place and
+call it in multiple locations:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">orders</span>
+  <span class="ruby-constant">RestClient</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'http://example.com/orders'</span>, <span class="ruby-string">'admin'</span>, <span class="ruby-string">'mypasswd'</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">orders</span>.<span class="ruby-identifier">get</span>                     <span class="ruby-comment"># GET http://example.com/orders</span>
+<span class="ruby-identifier">orders</span>[<span class="ruby-string">'1'</span>].<span class="ruby-identifier">get</span>                <span class="ruby-comment"># GET http://example.com/orders/1</span>
+<span class="ruby-identifier">orders</span>[<span class="ruby-string">'1/items'</span>].<span class="ruby-identifier">delete</span>       <span class="ruby-comment"># DELETE http://example.com/orders/1/items</span>
+</pre>
+
+<p>Nest resources as far as you want:</p>
+
+<pre class="ruby"><span class="ruby-identifier">site</span> = <span class="ruby-constant">RestClient</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'http://example.com'</span>)
+<span class="ruby-identifier">posts</span> = <span class="ruby-identifier">site</span>[<span class="ruby-string">'posts'</span>]
+<span class="ruby-identifier">first_post</span> = <span class="ruby-identifier">posts</span>[<span class="ruby-string">'1'</span>]
+<span class="ruby-identifier">comments</span> = <span class="ruby-identifier">first_post</span>[<span class="ruby-string">'comments'</span>]
+<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">post</span> <span class="ruby-string">'Hello'</span>, :<span class="ruby-identifier">content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'text/plain'</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/restclient/resource.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">suburl</span>, &amp;<span class="ruby-identifier">new_block</span>)
+  <span class="ruby-keyword">case</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-identifier">block_given?</span> <span class="ruby-keyword">then</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">concat_urls</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">suburl</span>), <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">new_block</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-identifier">block</span>        <span class="ruby-keyword">then</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">concat_urls</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">suburl</span>), <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">concat_urls</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">suburl</span>), <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete</span><span
+            class="method-args">(additional_headers={}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre><span class="ruby-comment"># File lib/restclient/resource.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">additional_headers</span>={}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">headers</span> = (<span class="ruby-identifier">options</span>[<span class="ruby-value">:headers</span>] <span class="ruby-operator">||</span> {}).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">additional_headers</span>)
+  <span class="ruby-constant">Request</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(
+          <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:delete</span>,
+          <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">url</span>,
+          <span class="ruby-value">:headers</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">headers</span>), &amp;(<span class="ruby-identifier">block</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@block</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete-method -->
+
+    
+      <div id="method-i-get" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get</span><span
+            class="method-args">(additional_headers={}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get-source">
+            <pre><span class="ruby-comment"># File lib/restclient/resource.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get</span>(<span class="ruby-identifier">additional_headers</span>={}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">headers</span> = (<span class="ruby-identifier">options</span>[<span class="ruby-value">:headers</span>] <span class="ruby-operator">||</span> {}).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">additional_headers</span>)
+  <span class="ruby-constant">Request</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(
+          <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>,
+          <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">url</span>,
+          <span class="ruby-value">:headers</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">headers</span>), &amp;(<span class="ruby-identifier">block</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@block</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get-method -->
+
+    
+      <div id="method-i-head" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">head</span><span
+            class="method-args">(additional_headers={}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="head-source">
+            <pre><span class="ruby-comment"># File lib/restclient/resource.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">head</span>(<span class="ruby-identifier">additional_headers</span>={}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">headers</span> = (<span class="ruby-identifier">options</span>[<span class="ruby-value">:headers</span>] <span class="ruby-operator">||</span> {}).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">additional_headers</span>)
+  <span class="ruby-constant">Request</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(
+          <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:head</span>,
+          <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">url</span>,
+          <span class="ruby-value">:headers</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">headers</span>), &amp;(<span class="ruby-identifier">block</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@block</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- head-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- head-method -->
+
+    
+      <div id="method-i-headers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">headers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="headers-source">
+            <pre><span class="ruby-comment"># File lib/restclient/resource.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">headers</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:headers</span>] <span class="ruby-operator">||</span> {}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- headers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- headers-method -->
+
+    
+      <div id="method-i-open_timeout" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">open_timeout</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="open_timeout-source">
+            <pre><span class="ruby-comment"># File lib/restclient/resource.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">open_timeout</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:open_timeout</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- open_timeout-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- open_timeout-method -->
+
+    
+      <div id="method-i-password" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">password</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="password-source">
+            <pre><span class="ruby-comment"># File lib/restclient/resource.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">password</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:password</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- password-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- password-method -->
+
+    
+      <div id="method-i-patch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">patch</span><span
+            class="method-args">(payload, additional_headers={}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="patch-source">
+            <pre><span class="ruby-comment"># File lib/restclient/resource.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">patch</span>(<span class="ruby-identifier">payload</span>, <span class="ruby-identifier">additional_headers</span>={}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">headers</span> = (<span class="ruby-identifier">options</span>[<span class="ruby-value">:headers</span>] <span class="ruby-operator">||</span> {}).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">additional_headers</span>)
+  <span class="ruby-constant">Request</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(
+          <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:patch</span>,
+          <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">url</span>,
+          <span class="ruby-value">:payload</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">payload</span>,
+          <span class="ruby-value">:headers</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">headers</span>), &amp;(<span class="ruby-identifier">block</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@block</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- patch-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- patch-method -->
+
+    
+      <div id="method-i-post" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">post</span><span
+            class="method-args">(payload, additional_headers={}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="post-source">
+            <pre><span class="ruby-comment"># File lib/restclient/resource.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">post</span>(<span class="ruby-identifier">payload</span>, <span class="ruby-identifier">additional_headers</span>={}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">headers</span> = (<span class="ruby-identifier">options</span>[<span class="ruby-value">:headers</span>] <span class="ruby-operator">||</span> {}).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">additional_headers</span>)
+  <span class="ruby-constant">Request</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(
+          <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>,
+          <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">url</span>,
+          <span class="ruby-value">:payload</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">payload</span>,
+          <span class="ruby-value">:headers</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">headers</span>), &amp;(<span class="ruby-identifier">block</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@block</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- post-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- post-method -->
+
+    
+      <div id="method-i-put" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">put</span><span
+            class="method-args">(payload, additional_headers={}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="put-source">
+            <pre><span class="ruby-comment"># File lib/restclient/resource.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">put</span>(<span class="ruby-identifier">payload</span>, <span class="ruby-identifier">additional_headers</span>={}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">headers</span> = (<span class="ruby-identifier">options</span>[<span class="ruby-value">:headers</span>] <span class="ruby-operator">||</span> {}).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">additional_headers</span>)
+  <span class="ruby-constant">Request</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(
+          <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:put</span>,
+          <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">url</span>,
+          <span class="ruby-value">:payload</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">payload</span>,
+          <span class="ruby-value">:headers</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">headers</span>), &amp;(<span class="ruby-identifier">block</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@block</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- put-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- put-method -->
+
+    
+      <div id="method-i-timeout" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">timeout</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="timeout-source">
+            <pre><span class="ruby-comment"># File lib/restclient/resource.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">timeout</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:timeout</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- timeout-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- timeout-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/restclient/resource.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">url</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+      <div id="method-i-user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="user-source">
+            <pre><span class="ruby-comment"># File lib/restclient/resource.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">user</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:user</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- user-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

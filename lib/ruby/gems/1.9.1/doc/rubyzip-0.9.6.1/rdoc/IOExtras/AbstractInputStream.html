@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>module IOExtras::AbstractInputStream - rubyzip-0.9.6.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/zip/ioextras.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  
+    <li><a class="include" href="FakeIO.html">IOExtras::FakeIO</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-each">#each</a>
+    
+    <li><a href="#method-i-each_line">#each_line</a>
+    
+    <li><a href="#method-i-flush">#flush</a>
+    
+    <li><a href="#method-i-gets">#gets</a>
+    
+    <li><a href="#method-i-read">#read</a>
+    
+    <li><a href="#method-i-readline">#readline</a>
+    
+    <li><a href="#method-i-readlines">#readlines</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Zip.html">Zip</a>
+  
+    <li><a href="../Zip/ZipCentralDirectory.html">Zip::ZipCentralDirectory</a>
+  
+    <li><a href="../Zip/ZipCompressionMethodError.html">Zip::ZipCompressionMethodError</a>
+  
+    <li><a href="../Zip/ZipDestinationFileExistsError.html">Zip::ZipDestinationFileExistsError</a>
+  
+    <li><a href="../Zip/ZipEntry.html">Zip::ZipEntry</a>
+  
+    <li><a href="../Zip/ZipEntryExistsError.html">Zip::ZipEntryExistsError</a>
+  
+    <li><a href="../Zip/ZipEntryNameError.html">Zip::ZipEntryNameError</a>
+  
+    <li><a href="../Zip/ZipError.html">Zip::ZipError</a>
+  
+    <li><a href="../Zip/ZipExtraField.html">Zip::ZipExtraField</a>
+  
+    <li><a href="../Zip/ZipExtraField/Generic.html">Zip::ZipExtraField::Generic</a>
+  
+    <li><a href="../Zip/ZipExtraField/IUnix.html">Zip::ZipExtraField::IUnix</a>
+  
+    <li><a href="../Zip/ZipExtraField/UniversalTime.html">Zip::ZipExtraField::UniversalTime</a>
+  
+    <li><a href="../Zip/ZipFile.html">Zip::ZipFile</a>
+  
+    <li><a href="../Zip/ZipFileSystem.html">Zip::ZipFileSystem</a>
+  
+    <li><a href="../Zip/ZipFileSystem/ZipFsDir.html">Zip::ZipFileSystem::ZipFsDir</a>
+  
+    <li><a href="../Zip/ZipFileSystem/ZipFsFile.html">Zip::ZipFileSystem::ZipFsFile</a>
+  
+    <li><a href="../Zip/ZipFileSystem/ZipFsFile/ZipFsStat.html">Zip::ZipFileSystem::ZipFsFile::ZipFsStat</a>
+  
+    <li><a href="../Zip/ZipInputStream.html">Zip::ZipInputStream</a>
+  
+    <li><a href="../Zip/ZipInternalError.html">Zip::ZipInternalError</a>
+  
+    <li><a href="../Zip/ZipOutputStream.html">Zip::ZipOutputStream</a>
+  
+    <li><a href="../Zip/ZipStreamableDirectory.html">Zip::ZipStreamableDirectory</a>
+  
+    <li><a href="../Zip/ZipStreamableStream.html">Zip::ZipStreamableStream</a>
+  
+    <li><a href="../IOExtras.html">IOExtras</a>
+  
+    <li><a href="../IOExtras/AbstractInputStream.html">IOExtras::AbstractInputStream</a>
+  
+    <li><a href="../IOExtras/AbstractOutputStream.html">IOExtras::AbstractOutputStream</a>
+  
+    <li><a href="../IOExtras/FakeIO.html">IOExtras::FakeIO</a>
+  
+    <li><a href="../BugFix.html">BugFix</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module IOExtras::AbstractInputStream</h1>
+
+  <div id="description" class="description">
+    
+<p>Implements many of the convenience methods of IO such as gets, getc,
+readline and readlines  depends on: input_finished?, produce_input and read</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-lineno" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">lineno</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/zip/ioextras.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-ivar">@lineno</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@outputBuffer</span> = <span class="ruby-string">&quot;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-each" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">(aSepString = $/)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="AbstractInputStream.html#method-i-each_line">each_line</a>
+        </div>
+        
+      </div><!-- each-method -->
+
+    
+      <div id="method-i-each_line" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_line</span><span
+            class="method-args">(aSepString = $/) { |readline(aSepString)| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each_line-source">
+            <pre><span class="ruby-comment"># File lib/zip/ioextras.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_line</span>(<span class="ruby-identifier">aSepString</span> = <span class="ruby-identifier">$/</span>)
+  <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">readline</span>(<span class="ruby-identifier">aSepString</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">EOFError</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_line-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="AbstractInputStream.html#method-i-each">each</a>
+        </div>
+        
+
+        
+      </div><!-- each_line-method -->
+
+    
+      <div id="method-i-flush" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">flush</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="flush-source">
+            <pre><span class="ruby-comment"># File lib/zip/ioextras.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">flush</span>
+  <span class="ruby-identifier">retVal</span> = <span class="ruby-ivar">@outputBuffer</span>
+  <span class="ruby-ivar">@outputBuffer</span>=<span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">retVal</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- flush-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- flush-method -->
+
+    
+      <div id="method-i-gets" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gets</span><span
+            class="method-args">(aSepString = $/)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gets-source">
+            <pre><span class="ruby-comment"># File lib/zip/ioextras.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gets</span>(<span class="ruby-identifier">aSepString</span> = <span class="ruby-identifier">$/</span>)
+  <span class="ruby-ivar">@lineno</span> = <span class="ruby-ivar">@lineno</span>.<span class="ruby-identifier">next</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">read</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">aSepString</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">aSepString</span> = <span class="ruby-node">&quot;#{$/}#{$/}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">aSepString</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">bufferIndex</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">while</span> ((<span class="ruby-identifier">matchIndex</span> = <span class="ruby-ivar">@outputBuffer</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">aSepString</span>, <span class="ruby-identifier">bufferIndex</span>)) <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
+    <span class="ruby-identifier">bufferIndex</span> = <span class="ruby-ivar">@outputBuffer</span>.<span class="ruby-identifier">bytesize</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">input_finished?</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-ivar">@outputBuffer</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">flush</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@outputBuffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">produce_input</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">sepIndex</span> = <span class="ruby-identifier">matchIndex</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">aSepString</span>.<span class="ruby-identifier">bytesize</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@outputBuffer</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">sepIndex</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- gets-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- gets-method -->
+
+    
+      <div id="method-i-read" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read</span><span
+            class="method-args">(numberOfBytes = nil, buf = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="read-source">
+            <pre><span class="ruby-comment"># File lib/zip/ioextras.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">read</span>(<span class="ruby-identifier">numberOfBytes</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">buf</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">tbuf</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@outputBuffer</span>.<span class="ruby-identifier">bytesize</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">numberOfBytes</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-ivar">@outputBuffer</span>.<span class="ruby-identifier">bytesize</span>
+      <span class="ruby-identifier">tbuf</span> = <span class="ruby-ivar">@outputBuffer</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">numberOfBytes</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">numberOfBytes</span> <span class="ruby-operator">-=</span> <span class="ruby-ivar">@outputBuffer</span>.<span class="ruby-identifier">bytesize</span> <span class="ruby-keyword">if</span> (<span class="ruby-identifier">numberOfBytes</span>)
+      <span class="ruby-identifier">rbuf</span> = <span class="ruby-identifier">sysread</span>(<span class="ruby-identifier">numberOfBytes</span>, <span class="ruby-identifier">buf</span>)
+      <span class="ruby-identifier">tbuf</span> = <span class="ruby-ivar">@outputBuffer</span>
+      <span class="ruby-identifier">tbuf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">rbuf</span> <span class="ruby-keyword">if</span> (<span class="ruby-identifier">rbuf</span>)
+      <span class="ruby-ivar">@outputBuffer</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">tbuf</span> = <span class="ruby-identifier">sysread</span>(<span class="ruby-identifier">numberOfBytes</span>, <span class="ruby-identifier">buf</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> (<span class="ruby-identifier">tbuf</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">buf</span>
+    <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">replace</span>(<span class="ruby-identifier">tbuf</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">buf</span> = <span class="ruby-identifier">tbuf</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">buf</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- read-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- read-method -->
+
+    
+      <div id="method-i-readline" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">readline</span><span
+            class="method-args">(aSepString = $/)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="readline-source">
+            <pre><span class="ruby-comment"># File lib/zip/ioextras.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">readline</span>(<span class="ruby-identifier">aSepString</span> = <span class="ruby-identifier">$/</span>)
+  <span class="ruby-identifier">retVal</span> = <span class="ruby-identifier">gets</span>(<span class="ruby-identifier">aSepString</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">EOFError</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">retVal</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">retVal</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- readline-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- readline-method -->
+
+    
+      <div id="method-i-readlines" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">readlines</span><span
+            class="method-args">(aSepString = $/)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="readlines-source">
+            <pre><span class="ruby-comment"># File lib/zip/ioextras.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">readlines</span>(<span class="ruby-identifier">aSepString</span> = <span class="ruby-identifier">$/</span>)
+  <span class="ruby-identifier">retVal</span> = []
+  <span class="ruby-identifier">each_line</span>(<span class="ruby-identifier">aSepString</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">retVal</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span> }
+  <span class="ruby-identifier">retVal</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- readlines-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- readlines-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"prompt:EFI"HighLine::Menu#prompt;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"IUsed by all the preset layouts to ask the actual question to fetch a:encoding"IBM437I"6menu selection from the user.  Defaults to "?  ".;@:
+@fileI"lib/highline/menu.rb;@F@

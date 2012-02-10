@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"key_files:EFI"3Net::SSH::Authentication::KeyManager#key_files;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"5The list of user key files that will be examined:encoding"IBM437:
+@fileI".lib/net/ssh/authentication/key_manager.rb;@F@

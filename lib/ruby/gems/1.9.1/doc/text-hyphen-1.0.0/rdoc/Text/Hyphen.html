@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Class: Text::Hyphen</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/text/hyphen.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-clear_cache-21">#clear_cache!</a>
+    
+    <li><a href="#method-i-hyphenate">#hyphenate</a>
+    
+    <li><a href="#method-i-hyphenate_to">#hyphenate_to</a>
+    
+    <li><a href="#method-i-stats">#stats</a>
+    
+    <li><a href="#method-i-visualise">#visualise</a>
+    
+    <li><a href="#method-i-visualize">#visualize</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../ChangeLog.html">ChangeLog</a>
+  
+    <li class="file"><a href="../INSTALL.html">INSTALL</a>
+  
+    <li class="file"><a href="../LICENCE.html">LICENCE</a>
+  
+    <li class="file"><a href="../README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Text.html">Text</a>
+  
+    <li><a href="../Text/Hyphen.html">Text::Hyphen</a>
+  
+    <li><a href="../Text/Hyphen/Language.html">Text::Hyphen::Language</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Text::Hyphen</h1>
+
+  <div id="description" class="description">
+    
+<h1 id="label-Introduction">Introduction</h1>
+
+<p><a href="Hyphen.html">Text::Hyphen</a> -- hyphenate words using modified
+versions of TeX hyphenation patterns.</p>
+
+<h2 id="label-Usage">Usage</h2>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'text/hyphen'</span>
+<span class="ruby-identifier">hh</span> = <span class="ruby-constant">Text</span><span class="ruby-operator">::</span><span class="ruby-constant">Hyphen</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">language</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'en_us'</span>, :<span class="ruby-identifier">left</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>, :<span class="ruby-identifier">right</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>)
+  <span class="ruby-comment"># Defaults to the above</span>
+<span class="ruby-identifier">hh</span> = <span class="ruby-constant">TeX</span><span class="ruby-operator">::</span><span class="ruby-constant">Hyphen</span>.<span class="ruby-identifier">new</span>
+
+<span class="ruby-identifier">word</span> = <span class="ruby-string">&quot;representation&quot;</span>
+<span class="ruby-identifier">points</span> = <span class="ruby-identifier">hyp</span>.<span class="ruby-identifier">hyphenate</span>(<span class="ruby-identifier">word</span>)    <span class="ruby-comment">#=&gt; [3, 5, 8, 10]</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">hyp</span>.<span class="ruby-identifier">visualize</span>(<span class="ruby-identifier">word</span>)        <span class="ruby-comment">#=&gt; rep-re-sen-ta-tion</span>
+
+<span class="ruby-identifier">en</span> = <span class="ruby-constant">Text</span><span class="ruby-operator">::</span><span class="ruby-constant">Hyphen</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">left</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, :<span class="ruby-identifier">right</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+<span class="ruby-identifier">fr</span> = <span class="ruby-constant">Text</span><span class="ruby-operator">::</span><span class="ruby-constant">Hyphen</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">language</span> = <span class="ruby-string">&quot;fr&quot;</span>, :<span class="ruby-identifier">left</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, :<span class="ruby-identifier">right</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">en</span>.<span class="ruby-identifier">visualise</span>(<span class="ruby-string">&quot;organiser&quot;</span>)  <span class="ruby-comment">#=&gt; or-gan-iser</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">fr</span>.<span class="ruby-identifier">visualise</span>(<span class="ruby-string">&quot;organiser&quot;</span>)  <span class="ruby-comment">#=&gt; or-ga-ni-ser</span>
+</pre>
+
+<h2 id="label-Description">Description</h2>
+
+<p>Creates a new <a href="Hyphen.html">Hyphen</a> object and loads the
+language patterns into memory. The hyphenator can then be asked for the
+hyphenation of a word. If no language is specified, then the language en_us
+(EN_US) is used by default.</p>
+<dl class="rdoc-list note-list"><dt>Copyright
+<dd>
+<p>Copyright (c) 2004 Austin Ziegler</p>
+</dd><dt>Version
+<dd>
+<p>1.0.0</p>
+</dd><dt>Based On
+<dd>
+<p><code>TeX::Hyphen</code> 0.4 Copyright (c) 2003 - 2004 Martin DeMello and
+Austin Ziegler, in turn based on Perl's <code>TeX::Hyphen</code></p>
+<dl class="rdoc-list label-list"><dt><a href="http://search.cpan.org/author/JANPAZ/TeX-Hyphen-0.140/lib/TeX/Hyphen.pm">search.cpan.org/author/JANPAZ/TeX-Hyphen-0.140/lib/TeX/Hyphen.pm</a>
+<dd>
+<p>Copyright (c) 1997 - 2002 Jan Pazdziora</p>
+</dd></dl>
+</dd></dl>
+
+<h2 id="label-Licence">Licence</h2>
+
+<p>Licensing for <a href="Hyphen.html">Text::Hyphen</a> is unfortunately
+complex because of the various copyrights and licences of the source
+hyphenation files. Some of these files are available only under the TeX
+licence and others are available only under the GNU GPL while others are
+public domain. Each language file has these licences embedded within the
+file. Please consult each file's licence to ensure that it is compatible
+with your application.</p>
+
+<p>The copyright on the <a href="Hyphen.html">Text::Hyphen</a>
+application/library and the Ruby translations of hyphenation files belongs
+to Austin Ziegler. All other copyrights on original versions still stand;
+<a href="Hyphen.html">Text::Hyphen</a> is a derivative work of these and
+other projects.</p>
+
+<h3 id="label-Application+and+Compilation+Licences">Application and Compilation Licences</h3>
+
+<p><a href="Hyphen.html">Text::Hyphen</a>, the application/library is licensed
+under the same terms as Ruby. Note that this specifically refers to the
+contents of bin/hyphen, lib/text/hyphen.rb, and
+lib/text/hyphen/language.rb.</p>
+
+<p>Individual language hyphenation files are NOT licensed under these terms,
+but under the following MIT-style licence and the original hyphenation
+pattern licenses. The copyright for the original TeX hyphenation files is
+held by the original authors; any mistakes in conversion of these files to
+Ruby is attributable to the contributors to the <a
+href="Hyphen.html">Text::Hyphen</a> package only.</p>
+
+<p>The compilation package <a href="Hyphen.html">Text::Hyphen</a> is licensed
+under the same terms as Ruby.</p>
+
+<h3 id="label-Blanket+Language+Hyphenation+File+Licence">Blanket <a href="Hyphen/Language.html">Language</a> Hyphenation File Licence</h3>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(options = {}) { |self| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The following initializations are equivalent:</p>
+
+<pre class="ruby"><span class="ruby-identifier">hyp</span> = <span class="ruby-constant">TeX</span><span class="ruby-operator">::</span><span class="ruby-constant">Hyphenate</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">language</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;EU&quot;</span>)
+<span class="ruby-identifier">hyp</span> = <span class="ruby-constant">TeX</span><span class="ruby-operator">::</span><span class="ruby-constant">Hyphenate</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">language</span> = <span class="ruby-string">&quot;EU&quot;</span> }
+</pre>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/text/hyphen.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span> = {}) <span class="ruby-comment"># :yields self:</span>
+  <span class="ruby-ivar">@iso_language</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:language</span>]
+  <span class="ruby-ivar">@left</span>         = <span class="ruby-identifier">options</span>[<span class="ruby-value">:left</span>]
+  <span class="ruby-ivar">@right</span>        = <span class="ruby-identifier">options</span>[<span class="ruby-value">:right</span>]
+
+  <span class="ruby-ivar">@cache</span>        = {}
+  <span class="ruby-ivar">@vcache</span>       = {}
+
+  <span class="ruby-ivar">@hyphen</span>       = {}
+  <span class="ruby-ivar">@begin_hyphen</span> = {}
+  <span class="ruby-ivar">@end_hyphen</span>   = {}
+  <span class="ruby-ivar">@both_hyphen</span>  = {}
+  <span class="ruby-ivar">@exception</span>    = {}
+
+  <span class="ruby-ivar">@first_load</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-ivar">@first_load</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-identifier">load_language</span>
+
+  <span class="ruby-ivar">@left</span>       <span class="ruby-operator">||=</span> <span class="ruby-constant">DEFAULT_MIN_LEFT</span>
+  <span class="ruby-ivar">@right</span>      <span class="ruby-operator">||=</span> <span class="ruby-constant">DEFAULT_MIN_RIGHT</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-clear_cache-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clear_cache!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="clear_cache-21-source">
+            <pre><span class="ruby-comment"># File lib/text/hyphen.rb, line 220</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clear_cache!</span>
+  <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">clear</span>
+  <span class="ruby-ivar">@vcache</span>.<span class="ruby-identifier">clear</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- clear_cache-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- clear_cache-21-method -->
+
+    
+      <div id="method-i-hyphenate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hyphenate</span><span
+            class="method-args">(word)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a list of places where the word can be divided, as</p>
+
+<pre>hyp.hyphenate('representation')</pre>
+
+<p>returns [3, 5, 8, 10]. If the word has been hyphenated previously, it will
+be returned from a per-instance cache.</p>
+          
+
+          
+          <div class="method-source-code" id="hyphenate-source">
+            <pre><span class="ruby-comment"># File lib/text/hyphen.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hyphenate</span>(<span class="ruby-identifier">word</span>)
+  <span class="ruby-identifier">word</span> = <span class="ruby-identifier">word</span>.<span class="ruby-identifier">downcase</span>
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Hyphenating #{word}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">DEBUG</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@cache</span>[<span class="ruby-identifier">word</span>] <span class="ruby-keyword">if</span> <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">word</span>)
+  <span class="ruby-identifier">res</span> = <span class="ruby-ivar">@language</span>.<span class="ruby-identifier">exceptions</span>[<span class="ruby-identifier">word</span>]
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@cache</span>[<span class="ruby-identifier">word</span>] = <span class="ruby-identifier">make_result_list</span>(<span class="ruby-identifier">res</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">res</span>
+
+  <span class="ruby-identifier">result</span> = [<span class="ruby-value">0</span>] * (<span class="ruby-identifier">word</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">//</span>).<span class="ruby-identifier">size</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+  <span class="ruby-identifier">rightstop</span> = <span class="ruby-identifier">word</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">//</span>).<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@right</span>
+
+  <span class="ruby-identifier">updater</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, <span class="ruby-identifier">str</span>, <span class="ruby-identifier">pos</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">str</span>)
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">print</span> <span class="ruby-node">&quot;#{pos}: #{str}: #{hash[str]}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">DEBUG</span>
+      <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">str</span>].<span class="ruby-identifier">split</span>(<span class="ruby-regexp">//</span>).<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cc</span>, <span class="ruby-identifier">ii</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">cc</span> = <span class="ruby-identifier">cc</span>.<span class="ruby-identifier">to_i</span>
+        <span class="ruby-identifier">result</span>[<span class="ruby-identifier">ii</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">pos</span>] = <span class="ruby-identifier">cc</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">cc</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">result</span>[<span class="ruby-identifier">ii</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">pos</span>]
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">print</span> <span class="ruby-node">&quot;: #{result}\n&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">DEBUG</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Walk the word</span>
+  (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">rightstop</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pos</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">restlength</span> = <span class="ruby-identifier">word</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">pos</span>
+    (<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-identifier">restlength</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">length</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">substr</span> = <span class="ruby-identifier">word</span>[<span class="ruby-identifier">pos</span>, <span class="ruby-identifier">length</span>]
+      <span class="ruby-identifier">updater</span>[<span class="ruby-ivar">@language</span>.<span class="ruby-identifier">hyphen</span>, <span class="ruby-identifier">substr</span>, <span class="ruby-identifier">pos</span>]
+      <span class="ruby-identifier">updater</span>[<span class="ruby-ivar">@language</span>.<span class="ruby-identifier">start</span>, <span class="ruby-identifier">substr</span>, <span class="ruby-identifier">pos</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">pos</span>.<span class="ruby-identifier">zero?</span>
+      <span class="ruby-identifier">updater</span>[<span class="ruby-ivar">@language</span>.<span class="ruby-identifier">stop</span>, <span class="ruby-identifier">substr</span>, <span class="ruby-identifier">pos</span>] <span class="ruby-keyword">if</span> (<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">restlength</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">updater</span>[<span class="ruby-ivar">@language</span>.<span class="ruby-identifier">both</span>, <span class="ruby-identifier">word</span>, <span class="ruby-value">0</span>] <span class="ruby-keyword">if</span> <span class="ruby-ivar">@language</span>.<span class="ruby-identifier">both</span>[<span class="ruby-identifier">word</span>]
+
+  (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-ivar">@left</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">result</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-value">0</span> }
+  ((<span class="ruby-value">-1</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@right</span>)<span class="ruby-operator">..</span>(<span class="ruby-value">-1</span>)).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">result</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-value">0</span> }
+  <span class="ruby-ivar">@cache</span>[<span class="ruby-identifier">word</span>] = <span class="ruby-identifier">make_result_list</span>(<span class="ruby-identifier">result</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hyphenate-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hyphenate-method -->
+
+    
+      <div id="method-i-hyphenate_to" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hyphenate_to</span><span
+            class="method-args">(word, size)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function will hyphenate a word so that the first point is at most
+<code>size</code> characters.</p>
+          
+
+          
+          <div class="method-source-code" id="hyphenate_to-source">
+            <pre><span class="ruby-comment"># File lib/text/hyphen.rb, line 227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hyphenate_to</span>(<span class="ruby-identifier">word</span>, <span class="ruby-identifier">size</span>)
+  <span class="ruby-identifier">point</span> = <span class="ruby-identifier">hyphenate</span>(<span class="ruby-identifier">word</span>).<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">e</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">size</span> }.<span class="ruby-identifier">max</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">point</span>.<span class="ruby-identifier">nil?</span>
+    [<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">word</span>]
+  <span class="ruby-keyword">else</span>
+    [<span class="ruby-identifier">word</span>[<span class="ruby-value">0</span> <span class="ruby-operator">...</span> <span class="ruby-identifier">point</span>] <span class="ruby-operator">+</span> <span class="ruby-string">&quot;-&quot;</span>, <span class="ruby-identifier">word</span>[<span class="ruby-identifier">point</span> <span class="ruby-operator">..</span> <span class="ruby-value">-1</span>]]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hyphenate_to-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hyphenate_to-method -->
+
+    
+      <div id="method-i-stats" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stats</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns statistics</p>
+          
+
+          
+          <div class="method-source-code" id="stats-source">
+            <pre><span class="ruby-comment"># File lib/text/hyphen.rb, line 237</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">stats</span>
+    <span class="ruby-identifier">_b</span> = <span class="ruby-ivar">@language</span>.<span class="ruby-identifier">both</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">_s</span> = <span class="ruby-ivar">@language</span>.<span class="ruby-identifier">start</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">_e</span> = <span class="ruby-ivar">@language</span>.<span class="ruby-identifier">stop</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">_h</span> = <span class="ruby-ivar">@language</span>.<span class="ruby-identifier">hyphen</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">_x</span> = <span class="ruby-ivar">@language</span>.<span class="ruby-identifier">exceptions</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">_T</span> = <span class="ruby-identifier">_b</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">_s</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">_e</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">_h</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">_x</span>
+
+    <span class="ruby-identifier">s</span> = <span class="ruby-string">&quot;
+The language '%s' contains %d total hyphenation patterns.
+    % 6d patterns are word start patterns.
+    % 6d patterns are word stop patterns.
+    % 6d patterns are word start/stop patterns.
+    % 6d patterns are normal patterns.
+    % 6d patterns are exceptions.
+
+&quot;</span>
+    <span class="ruby-identifier">s</span> <span class="ruby-operator">%</span> [ <span class="ruby-ivar">@iso_language</span>, <span class="ruby-identifier">_T</span>, <span class="ruby-identifier">_s</span>, <span class="ruby-identifier">_e</span>, <span class="ruby-identifier">_b</span>, <span class="ruby-identifier">_h</span>, <span class="ruby-identifier">_x</span> ]
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- stats-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- stats-method -->
+
+    
+      <div id="method-i-visualise" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visualise</span><span
+            class="method-args">(word)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a visualization of the hyphenation points, so:</p>
+
+<pre>hyp.visualize('representation')</pre>
+
+<p>returns <code>rep-re-sen-ta-tion</code>, at least for English patterns. If
+the word has been visualised previously, it will be returned from a
+per-instance cache.</p>
+          
+
+          
+          <div class="method-source-code" id="visualise-source">
+            <pre><span class="ruby-comment"># File lib/text/hyphen.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visualise</span>(<span class="ruby-identifier">word</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@vcache</span>[<span class="ruby-identifier">word</span>] <span class="ruby-keyword">if</span> <span class="ruby-ivar">@vcache</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">word</span>)
+  <span class="ruby-identifier">w</span> = <span class="ruby-identifier">word</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">hyphenate</span>(<span class="ruby-identifier">w</span>).<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pos</span>, <span class="ruby-identifier">n</span><span class="ruby-operator">|</span> 
+    <span class="ruby-identifier">w</span>[<span class="ruby-identifier">pos</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">n</span>, <span class="ruby-value">0</span>] = <span class="ruby-string">'-'</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">pos</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@vcache</span>[<span class="ruby-identifier">word</span>] = <span class="ruby-identifier">w</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- visualise-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Hyphen.html#method-i-visualize">visualize</a>
+        </div>
+        
+
+        
+      </div><!-- visualise-method -->
+
+    
+      <div id="method-i-visualize" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">visualize</span><span
+            class="method-args">(word)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Hyphen.html#method-i-visualise">visualise</a>
+        </div>
+        
+      </div><!-- visualize-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"header:EFI"HighLine::Menu#header;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HUsed by all the preset layouts to display title and/or introductory:encoding"IBM437I"/information, when set.  Defaults to +nil+.;@:
+@fileI"lib/highline/menu.rb;@F@

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>HISTORY</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./HISTORY.html">HISTORY</a>
+  
+    <li class="file"><a href="./LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Launchy.html">Launchy</a>
+  
+    <li><a href="./Launchy/Application.html">Launchy::Application</a>
+  
+    <li><a href="./Launchy/Browser.html">Launchy::Browser</a>
+  
+    <li><a href="./Launchy/CommandLine.html">Launchy::CommandLine</a>
+  
+    <li><a href="./Launchy/Paths.html">Launchy::Paths</a>
+  
+    <li><a href="./Launchy/Version.html">Launchy::Version</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Launchy+Changlog"><a href="Launchy.html">Launchy</a> Changlog</h1>
+
+<h2 id="label-Version+0.3.7+-+2010-07-19">Version 0.3.7 - 2010-07-19</h2>
+<ul><li>
+<p>Fix launchy on windows (mikefarmer)</p>
+</li></ul>
+
+<h2 id="label-Version+0.3.6+-+2010-02-22">Version 0.3.6 - 2010-02-22</h2>
+<ul><li>
+<p>add a test:spec task to run tests without rcov support</p>
+</li><li>
+<p>added 'testing' os family for running tests</p>
+</li></ul>
+
+<h2 id="label-Version+0.3.5+-+2009-12-17">Version 0.3.5 - 2009-12-17</h2>
+<ul><li>
+<p>clarify that launchy is under ISC license</p>
+</li><li>
+<p>fix missing data file in released gem needed for running specs</p>
+</li></ul>
+
+<h2 id="label-Version+0.3.3+-+2009-02-19">Version 0.3.3 - 2009-02-19</h2>
+<ul><li>
+<p>pass command line as discrete items to system() to avoid string
+interpretation by the system shell. (Suraj N. Kurapati)</p>
+</li><li>
+<p>rework project layout and tasks</p>
+</li></ul>
+
+<h2 id="label-Version+0.3.2+-+2008-05-21">Version 0.3.2 - 2008-05-21</h2>
+<ul><li>
+<p>detect aix and mingw as known operating systems.</p>
+</li></ul>
+
+<h2 id="label-Version+0.3.1+-+2007-09-08">Version 0.3.1 - 2007-09-08</h2>
+<ul><li>
+<p>finalize the command line wrapper around the launchy library.</p>
+</li><li>
+<p>added more tests</p>
+</li></ul>
+
+<h2 id="label-Version+0.3.0+-+2007-08-30">Version 0.3.0 - 2007-08-30</h2>
+<ul><li>
+<p>reorganize the code structure, removing Spawnable namespace</p>
+</li><li>
+<p>removed 'do_magic' method, changed it to 'open'</p>
+</li><li>
+<p>added override environment variable LAUNCHY_HOST_OS for testing</p>
+</li><li>
+<p>fix broken cygwin support [Bug #13472]</p>
+</li></ul>
+
+<h2 id="label-Version+0.2.1+-+2007-08-18">Version 0.2.1 - 2007-08-18</h2>
+<ul><li>
+<p>fix inability to find windows executables [Bug #13132]</p>
+</li></ul>
+
+<h2 id="label-Version+0.2.0+-+2007-08-11">Version 0.2.0 - 2007-08-11</h2>
+<ul><li>
+<p>rework browser finding</p>
+</li><li>
+<p>manual override with LAUNCHY_BROWSER environment variable</p>
+</li><li>
+<p>on *nix use desktop application launcher with fallback to list of browsers</p>
+</li><li>
+<p>On windows, switch to 'start' command and remove dependency on
+win32-process</p>
+</li><li>
+<p>removed win32 gem</p>
+</li><li>
+<p>Add debug output by setting LAUNCHY_DEBUG environment variable to 'true'</p>
+</li></ul>
+
+<h2 id="label-Version+0.1.2+-+2007-08-11">Version 0.1.2 - 2007-08-11</h2>
+<ul><li>
+<p>forked child exits without calling at_exit handlers</p>
+</li></ul>
+
+<h2 id="label-Version+0.1.1">Version 0.1.1</h2>
+<ul><li>
+<p>fixed rubyforge task to release mswin32 gem also</p>
+</li></ul>
+
+<h2 id="label-Version+0.1.0+">Version 0.1.0 </h2>
+<ul><li>
+<p>Initial public release</p>
+</li><li>
+<p>switched to using fork to spawn process and require 'win32/process' if on
+windows</p>
+</li></ul>
+
+<h2 id="label-Version+0.0.2">Version 0.0.2</h2>
+<ul><li>
+<p>First attempt at using systemu to spawn processes</p>
+</li></ul>
+
+<h2 id="label-Version+0.0.1">Version 0.0.1</h2>
+<ul><li>
+<p>Initially working release</p>
+</li></ul>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

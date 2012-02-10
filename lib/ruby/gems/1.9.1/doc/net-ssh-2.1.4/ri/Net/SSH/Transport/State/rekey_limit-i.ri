@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"rekey_limit:EFI"+Net::SSH::Transport::State#rekey_limit;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"KThe user-specified maximum number of bytes that this endpoint ought to:encoding"IBM437I"$process before needing a rekey.;@:
+@fileI"#lib/net/ssh/transport/state.rb;@F@

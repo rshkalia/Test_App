@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"overwrite:EFI"!HighLine::Question#overwrite;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[	I"NWhen set to +true+ the question is asked, but output does not progress to:encoding"IBM437I"Nthe next line.  The Cursor is moved back to the beginning of the question;@I"Oline and it is cleared so that all the contents of the line disappear from;@I"the screen.;@:
+@fileI"lib/highline/question.rb;@F@

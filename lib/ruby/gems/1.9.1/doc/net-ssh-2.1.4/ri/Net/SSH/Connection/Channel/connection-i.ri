@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"connection:EFI"-Net::SSH::Connection::Channel#connection;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"VThe underlying Net::SSH::Connection::Session instance that supports this channel.:encoding"IBM437:
+@fileI"&lib/net/ssh/connection/channel.rb;@F@

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"expanded:EFI"(JSON::Editor::JSONTreeView#expanded;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"?Returns true, if nodes are autoexpanding, false otherwise.:encoding"IBM437:
+@fileI"lib/json/editor.rb;@F@

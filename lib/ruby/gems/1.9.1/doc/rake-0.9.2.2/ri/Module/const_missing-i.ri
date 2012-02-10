@@ -1,0 +1,4 @@
+U:RDoc::AnyMethod[iI"const_missing:EFI"Module#const_missing;FF:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[
+I"DCheck for deprecated uses of top level (i.e. in Object) uses of:encoding"IBM437I"BRake class names.  If someone tries to reference the constant;@I"Ename, display a warning and return the proper object.  Using the;@I">--classic-namespace command line option will define these;@I"0constants in Object and avoid this handler.;@:
+@fileI"lib/rake/ext/module.rb;@00[[I" rake_original_const_missing;Fo;;	[o;
+;	[I"6Rename the original handler to make it available.;@;@I"(const_name);@@

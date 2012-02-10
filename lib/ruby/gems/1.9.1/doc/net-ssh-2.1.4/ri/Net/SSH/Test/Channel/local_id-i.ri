@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"local_id:EFI"%Net::SSH::Test::Channel#local_id;FI"W;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"NSets the local-id of this channel object (the id assigned by the client).:encoding"IBM437:
+@fileI" lib/net/ssh/test/channel.rb;@F@

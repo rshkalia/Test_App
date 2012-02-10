@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"properties:EFI"-Net::SSH::Connection::Channel#properties;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LA hash of properties for this channel. These can be used to store state:encoding"IBM437I";information about this channel. See also #[] and #[]=.;@:
+@fileI"&lib/net/ssh/connection/channel.rb;@F@

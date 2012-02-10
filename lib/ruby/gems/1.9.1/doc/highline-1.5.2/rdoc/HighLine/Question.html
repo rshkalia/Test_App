@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Class: HighLine::Question</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/highline/question.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-answer_or_default">#answer_or_default</a>
+    
+    <li><a href="#method-i-build_responses">#build_responses</a>
+    
+    <li><a href="#method-i-change_case">#change_case</a>
+    
+    <li><a href="#method-i-convert">#convert</a>
+    
+    <li><a href="#method-i-expected_range">#expected_range</a>
+    
+    <li><a href="#method-i-first_answer">#first_answer</a>
+    
+    <li><a href="#method-i-first_answer-3F">#first_answer?</a>
+    
+    <li><a href="#method-i-in_range-3F">#in_range?</a>
+    
+    <li><a href="#method-i-remove_whitespace">#remove_whitespace</a>
+    
+    <li><a href="#method-i-selection">#selection</a>
+    
+    <li><a href="#method-i-to_str">#to_str</a>
+    
+    <li><a href="#method-i-valid_answer-3F">#valid_answer?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../INSTALL.html">INSTALL</a>
+  
+    <li class="file"><a href="../LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../README.html">README</a>
+  
+    <li class="file"><a href="../TODO.html">TODO</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../HighLine.html">HighLine</a>
+  
+    <li><a href="../HighLine/ColorScheme.html">HighLine::ColorScheme</a>
+  
+    <li><a href="../HighLine/Menu.html">HighLine::Menu</a>
+  
+    <li><a href="../HighLine/Question.html">HighLine::Question</a>
+  
+    <li><a href="../HighLine/Question/NoAutoCompleteMatch.html">HighLine::Question::NoAutoCompleteMatch</a>
+  
+    <li><a href="../HighLine/QuestionError.html">HighLine::QuestionError</a>
+  
+    <li><a href="../HighLine/SampleColorScheme.html">HighLine::SampleColorScheme</a>
+  
+    <li><a href="../HighLine/SystemExtensions.html">HighLine::SystemExtensions</a>
+  
+    <li><a href="../IO.html">IO</a>
+  
+    <li><a href="../Kernel.html">Kernel</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../String.html">String</a>
+  
+    <li><a href="../StringIO.html">StringIO</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class HighLine::Question</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="Question.html">Question</a> objects contain all the details of a
+single invocation of <a
+href="../HighLine.html#method-i-ask">HighLine#ask</a>.  The object is
+initialized by the parameters passed to <a
+href="../HighLine.html#method-i-ask">HighLine#ask</a> and then queried to
+make sure each step of the input process is handled according to the users
+wishes.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-above" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">above</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Used to control range checks for answer.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-answer_type" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">answer_type</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The type that will be used to convert this answer.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-below" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">below</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Used to control range checks for answer.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-case" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">case</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Used to control character case processing for the answer to this question.
+See <a href="Question.html#method-i-change_case">#change_case</a> for
+acceptable settings.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-character" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">character</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Can be set to <code>true</code> to use HighLine's cross-platform character
+reader instead of fetching an entire line of input.  (Note: HighLine's
+character reader <strong>ONLY</strong> supports STDIN on Windows and Unix
+and may not work correctly if STDIN is redirected.)  Can also be set to
+<code>:getc</code> to use that method on the input stream.</p>
+
+<p><strong>WARNING</strong>:  The <em>echo</em> and <em>overwrite</em>
+attributes for a question are  ignored when using the <code>:getc</code>
+method.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-confirm" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">confirm</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Asks a yes or no confirmation question, to ensure a user knows what they
+have just agreed to.  If set to <code>true</code> the question will be,
+"Are you sure?  "  Any other true value for this attribute is assumed to be
+the question to ask.  When <code>false</code> or <code>nil</code> (the
+default),  answers are not confirmed.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-default" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">default</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Used to provide a default answer to this question.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-directory" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">directory</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The directory from which a user will be allowed to select files, when File
+or Pathname is specified as an <em><a
+href="Question.html#attribute-i-answer_type">#answer_type</a></em>. 
+Initially set to
+<code>Pathname.new(File.expand_path(File.dirname($0)))</code>.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-echo" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">echo</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Can be set to <code>true</code> or <code>false</code> to control whether or
+not input will be echoed back to the user.  A setting of <code>true</code>
+will cause echo to match input, but any other true value will be treated as
+to <a href="../String.html">String</a> to echo for each character typed.</p>
+
+<p>This requires HighLine's character reader.  See the <em>character</em>
+attribute for details.</p>
+
+<p><strong>Note</strong>:  When using <a href="../HighLine.html">HighLine</a>
+to manage echo on Unix based systems, we recommend installing the termios
+gem.  Without it, it's possible to type fast enough to have letters still
+show up (when reading character by character only).</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-first_answer" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">first_answer</span><span
+            class="attribute-access-type">[W]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>When set to a non <strong>nil</strong> value, this will be tried as an
+answer to the question.  If this answer passes validations, it will become
+the result without the user ever being prompted.  Otherwise this value is
+discarded,  and this <a href="Question.html">Question</a> is resolved as a
+normal call to <a href="../HighLine.html#method-i-ask">HighLine#ask</a>.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-gather" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">gather</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>When set, the user will be prompted for multiple answers which will be
+collected into an Array or Hash and returned as the final answer.</p>
+
+<p>You can set <em>gather</em> to an Integer to have an Array of exactly that
+many answers collected, or a String/Regexp to match an end input which will
+not be returned in the Array.</p>
+
+<p>Optionally <em>gather</em> can be set to a Hash.  In this case, the
+question will be asked once for each key and the answers will be returned
+in a Hash, mapped by key.  The <code>@key</code> variable is set before
+each  question is evaluated, so you can use it in your question.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-glob" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">glob</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The glob pattern used to limit file selection when File or Pathname is
+specified as an <em><a
+href="Question.html#attribute-i-answer_type">#answer_type</a></em>. 
+Initially set to <code>&quot;*&quot;</code>.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-in" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">in</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>If set, answer must pass an include?() check on this object.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-limit" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">limit</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Allows you to set a character limit for input.</p>
+
+<p><strong>WARNING</strong>:  This option forces a character by character
+read.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-overwrite" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">overwrite</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>When set to <code>true</code> the question is asked, but output does not
+progress to the next line.  The Cursor is moved back to the beginning of
+the question line and it is cleared so that all the contents of the line
+disappear from the screen.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-question" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">question</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The ERb template of the question to be asked.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-readline" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">readline</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Use the Readline library to fetch input.  This allows input editing as well
+as keeping a history.  In addition, tab will auto-complete  within an Array
+of choices or a file listing.</p>
+
+<p><strong>WARNING</strong>:  This option is incompatible with all of
+HighLine's  character reading  modes and it causes <a
+href="../HighLine.html">HighLine</a> to ignore the specified <em>input</em>
+stream.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-responses" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">responses</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>A Hash that stores the various responses used by <a
+href="../HighLine.html">HighLine</a> to notify the user.  The currently
+used responses and their purpose are as follows:</p>
+<dl class="rdoc-list note-list"><dt><code>:ambiguous_completion</code>
+<dd>
+<p>Used to notify the user of an ambiguous answer the auto-completion system
+cannot resolve.</p>
+</dd><dt><code>:ask_on_error</code>
+<dd>
+<p>This is the question that will be redisplayed to the user in the event of
+an error.  Can be set to <code>:question</code> to repeat the original
+question.</p>
+</dd><dt><code>:invalid_type</code>
+<dd>
+<p>The error message shown when a type conversion fails.</p>
+</dd><dt><code>:no_completion</code>
+<dd>
+<p>Used to notify the user that their selection does not have a valid
+auto-completion match.</p>
+</dd><dt><code>:not_in_range</code>
+<dd>
+<p>Used to notify the user that a provided answer did not satisfy the range
+requirement tests.</p>
+</dd><dt><code>:not_valid</code>
+<dd>
+<p>The error message shown when validation checks fail.</p>
+</dd></dl>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-validate" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">validate</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>If set to a Regexp, the answer must match (before type conversion). Can
+also be set to a Proc which will be called with the provided answer to
+validate with a <code>true</code> or <code>false</code> return.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-whitespace" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">whitespace</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Used to control whitespace processing for the answer to this question. See
+<a href="Question.html#method-i-remove_whitespace">#remove_whitespace</a>
+for acceptable settings.</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">( question, answer_type ) { |self| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create an instance of <a href="Question.html">HighLine::Question</a>. 
+Expects a <em>question</em> to ask (can be <code>&quot;&quot;</code>) and
+an <em><a
+href="Question.html#attribute-i-answer_type">#answer_type</a></em> to
+convert the answer to. The <em><a
+href="Question.html#attribute-i-answer_type">#answer_type</a></em>
+parameter must be a type recongnized by <a
+href="Question.html#method-i-convert">#convert</a>. If given, a block is
+yeilded the new <a href="Question.html">Question</a> object to allow custom
+initializaion.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/highline/question.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">question</span>, <span class="ruby-identifier">answer_type</span> )
+  <span class="ruby-comment"># initialize instance data</span>
+  <span class="ruby-ivar">@question</span>    = <span class="ruby-identifier">question</span>
+  <span class="ruby-ivar">@answer_type</span> = <span class="ruby-identifier">answer_type</span>
+  
+  <span class="ruby-ivar">@character</span>    = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@limit</span>        = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@echo</span>         = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@readline</span>     = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@whitespace</span>   = <span class="ruby-value">:strip</span>
+  <span class="ruby-ivar">@case</span>         = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@default</span>      = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@validate</span>     = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@above</span>        = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@below</span>        = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@in</span>           = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@confirm</span>      = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@gather</span>       = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@first_answer</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@directory</span>    = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">$0</span>)))
+  <span class="ruby-ivar">@glob</span>         = <span class="ruby-string">&quot;*&quot;</span>
+  <span class="ruby-ivar">@responses</span>    = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@overwrite</span>    = <span class="ruby-keyword">false</span>
+  
+  <span class="ruby-comment"># allow block to override settings</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-comment"># finalize responses based on settings</span>
+  <span class="ruby-identifier">build_responses</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-answer_or_default" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">answer_or_default</span><span
+            class="method-args">( answer_string )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the provided <em>answer_string</em> or the default answer for this
+<a href="Question.html">Question</a> if a default was set and the answer is
+empty.</p>
+          
+
+          
+          <div class="method-source-code" id="answer_or_default-source">
+            <pre><span class="ruby-comment"># File lib/highline/question.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">answer_or_default</span>( <span class="ruby-identifier">answer_string</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">answer_string</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@default</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@default</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">answer_string</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- answer_or_default-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- answer_or_default-method -->
+
+    
+      <div id="method-i-build_responses" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_responses</span><span
+            class="method-args">( )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Called late in the initialization process to build intelligent responses
+based on the details of this <a href="Question.html">Question</a> object.</p>
+          
+
+          
+          <div class="method-source-code" id="build_responses-source">
+            <pre><span class="ruby-comment"># File lib/highline/question.rb, line 222</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">build_responses</span>(  )
+  <span class="ruby-comment">### WARNING:  This code is quasi-duplicated in     ###</span>
+  <span class="ruby-comment">### Menu.update_responses().  Check there too when ###</span>
+  <span class="ruby-comment">### making changes!                                ###</span>
+  <span class="ruby-identifier">append_default</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">default</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-ivar">@responses</span> = { <span class="ruby-value">:ambiguous_completion</span> =<span class="ruby-operator">&gt;</span>
+                   <span class="ruby-string">&quot;Ambiguous choice.  &quot;</span> <span class="ruby-operator">+</span>
+                   <span class="ruby-node">&quot;Please choose one of #{@answer_type.inspect}.&quot;</span>,
+                 <span class="ruby-value">:ask_on_error</span>         =<span class="ruby-operator">&gt;</span>
+                   <span class="ruby-string">&quot;?  &quot;</span>,
+                 <span class="ruby-value">:invalid_type</span>         =<span class="ruby-operator">&gt;</span>
+                   <span class="ruby-node">&quot;You must enter a valid #{@answer_type}.&quot;</span>,
+                 <span class="ruby-value">:no_completion</span>        =<span class="ruby-operator">&gt;</span>
+                   <span class="ruby-string">&quot;You must choose one of &quot;</span> <span class="ruby-operator">+</span>
+                   <span class="ruby-node">&quot;#{@answer_type.inspect}.&quot;</span>,
+                 <span class="ruby-value">:not_in_range</span>         =<span class="ruby-operator">&gt;</span>
+                   <span class="ruby-string">&quot;Your answer isn't within the expected range &quot;</span> <span class="ruby-operator">+</span>
+                   <span class="ruby-node">&quot;(#{expected_range}).&quot;</span>,
+                 <span class="ruby-value">:not_valid</span>            =<span class="ruby-operator">&gt;</span>
+                   <span class="ruby-string">&quot;Your answer isn't valid (must match &quot;</span> <span class="ruby-operator">+</span>
+                   <span class="ruby-node">&quot;#{@validate.inspect}).&quot;</span> }.<span class="ruby-identifier">merge</span>(<span class="ruby-ivar">@responses</span>)
+  <span class="ruby-comment">### WARNING:  This code is quasi-duplicated in     ###</span>
+  <span class="ruby-comment">### Menu.update_responses().  Check there too when ###</span>
+  <span class="ruby-comment">### making changes!                                ###</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- build_responses-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- build_responses-method -->
+
+    
+      <div id="method-i-change_case" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">change_case</span><span
+            class="method-args">( answer_string )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the provided <em>answer_string</em> after changing character case
+by the rules of this <a href="Question.html">Question</a>.  Valid settings
+for whitespace are:</p>
+<dl class="rdoc-list note-list"><dt><code>nil</code>
+<dd>
+<p>Do not alter character case.  (Default.)</p>
+</dd><dt><code>:up</code>
+<dd>
+<p>Calls upcase().</p>
+</dd><dt><code>:upcase</code>
+<dd>
+<p>Calls upcase().</p>
+</dd><dt><code>:down</code>
+<dd>
+<p>Calls downcase().</p>
+</dd><dt><code>:downcase</code>
+<dd>
+<p>Calls downcase().</p>
+</dd><dt><code>:capitalize</code>
+<dd>
+<p>Calls capitalize().</p>
+</dd></dl>
+
+<p>An unrecognized choice (like <code>:none</code>) is treated as
+<code>nil</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="change_case-source">
+            <pre><span class="ruby-comment"># File lib/highline/question.rb, line 262</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">change_case</span>( <span class="ruby-identifier">answer_string</span> )
+  <span class="ruby-keyword">if</span> [<span class="ruby-value">:up</span>, <span class="ruby-value">:upcase</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@case</span>)
+    <span class="ruby-identifier">answer_string</span>.<span class="ruby-identifier">upcase</span>
+  <span class="ruby-keyword">elsif</span> [<span class="ruby-value">:down</span>, <span class="ruby-value">:downcase</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@case</span>)
+    <span class="ruby-identifier">answer_string</span>.<span class="ruby-identifier">downcase</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@case</span> <span class="ruby-operator">==</span> <span class="ruby-value">:capitalize</span>
+    <span class="ruby-identifier">answer_string</span>.<span class="ruby-identifier">capitalize</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">answer_string</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- change_case-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- change_case-method -->
+
+    
+      <div id="method-i-convert" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">convert</span><span
+            class="method-args">( answer_string )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Transforms the given <em>answer_string</em> into the expected type for this
+<a href="Question.html">Question</a>.  Currently supported conversions are:</p>
+<dl class="rdoc-list note-list"><dt><code>[...]</code>
+<dd>
+<p>Answer must be a member of the passed Array.  Auto-completion is used to
+expand partial answers.</p>
+</dd><dt><code>lambda {...}</code>
+<dd>
+<p>Answer is passed to lambda for conversion.</p>
+</dd><dt>Date
+<dd>
+<p>Date.parse() is called with answer.</p>
+</dd><dt>DateTime
+<dd>
+<p>DateTime.parse() is called with answer.</p>
+</dd><dt>File
+<dd>
+<p>The entered file name is auto-completed in  terms of <em>directory</em> +
+<em>glob</em>, opened, and returned.</p>
+</dd><dt>Float
+<dd>
+<p>Answer is converted with <a href="../Kernel.html">Kernel</a>.Float().</p>
+</dd><dt>Integer
+<dd>
+<p>Answer is converted with <a href="../Kernel.html">Kernel</a>.Integer().</p>
+</dd><dt><code>nil</code>
+<dd>
+<p>Answer is left in <a href="../String.html">String</a> format.  (Default.)</p>
+</dd><dt>Pathname
+<dd>
+<p>Same as File, save that a Pathname object is returned.</p>
+</dd><dt><a href="../String.html">String</a>
+<dd>
+<p>Answer is converted with <a href="../Kernel.html">Kernel</a>.String().</p>
+</dd><dt>Regexp
+<dd>
+<p>Answer is fed to Regexp.new().</p>
+</dd><dt>Symbol
+<dd>
+<p>The method to_sym() is called on answer and the result returned.</p>
+</dd><dt><em>any other Class</em>
+<dd>
+<p>The answer is passed on to <code>Class.parse()</code>.</p>
+</dd></dl>
+
+<p>This method throws ArgumentError, if the conversion cannot be completed for
+any reason.</p>
+          
+
+          
+          <div class="method-source-code" id="convert-source">
+            <pre><span class="ruby-comment"># File lib/highline/question.rb, line 302</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert</span>( <span class="ruby-identifier">answer_string</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@answer_type</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">answer_string</span>
+  <span class="ruby-keyword">elsif</span> [<span class="ruby-constant">Float</span>, <span class="ruby-constant">Integer</span>, <span class="ruby-constant">String</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@answer_type</span>)
+    <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">send</span>(<span class="ruby-ivar">@answer_type</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">answer_string</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@answer_type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Symbol</span>
+    <span class="ruby-identifier">answer_string</span>.<span class="ruby-identifier">to_sym</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@answer_type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Regexp</span>
+    <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">answer_string</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@answer_type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-keyword">or</span> [<span class="ruby-constant">File</span>, <span class="ruby-constant">Pathname</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@answer_type</span>)
+    <span class="ruby-comment"># cheating, using OptionParser's Completion module</span>
+    <span class="ruby-identifier">choices</span> = <span class="ruby-identifier">selection</span>
+    <span class="ruby-identifier">choices</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">Completion</span>)
+    <span class="ruby-identifier">answer</span> = <span class="ruby-identifier">choices</span>.<span class="ruby-identifier">complete</span>(<span class="ruby-identifier">answer_string</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">answer</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoAutoCompleteMatch</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@answer_type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-identifier">answer</span>.<span class="ruby-identifier">last</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@answer_type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">File</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@directory</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">answer</span>.<span class="ruby-identifier">last</span>))
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@directory</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">answer</span>.<span class="ruby-identifier">last</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> [<span class="ruby-constant">Date</span>, <span class="ruby-constant">DateTime</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@answer_type</span>) <span class="ruby-keyword">or</span> <span class="ruby-ivar">@answer_type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Class</span>)
+    <span class="ruby-ivar">@answer_type</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">answer_string</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@answer_type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Proc</span>)
+    <span class="ruby-ivar">@answer_type</span>[<span class="ruby-identifier">answer_string</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- convert-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- convert-method -->
+
+    
+      <div id="method-i-expected_range" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">expected_range</span><span
+            class="method-args">( )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a english explination of the current range settings.</p>
+          
+
+          
+          <div class="method-source-code" id="expected_range-source">
+            <pre><span class="ruby-comment"># File lib/highline/question.rb, line 334</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">expected_range</span>(  )
+  <span class="ruby-identifier">expected</span> = [ ]
+
+  <span class="ruby-identifier">expected</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;above #{@above}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@above</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">expected</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;below #{@below}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@below</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">expected</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;included in #{@in.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@in</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">expected</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">0</span> <span class="ruby-keyword">then</span> <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">1</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">expected</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">2</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">expected</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot; and &quot;</span>)
+  <span class="ruby-keyword">else</span>        <span class="ruby-identifier">expected</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">-2</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;, &quot;</span>) <span class="ruby-operator">+</span> <span class="ruby-node">&quot;, and #{expected.last}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- expected_range-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- expected_range-method -->
+
+    
+      <div id="method-i-first_answer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">first_answer</span><span
+            class="method-args">( )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns <em><a
+href="Question.html#method-i-first_answer">#first_answer</a></em>, which
+will be unset following this call.</p>
+          
+
+          
+          <div class="method-source-code" id="first_answer-source">
+            <pre><span class="ruby-comment"># File lib/highline/question.rb, line 350</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">first_answer</span>( )
+  <span class="ruby-ivar">@first_answer</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-ivar">@first_answer</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- first_answer-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- first_answer-method -->
+
+    
+      <div id="method-i-first_answer-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">first_answer?</span><span
+            class="method-args">( )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if <em><a
+href="Question.html#method-i-first_answer">#first_answer</a></em> is set.</p>
+          
+
+          
+          <div class="method-source-code" id="first_answer-3F-source">
+            <pre><span class="ruby-comment"># File lib/highline/question.rb, line 357</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">first_answer?</span>( )
+  <span class="ruby-keyword">not</span> <span class="ruby-ivar">@first_answer</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- first_answer-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- first_answer-3F-method -->
+
+    
+      <div id="method-i-in_range-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in_range?</span><span
+            class="method-args">( answer_object )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns <code>true</code> if the <em>answer_object</em> is greater than the
+<em>above</em> attribute, less than the <em>below</em> attribute and
+included?()ed in the <em>in</em> attribute.  Otherwise, <code>false</code>
+is returned.  Any <code>nil</code> attributes are not checked.</p>
+          
+
+          
+          <div class="method-source-code" id="in_range-3F-source">
+            <pre><span class="ruby-comment"># File lib/highline/question.rb, line 367</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">in_range?</span>( <span class="ruby-identifier">answer_object</span> )
+  (<span class="ruby-ivar">@above</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">answer_object</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@above</span>) <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@below</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">answer_object</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@below</span>) <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@in</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-ivar">@in</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">answer_object</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in_range-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in_range-3F-method -->
+
+    
+      <div id="method-i-remove_whitespace" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_whitespace</span><span
+            class="method-args">( answer_string )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the provided <em>answer_string</em> after processing whitespace by
+the rules of this <a href="Question.html">Question</a>.  Valid settings for
+whitespace are:</p>
+<dl class="rdoc-list note-list"><dt><code>nil</code>
+<dd>
+<p>Do not alter whitespace.</p>
+</dd><dt><code>:strip</code>
+<dd>
+<p>Calls strip().  (Default.)</p>
+</dd><dt><code>:chomp</code>
+<dd>
+<p>Calls chomp().</p>
+</dd><dt><code>:collapse</code>
+<dd>
+<p>Collapses all whitspace runs to a single space.</p>
+</dd><dt><code>:strip_and_collapse</code>
+<dd>
+<p>Calls strip(), then collapses all whitspace runs to a single space.</p>
+</dd><dt><code>:chomp_and_collapse</code>
+<dd>
+<p>Calls chomp(), then collapses all whitspace runs to a single space.</p>
+</dd><dt><code>:remove</code>
+<dd>
+<p>Removes all whitespace.</p>
+</dd></dl>
+
+<p>An unrecognized choice (like <code>:none</code>) is treated as
+<code>nil</code>.</p>
+
+<p>This process is skipped, for single character input.</p>
+          
+
+          
+          <div class="method-source-code" id="remove_whitespace-source">
+            <pre><span class="ruby-comment"># File lib/highline/question.rb, line 392</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_whitespace</span>( <span class="ruby-identifier">answer_string</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@whitespace</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">answer_string</span>
+  <span class="ruby-keyword">elsif</span> [<span class="ruby-value">:strip</span>, <span class="ruby-value">:chomp</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@whitespace</span>)
+    <span class="ruby-identifier">answer_string</span>.<span class="ruby-identifier">send</span>(<span class="ruby-ivar">@whitespace</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@whitespace</span> <span class="ruby-operator">==</span> <span class="ruby-value">:collapse</span>
+    <span class="ruby-identifier">answer_string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\s+/</span>, <span class="ruby-string">&quot; &quot;</span>)
+  <span class="ruby-keyword">elsif</span> [<span class="ruby-value">:strip_and_collapse</span>, <span class="ruby-value">:chomp_and_collapse</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@whitespace</span>)
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">answer_string</span>.<span class="ruby-identifier">send</span>(<span class="ruby-ivar">@whitespace</span>.<span class="ruby-identifier">to_s</span>[<span class="ruby-regexp">/^[a-z]+/</span>])
+    <span class="ruby-identifier">result</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\s+/</span>, <span class="ruby-string">&quot; &quot;</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@whitespace</span> <span class="ruby-operator">==</span> <span class="ruby-value">:remove</span>
+    <span class="ruby-identifier">answer_string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\s+/</span>, <span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">answer_string</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_whitespace-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_whitespace-method -->
+
+    
+      <div id="method-i-selection" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">selection</span><span
+            class="method-args">( )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an Array of valid answers to this question.  These answers are only
+known when <em><a
+href="Question.html#attribute-i-answer_type">#answer_type</a></em> is set
+to an Array of choices, File, or Pathname.  Any other time, this method
+will return an empty Array.</p>
+          
+
+          
+          <div class="method-source-code" id="selection-source">
+            <pre><span class="ruby-comment"># File lib/highline/question.rb, line 414</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">selection</span>(  )
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@answer_type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+    <span class="ruby-ivar">@answer_type</span>
+  <span class="ruby-keyword">elsif</span> [<span class="ruby-constant">File</span>, <span class="ruby-constant">Pathname</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@answer_type</span>)
+    <span class="ruby-constant">Dir</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@directory</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-ivar">@glob</span>)].<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">file</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    [ ]
+  <span class="ruby-keyword">end</span>      
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- selection-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- selection-method -->
+
+    
+      <div id="method-i-to_str" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_str</span><span
+            class="method-args">( )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Stringifies the question to be asked.</p>
+          
+
+          
+          <div class="method-source-code" id="to_str-source">
+            <pre><span class="ruby-comment"># File lib/highline/question.rb, line 427</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_str</span>(  )
+  <span class="ruby-ivar">@question</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_str-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_str-method -->
+
+    
+      <div id="method-i-valid_answer-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">valid_answer?</span><span
+            class="method-args">( answer_string )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns <code>true</code> if the provided <em>answer_string</em> is
+accepted by the  <em>validate</em> attribute or <code>false</code> if it's
+not.</p>
+
+<p>It's important to realize that an answer is validated after whitespace and
+case handling.</p>
+          
+
+          
+          <div class="method-source-code" id="valid_answer-3F-source">
+            <pre><span class="ruby-comment"># File lib/highline/question.rb, line 438</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">valid_answer?</span>( <span class="ruby-identifier">answer_string</span> )
+  <span class="ruby-ivar">@validate</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> 
+  (<span class="ruby-ivar">@validate</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">answer_string</span> <span class="ruby-operator">=~</span> <span class="ruby-ivar">@validate</span>) <span class="ruby-keyword">or</span>
+  (<span class="ruby-ivar">@validate</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Proc</span>)   <span class="ruby-keyword">and</span> <span class="ruby-ivar">@validate</span>[<span class="ruby-identifier">answer_string</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- valid_answer-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- valid_answer-3F-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

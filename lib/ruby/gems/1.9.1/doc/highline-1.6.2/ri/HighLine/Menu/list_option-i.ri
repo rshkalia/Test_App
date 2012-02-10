@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"list_option:EFI"HighLine::Menu#list_option;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HThis setting is passed on as the third parameter to HighLine.list():encoding"IBM437I"Cby all the preset layouts.  See that method for details of its;@I"!effects.  Defaults to +nil+.;@:
+@fileI"lib/highline/menu.rb;@F@

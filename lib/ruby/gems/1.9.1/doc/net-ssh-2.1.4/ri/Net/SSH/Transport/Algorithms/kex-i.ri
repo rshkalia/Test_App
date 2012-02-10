@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"kex:EFI"(Net::SSH::Transport::Algorithms#kex;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"GThe kex algorithm to use settled on between the client and server.:encoding"IBM437:
+@fileI"(lib/net/ssh/transport/algorithms.rb;@F@

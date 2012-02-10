@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"whitespace:EFI""HighLine::Question#whitespace;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"KUsed to control whitespace processing for the answer to this question.:encoding"IBM437I"HSee HighLine::Question.remove_whitespace() for acceptable settings.;@:
+@fileI"lib/highline/question.rb;@F@

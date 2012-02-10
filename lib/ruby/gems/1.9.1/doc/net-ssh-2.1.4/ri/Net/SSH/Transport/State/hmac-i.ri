@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	hmac:EFI"$Net::SSH::Transport::State#hmac;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"1The hmac algorithm in use for this endpoint.:encoding"IBM437:
+@fileI"#lib/net/ssh/transport/state.rb;@F@

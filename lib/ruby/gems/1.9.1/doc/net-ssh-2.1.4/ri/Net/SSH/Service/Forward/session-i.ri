@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"session:EFI"'Net::SSH::Service::Forward#session;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HThe underlying connection service instance that the port-forwarding:encoding"IBM437I"services employ.;@:
+@fileI"#lib/net/ssh/service/forward.rb;@F@

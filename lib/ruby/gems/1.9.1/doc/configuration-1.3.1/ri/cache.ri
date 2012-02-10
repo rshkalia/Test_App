@@ -1,0 +1,7 @@
+{:ancestors{
+I"Configuration:EF[I"Object;FI"Configuration::DSL;F[@	I"Configuration::Pure;F[@	I"Object;F[I"BasicObject;FI"#Configuration::InstanceMethods;F[I"Enumerable;F:attributes{@[I"attr_reader name;F:class_methods{	@[I"version;F@
+[I"evaluate;FI"new;F@[I"[];FI"new;F@[I"new;F:encodingIu:EncodingIBM437;F:instance_methods{
+@
+[
+I"Method;FI"	Send;FI"__configuration__;FI"method_missing;FI"object_id;F@[I"method_missing;FI"Object;F[I"Configuration;FI" Configuration::ClassMethods;F[	I"for;FI"	load;FI"	path;FI"
+path=;F@[I"dup;FI"	each;FI"method_missing;FI"	name;	"IBM437I"to_hash;FI"update;F:modules[I"Configuration;FI" Configuration::ClassMethods;FI"Configuration::DSL;FI"#Configuration::InstanceMethods;FI"Configuration::Pure;F@	

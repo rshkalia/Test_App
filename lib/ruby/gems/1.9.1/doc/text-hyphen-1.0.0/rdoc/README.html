@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>ChangeLog</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./ChangeLog.html">ChangeLog</a>
+  
+    <li class="file"><a href="./INSTALL.html">INSTALL</a>
+  
+    <li class="file"><a href="./LICENCE.html">LICENCE</a>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Text.html">Text</a>
+  
+    <li><a href="./Text/Hyphen.html">Text::Hyphen</a>
+  
+    <li><a href="./Text/Hyphen/Language.html">Text::Hyphen::Language</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p><a href="Text/Hyphen.html">Text::Hyphen</a> <a
+href="README.html">README</a></p>
+
+<h6 id="label-"></h6>
+
+<p><a href="Text/Hyphen.html">Text::Hyphen</a> will properly hyphenate various
+words according to the rules of the language the word is written in. The
+algorithm is based on that of the TeX typesetting system by Donald E.
+Knuth. This is originally based on the Perl implementation of <a
+href="http://1">TeX::Hyphen</a> and the Ruby port <a
+href="http://2">TeX::Hyphen</a>. The language hyphenation pattern files are
+based on the sources available from <a href="http://3">CTAN</a> as of
+2004.12.19 and have been translated by Austin Ziegler.</p>
+
+<p>This release is 1.0, the initial release of <a
+href="Text/Hyphen.html">Text::Hyphen</a>, representing a significant
+improvement over its predecessor, TeX::Hyphen.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'text/hyphen'</span>
+<span class="ruby-identifier">hh</span> = <span class="ruby-constant">Text</span><span class="ruby-operator">::</span><span class="ruby-constant">Hyphen</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">language</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'en_us'</span>, :<span class="ruby-identifier">left</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>, :<span class="ruby-identifier">right</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>)
+  <span class="ruby-comment"># Defaults to the above</span>
+<span class="ruby-identifier">hh</span> = <span class="ruby-constant">TeX</span><span class="ruby-operator">::</span><span class="ruby-constant">Hyphen</span>.<span class="ruby-identifier">new</span>
+
+<span class="ruby-identifier">word</span> = <span class="ruby-string">&quot;representation&quot;</span>
+<span class="ruby-identifier">points</span> = <span class="ruby-identifier">hyp</span>.<span class="ruby-identifier">hyphenate</span>(<span class="ruby-identifier">word</span>)  <span class="ruby-comment">#=&gt; [3, 5, 8, 10]</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">hyp</span>.<span class="ruby-identifier">visualize</span>(<span class="ruby-identifier">word</span>)      <span class="ruby-comment">#=&gt; rep-re-sen-ta-tion</span>
+</pre>
+
+<p><a href="Text/Hyphen.html">Text::Hyphen</a> is truly multilingual in <a
+href="http://4">nature</a>. As an example, consider the difference between
+the following:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'text/hyphen'</span>
+  <span class="ruby-comment"># Using left and right minimum values of 0 ensures that you will see all</span>
+  <span class="ruby-comment"># possible hyphenation points, not just those that meet the minimum</span>
+  <span class="ruby-comment"># width requirements.</span>
+<span class="ruby-identifier">en</span> = <span class="ruby-constant">Text</span><span class="ruby-operator">::</span><span class="ruby-constant">Hyphen</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">left</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, :<span class="ruby-identifier">right</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+<span class="ruby-identifier">fr</span> = <span class="ruby-constant">Text</span><span class="ruby-operator">::</span><span class="ruby-constant">Hyphen</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">language</span> = <span class="ruby-string">&quot;fr&quot;</span>, :<span class="ruby-identifier">left</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, :<span class="ruby-identifier">right</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">en</span>.<span class="ruby-identifier">visualise</span>(<span class="ruby-string">&quot;organiser&quot;</span>)      <span class="ruby-comment">#=&gt; or-gan-iser</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">fr</span>.<span class="ruby-identifier">visualise</span>(<span class="ruby-string">&quot;organiser&quot;</span>)      <span class="ruby-comment">#=&gt; or-ga-ni-ser</span>
+</pre>
+
+<p>As you can see, the hyphenation is distinct between the two hyphenators.
+Additional improvements over TeX::Hyphen include thread safety (except for
+debug control) and support for UTF-8.</p>
+
+<p>It is very important to read the <a href="LICENCE.html">LICENCE</a> file
+and each language file desired, as some languages may be held under a more
+strict licence than that granted by <a href="LICENCE.html">LICENCE</a>.</p>
+
+<p>Copyright</p>
+
+<h6 id="label-"></h6>
+
+<p># Copyright 2004 Austin Ziegler &lt;text-hyphen@halostatue.ca&gt; # See the
+<a href="LICENCE.html">LICENCE</a> file for more information.</p>
+<dl class="rdoc-list label-list"><dt>1
+<dd>
+<p>&lt;<a
+href="http://search.cpan.org/author/JANPAZ/TeX-Hyphen-0.140/lib/TeX/Hyphen.pm">search.cpan.org/author/JANPAZ/TeX-Hyphen-0.140/lib/TeX/Hyphen.pm</a>&gt;
+Maintained by Jan Pazdziora.</p>
+</dd><dt>2
+<dd>
+<p>Available at &lt;<a
+href="http://rubyforge.org/projects/text-format">rubyforge.org/projects/text-format</a>&gt;.</p>
+</dd><dt>3
+<dd>
+<p>&lt;<a href="http://www.ctan.org">www.ctan.org</a>&gt;</p>
+</dd><dt>4
+<dd>
+<p>There are some bugs and design decisions in the original Perl
+implementation of TeX::Hyphen that make it unsuitable for most multilingual
+implementations that carried over to the Ruby port of TeX::Hyphen.</p>
+</dd></dl>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Class: HighLine::Menu</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/highline/menu.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Question
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-choice">#choice</a>
+    
+    <li><a href="#method-i-choices">#choices</a>
+    
+    <li><a href="#method-i-help">#help</a>
+    
+    <li><a href="#method-i-hidden">#hidden</a>
+    
+    <li><a href="#method-i-index-3D">#index=</a>
+    
+    <li><a href="#method-i-init_help">#init_help</a>
+    
+    <li><a href="#method-i-layout-3D">#layout=</a>
+    
+    <li><a href="#method-i-options">#options</a>
+    
+    <li><a href="#method-i-select">#select</a>
+    
+    <li><a href="#method-i-to_ary">#to_ary</a>
+    
+    <li><a href="#method-i-to_str">#to_str</a>
+    
+    <li><a href="#method-i-update_responses">#update_responses</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../INSTALL.html">INSTALL</a>
+  
+    <li class="file"><a href="../LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../README.html">README</a>
+  
+    <li class="file"><a href="../TODO.html">TODO</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../HighLine.html">HighLine</a>
+  
+    <li><a href="../HighLine/ColorScheme.html">HighLine::ColorScheme</a>
+  
+    <li><a href="../HighLine/Menu.html">HighLine::Menu</a>
+  
+    <li><a href="../HighLine/Question.html">HighLine::Question</a>
+  
+    <li><a href="../HighLine/Question/NoAutoCompleteMatch.html">HighLine::Question::NoAutoCompleteMatch</a>
+  
+    <li><a href="../HighLine/QuestionError.html">HighLine::QuestionError</a>
+  
+    <li><a href="../HighLine/SampleColorScheme.html">HighLine::SampleColorScheme</a>
+  
+    <li><a href="../HighLine/SystemExtensions.html">HighLine::SystemExtensions</a>
+  
+    <li><a href="../IO.html">IO</a>
+  
+    <li><a href="../Kernel.html">Kernel</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../String.html">String</a>
+  
+    <li><a href="../StringIO.html">StringIO</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class HighLine::Menu</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="Menu.html">Menu</a> objects encapsulate all the details of a call
+to <a href="../HighLine.html#method-i-choose">HighLine#choose</a>. Using
+the accessors and <a href="Menu.html#method-i-choice">#choice</a> and <a
+href="Menu.html#method-i-choices">#choices</a>, the block passed to <a
+href="../HighLine.html#method-i-choose">HighLine#choose</a> can detail all
+aspects of menu display and control.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-flow" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">flow</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This attribute is passed directly on as the mode to <a
+href="../HighLine.html#method-i-list">HighLine#list</a> by all the preset
+layouts.  See that method for appropriate settings.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-header" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">header</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Used by all the preset layouts to display title and/or introductory
+information, when set.  Defaults to <code>nil</code>.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-index" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">index</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>An <em>index</em> to append to each menu item in display.  See <a
+href="Menu.html#method-i-index-3D">#index=</a> for details.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-index_suffix" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">index_suffix</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The <a href="../String.html">String</a> placed between an <em>index</em>
+and a menu item.  Defaults to ". ".  Switches to " ", when <em>index</em>
+is set to a <a href="../String.html">String</a> (like "-").</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-layout" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">layout</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>An ERb <em>layout</em> to use when displaying this <a
+href="Menu.html">Menu</a> object.  See <a
+href="Menu.html#method-i-layout-3D">#layout=</a> for details.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-list_option" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">list_option</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This setting is passed on as the third parameter to <a
+href="../HighLine.html#method-i-list">HighLine#list</a> by all the preset
+layouts.  See that method for details of its effects.  Defaults to
+<code>nil</code>.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-nil_on_handled" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">nil_on_handled</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>When <code>true</code>, any selected item handled by provided action code,
+will return <code>nil</code>, instead of the results to the action code. 
+This may prove handy when dealing with mixed menus where only the names of
+items without any code (and <code>nil</code>, of course) will be returned.
+Defaults to <code>false</code>.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-prompt" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">prompt</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Used by all the preset layouts to ask the actual question to fetch a menu
+selection from the user.  Defaults to "?  ".</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-select_by" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">select_by</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The <em><a href="Menu.html#attribute-i-select_by">#select_by</a></em>
+attribute controls how the user is allowed to pick a  menu item.  The
+available choices are:</p>
+<dl class="rdoc-list note-list"><dt><code>:index</code>
+<dd>
+<p>The user is allowed to type the numerical or alphetical index for their
+selection.</p>
+</dd><dt><code>:index_or_name</code>
+<dd>
+<p>Allows both methods from the <code>:index</code> option and the
+<code>:name</code> option.</p>
+</dd><dt><code>:name</code>
+<dd>
+<p><a href="Menu.html">Menu</a> items are selected by typing a portion of the
+item name that will be auto-completed.</p>
+</dd></dl>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-shell" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">shell</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>When set to <code>true</code>, responses are allowed to be an entire line
+of input, including details beyond the command itself.  Only the first
+"word" of input will be matched against the menu choices, but both the
+command selected and the rest of the line will be passed to provided action
+blocks.  Defaults to <code>false</code>.</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">( ) { |self| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create an instance of <a href="Menu.html">HighLine::Menu</a>.  All
+customization is done through the passed block, which should call accessors
+and choice() and choices() as needed to define the <a
+href="Menu.html">Menu</a>.  Note that Menus are also Questions, so all that
+functionality is available to the block as well.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/highline/menu.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(  )
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># Initialize Question objects with ignored values, we'll</span>
+  <span class="ruby-comment"># adjust ours as needed.</span>
+  <span class="ruby-comment"># </span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-string">&quot;Ignored&quot;</span>, [ ], &amp;<span class="ruby-keyword">nil</span>)    <span class="ruby-comment"># avoiding passing the block along</span>
+  
+  <span class="ruby-ivar">@items</span>           = [ ]
+  <span class="ruby-ivar">@hidden_items</span>    = [ ]
+  <span class="ruby-ivar">@help</span>            = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;There's no help for that topic.&quot;</span>)
+
+  <span class="ruby-ivar">@index</span>           = <span class="ruby-value">:number</span>
+  <span class="ruby-ivar">@index_suffix</span>    = <span class="ruby-string">&quot;. &quot;</span>
+  <span class="ruby-ivar">@select_by</span>       = <span class="ruby-value">:index_or_name</span>
+  <span class="ruby-ivar">@flow</span>            = <span class="ruby-value">:rows</span>
+  <span class="ruby-ivar">@list_option</span>     = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@header</span>          = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@prompt</span>          = <span class="ruby-string">&quot;?  &quot;</span>
+  <span class="ruby-ivar">@layout</span>          = <span class="ruby-value">:list</span>
+  <span class="ruby-ivar">@shell</span>           = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@nil_on_handled</span>  = <span class="ruby-keyword">false</span>
+  
+  <span class="ruby-comment"># Override Questions responses, we'll set our own.</span>
+  <span class="ruby-ivar">@responses</span>       = { }
+  <span class="ruby-comment"># Context for action code.</span>
+  <span class="ruby-ivar">@highline</span>        = <span class="ruby-keyword">nil</span>
+  
+  <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-identifier">init_help</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@shell</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@help</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">update_responses</span>     <span class="ruby-comment"># rebuild responses based on our settings</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-choice" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">choice</span><span
+            class="method-args">( name, help = nil, &action )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds <em>name</em> to the list of available menu items.  <a
+href="Menu.html">Menu</a> items will be displayed in the order they are
+added.</p>
+
+<p>An optional <em>action</em> can be associated with this name and if
+provided, it will be called if the item is selected.  The result of the
+method will be returned, unless <em><a
+href="Menu.html#attribute-i-nil_on_handled">#nil_on_handled</a></em> is set
+(when you would get <code>nil</code> instead).  In <em>shell</em> mode, a
+provided block will be passed the command chosen and any details that
+followed the command.  Otherwise, just the command is passed.  The
+<code>@highline</code> variable is set to the current <a
+href="../HighLine.html">HighLine</a> context before the action code is
+called and can thus be used for adding output and the like.</p>
+          
+
+          
+          <div class="method-source-code" id="choice-source">
+            <pre><span class="ruby-comment"># File lib/highline/menu.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">choice</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">help</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">action</span> )
+  <span class="ruby-ivar">@items</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">name</span>, <span class="ruby-identifier">action</span>]
+  
+  <span class="ruby-ivar">@help</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>] = <span class="ruby-identifier">help</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">help</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- choice-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- choice-method -->
+
+    
+      <div id="method-i-choices" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">choices</span><span
+            class="method-args">( *names, &action )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A shortcut for multiple calls to the sister method choice().  <strong>Be
+warned:</strong>  An <em>action</em> set here will apply to
+<strong>all</strong> provided <em>names</em>.  This is considered to be a
+feature, so you can easily hand-off interface processing to a different
+chunk of code.</p>
+          
+
+          
+          <div class="method-source-code" id="choices-source">
+            <pre><span class="ruby-comment"># File lib/highline/menu.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">choices</span>( *<span class="ruby-identifier">names</span>, &amp;<span class="ruby-identifier">action</span> )
+  <span class="ruby-identifier">names</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">choice</span>(<span class="ruby-identifier">n</span>, &amp;<span class="ruby-identifier">action</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- choices-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- choices-method -->
+
+    
+      <div id="method-i-help" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">help</span><span
+            class="method-args">( topic, help )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Used to set help for arbitrary topics.  Use the topic
+<code>&quot;help&quot;</code> to override the default message.</p>
+          
+
+          
+          <div class="method-source-code" id="help-source">
+            <pre><span class="ruby-comment"># File lib/highline/menu.rb, line 216</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">help</span>( <span class="ruby-identifier">topic</span>, <span class="ruby-identifier">help</span> )
+  <span class="ruby-ivar">@help</span>[<span class="ruby-identifier">topic</span>] = <span class="ruby-identifier">help</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- help-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- help-method -->
+
+    
+      <div id="method-i-hidden" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hidden</span><span
+            class="method-args">( name, help = nil, &action )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Identical to choice(), but the item will not be listed for the user.</p>
+          
+
+          
+          <div class="method-source-code" id="hidden-source">
+            <pre><span class="ruby-comment"># File lib/highline/menu.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hidden</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">help</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">action</span> )
+  <span class="ruby-ivar">@hidden_items</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">name</span>, <span class="ruby-identifier">action</span>]
+  
+  <span class="ruby-ivar">@help</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>] = <span class="ruby-identifier">help</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">help</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hidden-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hidden-method -->
+
+    
+      <div id="method-i-index-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index=</span><span
+            class="method-args">( style )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the indexing style for this <a href="Menu.html">Menu</a> object. 
+Indexes are appended to menu items, when displayed in list form.  The
+available settings are:</p>
+<dl class="rdoc-list note-list"><dt><code>:number</code>
+<dd>
+<p><a href="Menu.html">Menu</a> items will be indexed numerically, starting
+with 1.  This is the default method of indexing.</p>
+</dd><dt><code>:letter</code>
+<dd>
+<p>Items will be indexed alphabetically, starting with a.</p>
+</dd><dt><code>:none</code>
+<dd>
+<p>No index will be appended to menu items.</p>
+</dd><dt><em>any <a href="../String.html">String</a></em>
+<dd>
+<p>Will be used as the literal <em>index</em>.</p>
+</dd></dl>
+
+<p>Setting the <em>index</em> to <code>:none</code> a literal <a
+href="../String.html">String</a>, also adjusts <em><a
+href="Menu.html#attribute-i-index_suffix">#index_suffix</a></em> to a
+single space and <em><a
+href="Menu.html#attribute-i-select_by">#select_by</a></em> to
+<code>:none</code>.  Because of this, you should make a habit of setting
+the <em>index</em> first.</p>
+          
+
+          
+          <div class="method-source-code" id="index-3D-source">
+            <pre><span class="ruby-comment"># File lib/highline/menu.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index=</span>( <span class="ruby-identifier">style</span> )
+  <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">style</span>
+  
+  <span class="ruby-comment"># Default settings.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@index</span> <span class="ruby-operator">==</span> <span class="ruby-value">:none</span> <span class="ruby-keyword">or</span> <span class="ruby-ivar">@index</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+    <span class="ruby-ivar">@index_suffix</span> = <span class="ruby-string">&quot; &quot;</span>
+    <span class="ruby-ivar">@select_by</span>    = <span class="ruby-value">:name</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-3D-method -->
+
+    
+      <div id="method-i-init_help" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">init_help</span><span
+            class="method-args">( )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes the help system by adding a <code>:help</code> choice, some
+action code, and the default help listing.</p>
+          
+
+          
+          <div class="method-source-code" id="init_help-source">
+            <pre><span class="ruby-comment"># File lib/highline/menu.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">init_help</span>(  )
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:help</span>)
+  
+  <span class="ruby-identifier">topics</span>    = <span class="ruby-ivar">@help</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort</span>
+  <span class="ruby-identifier">help_help</span> = <span class="ruby-ivar">@help</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;help&quot;</span>) <span class="ruby-operator">?</span> <span class="ruby-ivar">@help</span>[<span class="ruby-string">&quot;help&quot;</span>] <span class="ruby-operator">:</span>
+              <span class="ruby-string">&quot;This command will display helpful messages about &quot;</span> <span class="ruby-operator">+</span>
+              <span class="ruby-string">&quot;functionality, like this one.  To see the help for &quot;</span> <span class="ruby-operator">+</span>
+              <span class="ruby-string">&quot;a specific topic enter:\n\thelp [TOPIC]\nTry asking &quot;</span> <span class="ruby-operator">+</span>
+              <span class="ruby-string">&quot;for help on any of the following:\n\n&quot;</span> <span class="ruby-operator">+</span>
+              <span class="ruby-node">&quot;&lt;%= list(#{topics.inspect}, :columns_across) %&gt;&quot;</span>
+  <span class="ruby-identifier">choice</span>(<span class="ruby-value">:help</span>, <span class="ruby-identifier">help_help</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">command</span>, <span class="ruby-identifier">topic</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">strip!</span>
+    <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">downcase!</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-ivar">@highline</span>.<span class="ruby-identifier">say</span>(<span class="ruby-ivar">@help</span>[<span class="ruby-string">&quot;help&quot;</span>])
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@highline</span>.<span class="ruby-identifier">say</span>(<span class="ruby-node">&quot;= #{topic}\n\n#{@help[topic]}&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- init_help-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- init_help-method -->
+
+    
+      <div id="method-i-layout-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">layout=</span><span
+            class="method-args">( new_layout )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Setting a <em>layout</em> with this method also adjusts some other
+attributes of the <a href="Menu.html">Menu</a> object, to ideal defaults
+for the chosen <em>layout</em>.  To account for that, you probably want to
+set a <em>layout</em> first in your configuration block, if needed.</p>
+
+<p>Accepted settings for <em>layout</em> are:</p>
+<dl class="rdoc-list note-list"><dt><code>:list</code>
+<dd>
+<p>The default <em>layout</em>.  The <em>header</em> if set will appear at the
+top on its own line with a trailing colon.  Then the list of menu items
+will follow.  Finally, the <em>prompt</em> will be used as the ask()-like
+question.</p>
+</dd><dt><code>:one_line</code>
+<dd>
+<p>A shorter <em>layout</em> that fits on one line.</p>
+
+<p>The <em>header</em> comes first followed by a colon and spaces, then the
+<em>prompt</em> with menu items between trailing parenthesis.</p>
+</dd><dt><code>:menu_only</code>
+<dd>
+<p>Just the menu items, followed up by a likely short <em>prompt</em>.</p>
+</dd><dt><em>any ERb <a href="../String.html">String</a></em>
+<dd>
+<p>Will be taken as the literal <em>layout</em>.  This <a
+href="../String.html">String</a> can access <code>@header</code>, 
+<code>@menu</code> and <code>@prompt</code>, but is otherwise evaluated in
+the typical <a href="../HighLine.html">HighLine</a> context, to provide
+access to utilities like <a
+href="../HighLine.html#method-i-list">HighLine#list</a> primarily.</p>
+</dd></dl>
+
+<p>If set to either <code>:one_line</code>, or <code>:menu_only</code>,
+<em>index</em> will default to <code>:none</code> and <em>flow</em> will
+default to <code>:inline</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="layout-3D-source">
+            <pre><span class="ruby-comment"># File lib/highline/menu.rb, line 250</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">layout=</span>( <span class="ruby-identifier">new_layout</span> )
+  <span class="ruby-ivar">@layout</span> = <span class="ruby-identifier">new_layout</span>
+  
+  <span class="ruby-comment"># Default settings.</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-ivar">@layout</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:one_line</span>, <span class="ruby-value">:menu_only</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">index</span> = <span class="ruby-value">:none</span>
+    <span class="ruby-ivar">@flow</span>  = <span class="ruby-value">:inline</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- layout-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- layout-3D-method -->
+
+    
+      <div id="method-i-options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">options</span><span
+            class="method-args">( )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method returns all possible options for auto-completion, based on the
+settings of <em>index</em> and <em><a
+href="Menu.html#attribute-i-select_by">#select_by</a></em>.</p>
+          
+
+          
+          <div class="method-source-code" id="options-source">
+            <pre><span class="ruby-comment"># File lib/highline/menu.rb, line 265</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">options</span>(  )
+  <span class="ruby-comment"># add in any hidden menu commands</span>
+  <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-ivar">@hidden_items</span>)
+  
+  <span class="ruby-identifier">by_index</span> = <span class="ruby-keyword">if</span> <span class="ruby-ivar">@index</span> <span class="ruby-operator">==</span> <span class="ruby-value">:letter</span>
+    <span class="ruby-identifier">l_index</span> = <span class="ruby-string">&quot;`&quot;</span>
+    <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">map</span> { <span class="ruby-node">&quot;#{l_index.succ!}&quot;</span> }
+  <span class="ruby-keyword">else</span>
+    (<span class="ruby-value">1</span> <span class="ruby-operator">..</span> <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-constant">String</span>(<span class="ruby-identifier">s</span>) }
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">by_name</span> = <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">first</span> }
+
+  <span class="ruby-keyword">case</span> <span class="ruby-ivar">@select_by</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:index</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">by_index</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:name</span>
+    <span class="ruby-identifier">by_name</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">by_index</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">by_name</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-comment"># make sure the hidden items are removed, before we return</span>
+  <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-ivar">@items</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@hidden_items</span>.<span class="ruby-identifier">size</span>, <span class="ruby-ivar">@hidden_items</span>.<span class="ruby-identifier">size</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- options-method -->
+
+    
+      <div id="method-i-select" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">select</span><span
+            class="method-args">( highline_context, selection, details = nil )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method processes the auto-completed user selection, based on the rules
+for this <a href="Menu.html">Menu</a> object.  If an action was provided
+for the  selection, it will be executed as described in <a
+href="Menu.html#method-i-choice">#choice</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="select-source">
+            <pre><span class="ruby-comment"># File lib/highline/menu.rb, line 295</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">select</span>( <span class="ruby-identifier">highline_context</span>, <span class="ruby-identifier">selection</span>, <span class="ruby-identifier">details</span> = <span class="ruby-keyword">nil</span> )
+  <span class="ruby-comment"># add in any hidden menu commands</span>
+  <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-ivar">@hidden_items</span>)
+  
+  <span class="ruby-comment"># Find the selected action.</span>
+  <span class="ruby-identifier">name</span>, <span class="ruby-identifier">action</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">selection</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^\d+$/</span>
+    <span class="ruby-ivar">@items</span>[<span class="ruby-identifier">selection</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">l_index</span> = <span class="ruby-string">&quot;`&quot;</span>
+    <span class="ruby-identifier">index</span> = <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">map</span> { <span class="ruby-node">&quot;#{l_index.succ!}&quot;</span> }.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">selection</span>)
+    <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">selection</span> } <span class="ruby-keyword">or</span> <span class="ruby-ivar">@items</span>[<span class="ruby-identifier">index</span>]
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Run or return it.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@nil_on_handled</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">action</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@highline</span> = <span class="ruby-identifier">highline_context</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@shell</span>
+      <span class="ruby-identifier">action</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">details</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">action</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">action</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-comment"># make sure the hidden items are removed, before we return</span>
+  <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-ivar">@items</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@hidden_items</span>.<span class="ruby-identifier">size</span>, <span class="ruby-ivar">@hidden_items</span>.<span class="ruby-identifier">size</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- select-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- select-method -->
+
+    
+      <div id="method-i-to_ary" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_ary</span><span
+            class="method-args">( )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Allows <a href="Menu.html">Menu</a> objects to pass as Arrays, for use with
+<a href="../HighLine.html#method-i-list">HighLine#list</a>. This method
+returns all menu items to be displayed, complete with indexes.</p>
+          
+
+          
+          <div class="method-source-code" id="to_ary-source">
+            <pre><span class="ruby-comment"># File lib/highline/menu.rb, line 331</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_ary</span>(  )
+  <span class="ruby-keyword">case</span> <span class="ruby-ivar">@index</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:number</span>
+    <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{@items.index(c) + 1}#{@index_suffix}#{c.first}&quot;</span> }
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:letter</span>
+    <span class="ruby-identifier">l_index</span> = <span class="ruby-string">&quot;`&quot;</span>
+    <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{l_index.succ!}#{@index_suffix}#{c.first}&quot;</span> }
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:none</span>
+    <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{c.first}&quot;</span> }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{index}#{@index_suffix}#{c.first}&quot;</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_ary-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_ary-method -->
+
+    
+      <div id="method-i-to_str" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_str</span><span
+            class="method-args">( )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Allows <a href="Menu.html">Menu</a> to behave as a <a
+href="../String.html">String</a>, just like <a
+href="Question.html">Question</a>.  Returns the <em>layout</em> to be
+rendered, which is used by <a
+href="../HighLine.html#method-i-say">HighLine#say</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="to_str-source">
+            <pre><span class="ruby-comment"># File lib/highline/menu.rb, line 349</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_str</span>(  )
+  <span class="ruby-keyword">case</span> <span class="ruby-ivar">@layout</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:list</span>
+    <span class="ruby-string">'&lt;%= if @header.nil? then '</span><span class="ruby-string">' else &quot;#{@header}:\n&quot; end %&gt;'</span> <span class="ruby-operator">+</span>
+    <span class="ruby-node">&quot;&lt;%= list( @menu, #{@flow.inspect},
+                      #{@list_option.inspect} ) %&gt;&quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot;&lt;%= @prompt %&gt;&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:one_line</span>
+    <span class="ruby-string">'&lt;%= if @header.nil? then '</span><span class="ruby-string">' else &quot;#{@header}:  &quot; end %&gt;'</span> <span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot;&lt;%= @prompt %&gt;&quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-node">&quot;(&lt;%= list( @menu, #{@flow.inspect},
+                       #{@list_option.inspect} ) %&gt;)&quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot;&lt;%= @prompt[/\s*$/] %&gt;&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:menu_only</span>
+    <span class="ruby-node">&quot;&lt;%= list( @menu, #{@flow.inspect},
+                      #{@list_option.inspect} ) %&gt;&lt;%= @prompt %&gt;&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@layout</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_str-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_str-method -->
+
+    
+      <div id="method-i-update_responses" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_responses</span><span
+            class="method-args">( )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method will update the intelligent responses to account for <a
+href="Menu.html">Menu</a> specific differences.  This overrides the work
+done by  <a
+href="Question.html#method-i-build_responses">HighLine::Question#build_responses</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="update_responses-source">
+            <pre><span class="ruby-comment"># File lib/highline/menu.rb, line 375</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_responses</span>(  )
+  <span class="ruby-identifier">append_default</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">default</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-ivar">@responses</span> = { <span class="ruby-value">:ambiguous_completion</span> =<span class="ruby-operator">&gt;</span>
+                   <span class="ruby-string">&quot;Ambiguous choice.  &quot;</span> <span class="ruby-operator">+</span>
+                   <span class="ruby-node">&quot;Please choose one of #{options.inspect}.&quot;</span>,
+                 <span class="ruby-value">:ask_on_error</span>         =<span class="ruby-operator">&gt;</span>
+                   <span class="ruby-string">&quot;?  &quot;</span>,
+                 <span class="ruby-value">:invalid_type</span>         =<span class="ruby-operator">&gt;</span>
+                   <span class="ruby-node">&quot;You must enter a valid #{options}.&quot;</span>,
+                 <span class="ruby-value">:no_completion</span>        =<span class="ruby-operator">&gt;</span>
+                   <span class="ruby-string">&quot;You must choose one of &quot;</span> <span class="ruby-operator">+</span>
+                   <span class="ruby-node">&quot;#{options.inspect}.&quot;</span>,
+                 <span class="ruby-value">:not_in_range</span>         =<span class="ruby-operator">&gt;</span>
+                   <span class="ruby-string">&quot;Your answer isn't within the expected range &quot;</span> <span class="ruby-operator">+</span>
+                   <span class="ruby-node">&quot;(#{expected_range}).&quot;</span>,
+                 <span class="ruby-value">:not_valid</span>            =<span class="ruby-operator">&gt;</span>
+                   <span class="ruby-string">&quot;Your answer isn't valid (must match &quot;</span> <span class="ruby-operator">+</span>
+                   <span class="ruby-node">&quot;#{@validate.inspect}).&quot;</span> }.<span class="ruby-identifier">merge</span>(<span class="ruby-ivar">@responses</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update_responses-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update_responses-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

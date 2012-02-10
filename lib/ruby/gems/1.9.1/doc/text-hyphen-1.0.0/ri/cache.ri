@@ -1,0 +1,8 @@
+{:ancestors{I"Object:EF[I"BasicObject;FI"Text::Hyphen::Language;F[I"Object;FI"Text::Hyphen;F[@:attributes{@
+[I"attr_accessor exceptions;FI"attr_accessor left;FI"attr_accessor right;F@[	I"attr_accessor language;FI"attr_accessor left;FI"attr_accessor right;FI"attr_reader iso_language;F:class_methods{@
+[I"new;F@[I"new;F:encodingIu:EncodingIBM437;F:instance_methods{@
+[I"	both;FI"encoding;FI"exceptions;FI"hyphen;FI"	left;FI"patterns;FI"
+right;FI"
+start;FI"	stop;F@[I"clear_cache!;FI"hyphenate;FI"hyphenate_to;FI"iso_language;FI"language;FI"	left;FI"
+right;FI"
+stats;FI"visualise;FI"visualize;F:modules[	@I"	Text;FI"Text::Hyphen;FI"Text::Hyphen::Language;F

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Module: RestClient::AbstractResponse</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/restclient/abstract_response.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-beautify_headers">::beautify_headers</a>
+    
+    <li><a href="#method-i-code">#code</a>
+    
+    <li><a href="#method-i-cookies">#cookies</a>
+    
+    <li><a href="#method-i-description">#description</a>
+    
+    <li><a href="#method-i-follow_redirection">#follow_redirection</a>
+    
+    <li><a href="#method-i-headers">#headers</a>
+    
+    <li><a href="#method-i-raw_headers">#raw_headers</a>
+    
+    <li><a href="#method-i-return-21">#return!</a>
+    
+    <li><a href="#method-i-to_i">#to_i</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../RestClient.html">RestClient</a>
+  
+    <li><a href="../RestClient/AbstractResponse.html">RestClient::AbstractResponse</a>
+  
+    <li><a href="../RestClient/Exception.html">RestClient::Exception</a>
+  
+    <li><a href="../RestClient/ExceptionWithResponse.html">RestClient::ExceptionWithResponse</a>
+  
+    <li><a href="../RestClient/Exceptions.html">RestClient::Exceptions</a>
+  
+    <li><a href="../RestClient/MaxRedirectsReached.html">RestClient::MaxRedirectsReached</a>
+  
+    <li><a href="../RestClient/Payload.html">RestClient::Payload</a>
+  
+    <li><a href="../RestClient/Payload/Base.html">RestClient::Payload::Base</a>
+  
+    <li><a href="../RestClient/Payload/Multipart.html">RestClient::Payload::Multipart</a>
+  
+    <li><a href="../RestClient/Payload/Streamed.html">RestClient::Payload::Streamed</a>
+  
+    <li><a href="../RestClient/Payload/UrlEncoded.html">RestClient::Payload::UrlEncoded</a>
+  
+    <li><a href="../RestClient/RawResponse.html">RestClient::RawResponse</a>
+  
+    <li><a href="../RestClient/Redirect.html">RestClient::Redirect</a>
+  
+    <li><a href="../RestClient/Request.html">RestClient::Request</a>
+  
+    <li><a href="../RestClient/Redirect.html">RestClient::Request::Redirect</a>
+  
+    <li><a href="../RestClient/RequestFailed.html">RestClient::Request::RequestFailed</a>
+  
+    <li><a href="../RestClient/RequestFailed.html">RestClient::RequestFailed</a>
+  
+    <li><a href="../RestClient/Resource.html">RestClient::Resource</a>
+  
+    <li><a href="../RestClient/Response.html">RestClient::Response</a>
+  
+    <li><a href="../RestClient/ResponseForException.html">RestClient::ResponseForException</a>
+  
+    <li><a href="../RestClient/SSLCertificateNotVerified.html">RestClient::SSLCertificateNotVerified</a>
+  
+    <li><a href="../RestClient/ServerBrokeConnection.html">RestClient::ServerBrokeConnection</a>
+  
+    <li><a href="../Net.html">Net</a>
+  
+    <li><a href="../Net/HTTP.html">Net::HTTP</a>
+  
+    <li><a href="../Net/HTTP/Patch.html">Net::HTTP::Patch</a>
+  
+    <li><a href="../Net/HTTP/Protocol.html">Net::HTTP::Protocol</a>
+  
+    <li><a href="../MIME.html">MIME</a>
+  
+    <li><a href="../MIME/Types.html">MIME::Types</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module RestClient::AbstractResponse</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-args" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">args</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-net_http_res" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">net_http_res</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-beautify_headers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">beautify_headers</span><span
+            class="method-args">(headers)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="beautify_headers-source">
+            <pre><span class="ruby-comment"># File lib/restclient/abstract_response.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">AbstractResponse</span>.<span class="ruby-identifier">beautify_headers</span>(<span class="ruby-identifier">headers</span>)
+  <span class="ruby-identifier">headers</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">out</span>, (<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)<span class="ruby-operator">|</span>
+    <span class="ruby-identifier">out</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/-/</span>, <span class="ruby-string">'_'</span>).<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-node">%w{ set-cookie }</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">key</span>.<span class="ruby-identifier">downcase</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-identifier">out</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- beautify_headers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- beautify_headers-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-code" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">code</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>HTTP status code</p>
+          
+
+          
+          <div class="method-source-code" id="code-source">
+            <pre><span class="ruby-comment"># File lib/restclient/abstract_response.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">code</span>
+  <span class="ruby-ivar">@code</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@net_http_res</span>.<span class="ruby-identifier">code</span>.<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- code-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- code-method -->
+
+    
+      <div id="method-i-cookies" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cookies</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Hash of cookies extracted from response headers</p>
+          
+
+          
+          <div class="method-source-code" id="cookies-source">
+            <pre><span class="ruby-comment"># File lib/restclient/abstract_response.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cookies</span>
+  <span class="ruby-ivar">@cookies</span> <span class="ruby-operator">||=</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-value">:set_cookie</span>] <span class="ruby-operator">||</span> {}).<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">out</span>, <span class="ruby-identifier">cookie_content</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">merge</span> <span class="ruby-identifier">parse_cookie</span>(<span class="ruby-identifier">cookie_content</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cookies-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cookies-method -->
+
+    
+      <div id="method-i-description" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">description</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="description-source">
+            <pre><span class="ruby-comment"># File lib/restclient/abstract_response.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">description</span>
+  <span class="ruby-node">&quot;#{code} #{STATUSES[code]} | #{(headers[:content_type] || '').gsub(/;.*$/, '')} #{size} bytes\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- description-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- description-method -->
+
+    
+      <div id="method-i-follow_redirection" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">follow_redirection</span><span
+            class="method-args">(request = nil, result = nil, & block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Follow a redirection</p>
+          
+
+          
+          <div class="method-source-code" id="follow_redirection-source">
+            <pre><span class="ruby-comment"># File lib/restclient/abstract_response.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">follow_redirection</span> <span class="ruby-identifier">request</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">result</span> = <span class="ruby-keyword">nil</span>, &amp; <span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">url</span> = <span class="ruby-identifier">headers</span>[<span class="ruby-value">:location</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">url</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">/^http/</span>
+    <span class="ruby-identifier">url</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:url</span>]).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">url</span>).<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">args</span>[<span class="ruby-value">:url</span>] = <span class="ruby-identifier">url</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">request</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">max_redirects</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">MaxRedirectsReached</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">args</span>[<span class="ruby-value">:password</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">password</span>
+    <span class="ruby-identifier">args</span>[<span class="ruby-value">:user</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">user</span>
+    <span class="ruby-identifier">args</span>[<span class="ruby-value">:headers</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">headers</span>
+    <span class="ruby-identifier">args</span>[<span class="ruby-value">:max_redirects</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">max_redirects</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+    <span class="ruby-comment"># pass any cookie set in the result</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">result</span>[<span class="ruby-string">'set-cookie'</span>]
+      <span class="ruby-identifier">args</span>[<span class="ruby-value">:headers</span>][<span class="ruby-value">:cookies</span>] = (<span class="ruby-identifier">args</span>[<span class="ruby-value">:headers</span>][<span class="ruby-value">:cookies</span>] <span class="ruby-operator">||</span> {}).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">parse_cookie</span>(<span class="ruby-identifier">result</span>[<span class="ruby-string">'set-cookie'</span>]))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Request</span>.<span class="ruby-identifier">execute</span> <span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- follow_redirection-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- follow_redirection-method -->
+
+    
+      <div id="method-i-headers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">headers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A hash of the headers, beautified with symbols and underscores. e.g.
+"Content-type" will become :content_type.</p>
+          
+
+          
+          <div class="method-source-code" id="headers-source">
+            <pre><span class="ruby-comment"># File lib/restclient/abstract_response.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">headers</span>
+  <span class="ruby-ivar">@headers</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">AbstractResponse</span>.<span class="ruby-identifier">beautify_headers</span>(<span class="ruby-ivar">@net_http_res</span>.<span class="ruby-identifier">to_hash</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- headers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- headers-method -->
+
+    
+      <div id="method-i-raw_headers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">raw_headers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The raw headers.</p>
+          
+
+          
+          <div class="method-source-code" id="raw_headers-source">
+            <pre><span class="ruby-comment"># File lib/restclient/abstract_response.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">raw_headers</span>
+  <span class="ruby-ivar">@raw_headers</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@net_http_res</span>.<span class="ruby-identifier">to_hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- raw_headers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- raw_headers-method -->
+
+    
+      <div id="method-i-return-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">return!</span><span
+            class="method-args">(request = nil, result = nil, & block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the default behavior corresponding to the response code: the
+response itself for code in 200..206, redirection for 301, 302 and 307 in
+get and head cases, redirection for 303 and an exception in other cases</p>
+          
+
+          
+          <div class="method-source-code" id="return-21-source">
+            <pre><span class="ruby-comment"># File lib/restclient/abstract_response.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">return!</span> <span class="ruby-identifier">request</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">result</span> = <span class="ruby-keyword">nil</span>, &amp; <span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-value">200</span><span class="ruby-operator">..</span><span class="ruby-value">207</span>).<span class="ruby-identifier">include?</span> <span class="ruby-identifier">code</span>
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">elsif</span> [<span class="ruby-value">301</span>, <span class="ruby-value">302</span>, <span class="ruby-value">307</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">code</span>
+    <span class="ruby-keyword">unless</span> [<span class="ruby-value">:get</span>, <span class="ruby-value">:head</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:method</span>]
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exceptions</span><span class="ruby-operator">::</span><span class="ruby-constant">EXCEPTIONS_MAP</span>[<span class="ruby-identifier">code</span>].<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">code</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">follow_redirection</span>(<span class="ruby-identifier">request</span>, <span class="ruby-identifier">result</span>, &amp; <span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">303</span>
+    <span class="ruby-identifier">args</span>[<span class="ruby-value">:method</span>] = <span class="ruby-value">:get</span>
+    <span class="ruby-identifier">args</span>.<span class="ruby-identifier">delete</span> <span class="ruby-value">:payload</span>
+    <span class="ruby-identifier">follow_redirection</span>(<span class="ruby-identifier">request</span>, <span class="ruby-identifier">result</span>, &amp; <span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-constant">Exceptions</span><span class="ruby-operator">::</span><span class="ruby-constant">EXCEPTIONS_MAP</span>[<span class="ruby-identifier">code</span>]
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exceptions</span><span class="ruby-operator">::</span><span class="ruby-constant">EXCEPTIONS_MAP</span>[<span class="ruby-identifier">code</span>].<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">code</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">RequestFailed</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">code</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- return-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- return-21-method -->
+
+    
+      <div id="method-i-to_i" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_i</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_i-source">
+            <pre><span class="ruby-comment"># File lib/restclient/abstract_response.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_i</span>
+  <span class="ruby-identifier">code</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_i-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_i-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

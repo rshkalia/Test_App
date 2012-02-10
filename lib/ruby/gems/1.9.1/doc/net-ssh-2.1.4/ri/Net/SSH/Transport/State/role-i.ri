@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	role:EFI"$Net::SSH::Transport::State#role;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"?The role that this state plays (either :client or :server):encoding"IBM437:
+@fileI"#lib/net/ssh/transport/state.rb;@F@

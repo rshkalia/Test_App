@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"remote_window_size:EFI"5Net::SSH::Connection::Channel#remote_window_size;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"NThis is the remaining window size on the remote end of this channel. When:encoding"IBM437I"1this reaches zero, no more data can be sent.;@:
+@fileI"&lib/net/ssh/connection/channel.rb;@F@

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"local_id:EFI"+Net::SSH::Connection::Channel#local_id;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"[The local id for this channel, assigned by the Net::SSH::Connection::Session instance.:encoding"IBM437:
+@fileI"&lib/net/ssh/connection/channel.rb;@F@

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Module: JSON::Editor::MenuExtension</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/json/editor.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Gtk.html">JSON::Editor::Gtk</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-add_item">#add_item</a>
+    
+    <li><a href="#method-i-add_separator">#add_separator</a>
+    
+    <li><a href="#method-i-create">#create</a>
+    
+    <li><a href="#method-i-method_missing">#method_missing</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../JSON.html">JSON</a>
+  
+    <li><a href="../../JSON/Editor.html">JSON::Editor</a>
+  
+    <li><a href="../../JSON/Editor/EditMenu.html">JSON::Editor::EditMenu</a>
+  
+    <li><a href="../../JSON/Editor/FileMenu.html">JSON::Editor::FileMenu</a>
+  
+    <li><a href="../../JSON/Editor/Gtk.html">JSON::Editor::Gtk</a>
+  
+    <li><a href="../../JSON/Editor/Gtk/TreeIter.html">JSON::Editor::Gtk::TreeIter</a>
+  
+    <li><a href="../../JSON/Editor/JSONTreeView.html">JSON::Editor::JSONTreeView</a>
+  
+    <li><a href="../../JSON/Editor/MainWindow.html">JSON::Editor::MainWindow</a>
+  
+    <li><a href="../../JSON/Editor/MenuExtension.html">JSON::Editor::MenuExtension</a>
+  
+    <li><a href="../../JSON/Editor/OptionsMenu.html">JSON::Editor::OptionsMenu</a>
+  
+    <li><a href="../../JSON/Editor/PopUpMenu.html">JSON::Editor::PopUpMenu</a>
+  
+    <li><a href="../../JSON/Ext.html">JSON::Ext</a>
+  
+    <li><a href="../../JSON/GeneratorError.html">JSON::GeneratorError</a>
+  
+    <li><a href="../../JSON/JSONError.html">JSON::JSONError</a>
+  
+    <li><a href="../../JSON/MissingUnicodeSupport.html">JSON::MissingUnicodeSupport</a>
+  
+    <li><a href="../../JSON/NestingError.html">JSON::NestingError</a>
+  
+    <li><a href="../../JSON/ParserError.html">JSON::ParserError</a>
+  
+    <li><a href="../../JSON/Pure.html">JSON::Pure</a>
+  
+    <li><a href="../../JSON/Pure/Generator.html">JSON::Pure::Generator</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods.html">JSON::Pure::Generator::GeneratorMethods</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/Array.html">JSON::Pure::Generator::GeneratorMethods::Array</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/FalseClass.html">JSON::Pure::Generator::GeneratorMethods::FalseClass</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/Float.html">JSON::Pure::Generator::GeneratorMethods::Float</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/Hash.html">JSON::Pure::Generator::GeneratorMethods::Hash</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/Integer.html">JSON::Pure::Generator::GeneratorMethods::Integer</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/NilClass.html">JSON::Pure::Generator::GeneratorMethods::NilClass</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/Object.html">JSON::Pure::Generator::GeneratorMethods::Object</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/String.html">JSON::Pure::Generator::GeneratorMethods::String</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/String/Extend.html">JSON::Pure::Generator::GeneratorMethods::String::Extend</a>
+  
+    <li><a href="../../JSON/Pure/Generator/GeneratorMethods/TrueClass.html">JSON::Pure::Generator::GeneratorMethods::TrueClass</a>
+  
+    <li><a href="../../JSON/Pure/Generator/State.html">JSON::Pure::Generator::State</a>
+  
+    <li><a href="../../JSON/Pure/Parser.html">JSON::Pure::Parser</a>
+  
+    <li><a href="../../JSON/GeneratorError.html">JSON::UnparserError</a>
+  
+    <li><a href="../../Class.html">Class</a>
+  
+    <li><a href="../../Complex.html">Complex</a>
+  
+    <li><a href="../../Date.html">Date</a>
+  
+    <li><a href="../../DateTime.html">DateTime</a>
+  
+    <li><a href="../../Exception.html">Exception</a>
+  
+    <li><a href="../../Kernel.html">Kernel</a>
+  
+    <li><a href="../../Range.html">Range</a>
+  
+    <li><a href="../../Rational.html">Rational</a>
+  
+    <li><a href="../../Regexp.html">Regexp</a>
+  
+    <li><a href="../../Struct.html">Struct</a>
+  
+    <li><a href="../../Symbol.html">Symbol</a>
+  
+    <li><a href="../../Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module JSON::Editor::MenuExtension</h1>
+
+  <div id="description" class="description">
+    
+<p>This module bundles some method, that can be used to create a menu. It
+should be included into the class in question.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-menu" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">menu</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Returns the menu.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-treeview" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">treeview</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Returns the Gtk::TreeView of this menu.</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(treeview)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a Menu, that includes <a
+href="MenuExtension.html">MenuExtension</a>. <em>treeview</em> is the
+Gtk::TreeView, on which it operates.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">treeview</span>)
+  <span class="ruby-ivar">@treeview</span> = <span class="ruby-identifier">treeview</span>
+  <span class="ruby-ivar">@menu</span> = <span class="ruby-constant">Menu</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_item" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_item</span><span
+            class="method-args">(label, keyval = nil, klass = MenuItem, &callback)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a Gtk::MenuItem to this instance's <a
+href="MenuExtension.html#attribute-i-menu">#menu</a>. <em>label</em> is the
+label string, <em>klass</em> is the item type, and <em>callback</em> is the
+procedure, that is called if the <em>item</em> is activated.</p>
+          
+
+          
+          <div class="method-source-code" id="add_item-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_item</span>(<span class="ruby-identifier">label</span>, <span class="ruby-identifier">keyval</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">klass</span> = <span class="ruby-constant">MenuItem</span>, &amp;<span class="ruby-identifier">callback</span>)
+  <span class="ruby-identifier">label</span> = <span class="ruby-node">&quot;#{label} (C-#{keyval.chr})&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">keyval</span>
+  <span class="ruby-identifier">item</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">label</span>)
+  <span class="ruby-identifier">item</span>.<span class="ruby-identifier">signal_connect</span>(<span class="ruby-value">:activate</span>, &amp;<span class="ruby-identifier">callback</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">keyval</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">signal_connect</span>(<span class="ruby-value">:'key-press-event'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span>, <span class="ruby-identifier">event</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">event</span>.<span class="ruby-identifier">state</span> &amp; <span class="ruby-constant">Gdk</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span><span class="ruby-operator">::</span><span class="ruby-constant">ModifierType</span><span class="ruby-operator">::</span><span class="ruby-constant">CONTROL_MASK</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> <span class="ruby-keyword">and</span>
+        <span class="ruby-identifier">event</span>.<span class="ruby-identifier">keyval</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">keyval</span>
+        <span class="ruby-identifier">callback</span>.<span class="ruby-identifier">call</span> <span class="ruby-identifier">item</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">menu</span>.<span class="ruby-identifier">append</span> <span class="ruby-identifier">item</span>
+  <span class="ruby-identifier">item</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_item-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_item-method -->
+
+    
+      <div id="method-i-add_separator" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_separator</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a Gtk::SeparatorMenuItem to this instance's <a
+href="MenuExtension.html#attribute-i-menu">#menu</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="add_separator-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 223</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_separator</span>
+  <span class="ruby-identifier">menu</span>.<span class="ruby-identifier">append</span> <span class="ruby-constant">SeparatorMenuItem</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_separator-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_separator-method -->
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method should be implemented in subclasses to create the <a
+href="MenuExtension.html#attribute-i-menu">#menu</a> of this instance. It
+has to be called after an instance of this class is created, to build the
+menu.</p>
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create-method -->
+
+    
+      <div id="method-i-method_missing" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">method_missing</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="method_missing-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 253</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">method_missing</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">treeview</span>.<span class="ruby-identifier">__send__</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- method_missing-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- method_missing-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

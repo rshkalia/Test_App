@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Module: JSON::Editor</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/json/editor.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Editor/Gtk.html">JSON::Editor::Gtk</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-data2model">::data2model</a>
+    
+    <li><a href="#method-c-edit">::edit</a>
+    
+    <li><a href="#method-c-error_dialog">::error_dialog</a>
+    
+    <li><a href="#method-c-fetch_icon">::fetch_icon</a>
+    
+    <li><a href="#method-c-model2data">::model2data</a>
+    
+    <li><a href="#method-c-question_dialog">::question_dialog</a>
+    
+    <li><a href="#method-c-start">::start</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../JSON.html">JSON</a>
+  
+    <li><a href="../JSON/Editor.html">JSON::Editor</a>
+  
+    <li><a href="../JSON/Editor/EditMenu.html">JSON::Editor::EditMenu</a>
+  
+    <li><a href="../JSON/Editor/FileMenu.html">JSON::Editor::FileMenu</a>
+  
+    <li><a href="../JSON/Editor/Gtk.html">JSON::Editor::Gtk</a>
+  
+    <li><a href="../JSON/Editor/Gtk/TreeIter.html">JSON::Editor::Gtk::TreeIter</a>
+  
+    <li><a href="../JSON/Editor/JSONTreeView.html">JSON::Editor::JSONTreeView</a>
+  
+    <li><a href="../JSON/Editor/MainWindow.html">JSON::Editor::MainWindow</a>
+  
+    <li><a href="../JSON/Editor/MenuExtension.html">JSON::Editor::MenuExtension</a>
+  
+    <li><a href="../JSON/Editor/OptionsMenu.html">JSON::Editor::OptionsMenu</a>
+  
+    <li><a href="../JSON/Editor/PopUpMenu.html">JSON::Editor::PopUpMenu</a>
+  
+    <li><a href="../JSON/Ext.html">JSON::Ext</a>
+  
+    <li><a href="../JSON/GeneratorError.html">JSON::GeneratorError</a>
+  
+    <li><a href="../JSON/JSONError.html">JSON::JSONError</a>
+  
+    <li><a href="../JSON/MissingUnicodeSupport.html">JSON::MissingUnicodeSupport</a>
+  
+    <li><a href="../JSON/NestingError.html">JSON::NestingError</a>
+  
+    <li><a href="../JSON/ParserError.html">JSON::ParserError</a>
+  
+    <li><a href="../JSON/Pure.html">JSON::Pure</a>
+  
+    <li><a href="../JSON/Pure/Generator.html">JSON::Pure::Generator</a>
+  
+    <li><a href="../JSON/Pure/Generator/GeneratorMethods.html">JSON::Pure::Generator::GeneratorMethods</a>
+  
+    <li><a href="../JSON/Pure/Generator/GeneratorMethods/Array.html">JSON::Pure::Generator::GeneratorMethods::Array</a>
+  
+    <li><a href="../JSON/Pure/Generator/GeneratorMethods/FalseClass.html">JSON::Pure::Generator::GeneratorMethods::FalseClass</a>
+  
+    <li><a href="../JSON/Pure/Generator/GeneratorMethods/Float.html">JSON::Pure::Generator::GeneratorMethods::Float</a>
+  
+    <li><a href="../JSON/Pure/Generator/GeneratorMethods/Hash.html">JSON::Pure::Generator::GeneratorMethods::Hash</a>
+  
+    <li><a href="../JSON/Pure/Generator/GeneratorMethods/Integer.html">JSON::Pure::Generator::GeneratorMethods::Integer</a>
+  
+    <li><a href="../JSON/Pure/Generator/GeneratorMethods/NilClass.html">JSON::Pure::Generator::GeneratorMethods::NilClass</a>
+  
+    <li><a href="../JSON/Pure/Generator/GeneratorMethods/Object.html">JSON::Pure::Generator::GeneratorMethods::Object</a>
+  
+    <li><a href="../JSON/Pure/Generator/GeneratorMethods/String.html">JSON::Pure::Generator::GeneratorMethods::String</a>
+  
+    <li><a href="../JSON/Pure/Generator/GeneratorMethods/String/Extend.html">JSON::Pure::Generator::GeneratorMethods::String::Extend</a>
+  
+    <li><a href="../JSON/Pure/Generator/GeneratorMethods/TrueClass.html">JSON::Pure::Generator::GeneratorMethods::TrueClass</a>
+  
+    <li><a href="../JSON/Pure/Generator/State.html">JSON::Pure::Generator::State</a>
+  
+    <li><a href="../JSON/Pure/Parser.html">JSON::Pure::Parser</a>
+  
+    <li><a href="../JSON/GeneratorError.html">JSON::UnparserError</a>
+  
+    <li><a href="../Class.html">Class</a>
+  
+    <li><a href="../Complex.html">Complex</a>
+  
+    <li><a href="../Date.html">Date</a>
+  
+    <li><a href="../DateTime.html">DateTime</a>
+  
+    <li><a href="../Exception.html">Exception</a>
+  
+    <li><a href="../Kernel.html">Kernel</a>
+  
+    <li><a href="../Range.html">Range</a>
+  
+    <li><a href="../Rational.html">Rational</a>
+  
+    <li><a href="../Regexp.html">Regexp</a>
+  
+    <li><a href="../Struct.html">Struct</a>
+  
+    <li><a href="../Symbol.html">Symbol</a>
+  
+    <li><a href="../Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module JSON::Editor</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="ALL_NODES">ALL_NODES
+        
+        <dd class="description"><p>The Nodes necessary for the tree representation of a <a
+href="../JSON.html">JSON</a> document</p>
+        
+      
+        <dt id="ALL_TYPES">ALL_TYPES
+        
+        <dd class="description"><p>All <a href="../JSON.html">JSON</a> primitive types</p>
+        
+      
+        <dt id="CONTAINER_TYPES">CONTAINER_TYPES
+        
+        <dd class="description"><p><a href="../JSON.html">JSON</a> primitive types (Containers)</p>
+        
+      
+        <dt id="CONTENT_COL">CONTENT_COL
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_DIALOG_KEY_PRESS_HANDLER">DEFAULT_DIALOG_KEY_PRESS_HANDLER
+        
+        <dd class="description">
+        
+      
+        <dt id="TITLE">TITLE
+        
+        <dd class="description"><p>Beginning of the editor window title</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-c-window" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">window</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-data2model" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">data2model</span><span
+            class="method-args">(data, model = nil, parent = nil) { |model| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convert the Ruby data structure <em>data</em> into tree model data for <a
+href="Editor/Gtk.html">Gtk</a> and returns the whole model. If the
+parameter <em>model</em> wasn't given a new Gtk::TreeStore is created as
+the model. The <em>parent</em> parameter specifies the parent node (iter,
+Gtk:TreeIter instance) to which the data is appended, alternativeley the
+result of the yielded block is used as iter.</p>
+          
+
+          
+          <div class="method-source-code" id="data2model-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">data2model</span>(<span class="ruby-identifier">data</span>, <span class="ruby-identifier">model</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">parent</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">model</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">TreeStore</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Gdk</span><span class="ruby-operator">::</span><span class="ruby-constant">Pixbuf</span>, <span class="ruby-constant">String</span>, <span class="ruby-constant">String</span>)
+  <span class="ruby-identifier">iter</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">model</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">model</span>.<span class="ruby-identifier">append</span>(<span class="ruby-identifier">parent</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">data</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Hash</span>
+    <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">type</span> = <span class="ruby-string">'Hash'</span>
+    <span class="ruby-identifier">data</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">pair_iter</span> = <span class="ruby-identifier">model</span>.<span class="ruby-identifier">append</span>(<span class="ruby-identifier">iter</span>)
+      <span class="ruby-identifier">pair_iter</span>.<span class="ruby-identifier">type</span>    = <span class="ruby-string">'Key'</span>
+      <span class="ruby-identifier">pair_iter</span>.<span class="ruby-identifier">content</span> = <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">data2model</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">model</span>, <span class="ruby-identifier">pair_iter</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
+    <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">type</span> = <span class="ruby-string">'Array'</span>
+    <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">data2model</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">model</span>, <span class="ruby-identifier">iter</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">type</span> = <span class="ruby-string">'Numeric'</span>
+    <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">content</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>, <span class="ruby-keyword">true</span>, <span class="ruby-keyword">false</span>, <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">type</span>    = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>
+    <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">content</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-string">'null'</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">type</span>    = <span class="ruby-string">'String'</span>
+    <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">content</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">model</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- data2model-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- data2model-method -->
+
+    
+      <div id="method-c-edit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit</span><span
+            class="method-args">(json, encoding = 'utf8')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Edit the string <em>json</em> with encoding <em>encoding</em> in the
+editor.</p>
+          
+
+          
+          <div class="method-source-code" id="edit-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1360</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>(<span class="ruby-identifier">json</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-string">'utf8'</span>)
+  <span class="ruby-identifier">start</span>(<span class="ruby-identifier">encoding</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">window</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">window</span>.<span class="ruby-identifier">edit</span> <span class="ruby-identifier">json</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- edit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- edit-method -->
+
+    
+      <div id="method-c-error_dialog" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">error_dialog</span><span
+            class="method-args">(window, text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Opens an error dialog on top of <em>window</em> showing the error message
+<em>text</em>.</p>
+          
+
+          
+          <div class="method-source-code" id="error_dialog-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">error_dialog</span>(<span class="ruby-identifier">window</span>, <span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">dialog</span> = <span class="ruby-constant">MessageDialog</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">window</span>, <span class="ruby-constant">Dialog</span><span class="ruby-operator">::</span><span class="ruby-constant">MODAL</span>,
+    <span class="ruby-constant">MessageDialog</span><span class="ruby-operator">::</span><span class="ruby-constant">ERROR</span>,
+    <span class="ruby-constant">MessageDialog</span><span class="ruby-operator">::</span><span class="ruby-constant">BUTTONS_CLOSE</span>, <span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">show_all</span>
+  <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">run</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">TypeError</span>
+  <span class="ruby-identifier">dialog</span> = <span class="ruby-constant">MessageDialog</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Editor</span>.<span class="ruby-identifier">window</span>, <span class="ruby-constant">Dialog</span><span class="ruby-operator">::</span><span class="ruby-constant">MODAL</span>,
+    <span class="ruby-constant">MessageDialog</span><span class="ruby-operator">::</span><span class="ruby-constant">ERROR</span>,
+    <span class="ruby-constant">MessageDialog</span><span class="ruby-operator">::</span><span class="ruby-constant">BUTTONS_CLOSE</span>, <span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">show_all</span>
+  <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">run</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">destroy</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">dialog</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- error_dialog-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- error_dialog-method -->
+
+    
+      <div id="method-c-fetch_icon" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetch_icon</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the Gdk::Pixbuf of the icon named <em>name</em> from the icon
+cache.</p>
+          
+
+          
+          <div class="method-source-code" id="fetch_icon-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">fetch_icon</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-ivar">@icon_cache</span> <span class="ruby-operator">||=</span> {}
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@icon_cache</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>)
+    <span class="ruby-ivar">@icon_cache</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-constant">Gdk</span><span class="ruby-operator">::</span><span class="ruby-constant">Pixbuf</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> <span class="ruby-string">'.xpm'</span>))
+  <span class="ruby-keyword">end</span>
+ <span class="ruby-ivar">@icon_cache</span>[<span class="ruby-identifier">name</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fetch_icon-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fetch_icon-method -->
+
+    
+      <div id="method-c-model2data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">model2data</span><span
+            class="method-args">(iter)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convert the tree model starting from <a
+href="Editor/Gtk/TreeIter.html">Gtk::TreeIter</a> <em>iter</em> into a Ruby
+data structure and return it.</p>
+          
+
+          
+          <div class="method-source-code" id="model2data-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">model2data</span>(<span class="ruby-identifier">iter</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'Hash'</span>
+    <span class="ruby-identifier">hash</span> = {}
+    <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">c</span>.<span class="ruby-identifier">content</span>] = <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">model2data</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">first_child</span>) }
+    <span class="ruby-identifier">hash</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'Array'</span>
+    <span class="ruby-identifier">array</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">iter</span>.<span class="ruby-identifier">n_children</span>)
+    <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">each_with_index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">array</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">model2data</span>(<span class="ruby-identifier">c</span>) }
+    <span class="ruby-identifier">array</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'Key'</span>
+    <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">content</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'String'</span>
+    <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">content</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'Numeric'</span>
+    <span class="ruby-identifier">content</span> = <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">content</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-regexp">/\./</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">content</span>)
+      <span class="ruby-identifier">content</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">content</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'TrueClass'</span>
+    <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'FalseClass'</span>
+    <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'NilClass'</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">fail</span> <span class="ruby-node">&quot;Unknown type found in model: #{iter.type}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- model2data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- model2data-method -->
+
+    
+      <div id="method-c-question_dialog" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">question_dialog</span><span
+            class="method-args">(window, text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Opens a yes/no question dialog on top of <em>window</em> showing the error
+message <em>text</em>. If yes was answered <em>true</em> is returned,
+otherwise <em>false</em>.</p>
+          
+
+          
+          <div class="method-source-code" id="question_dialog-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">question_dialog</span>(<span class="ruby-identifier">window</span>, <span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">dialog</span> = <span class="ruby-constant">MessageDialog</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">window</span>, <span class="ruby-constant">Dialog</span><span class="ruby-operator">::</span><span class="ruby-constant">MODAL</span>,
+    <span class="ruby-constant">MessageDialog</span><span class="ruby-operator">::</span><span class="ruby-constant">QUESTION</span>,
+    <span class="ruby-constant">MessageDialog</span><span class="ruby-operator">::</span><span class="ruby-constant">BUTTONS_YES_NO</span>, <span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">show_all</span>
+  <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">run</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">response</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Gtk</span><span class="ruby-operator">::</span><span class="ruby-constant">Dialog</span><span class="ruby-operator">::</span><span class="ruby-constant">RESPONSE_YES</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">response</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-identifier">dialog</span>.<span class="ruby-identifier">destroy</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">dialog</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- question_dialog-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- question_dialog-method -->
+
+    
+      <div id="method-c-start" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start</span><span
+            class="method-args">(encoding = 'utf8') { |window| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Starts a <a href="../JSON.html">JSON</a> <a href="Editor.html">Editor</a>.
+If a block was given, it yields to the <a
+href="Editor/MainWindow.html">JSON::Editor::MainWindow</a> instance.</p>
+          
+
+          
+          <div class="method-source-code" id="start-source">
+            <pre><span class="ruby-comment"># File lib/json/editor.rb, line 1350</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start</span>(<span class="ruby-identifier">encoding</span> = <span class="ruby-string">'utf8'</span>) <span class="ruby-comment"># :yield: window</span>
+  <span class="ruby-constant">Gtk</span>.<span class="ruby-identifier">init</span>
+  <span class="ruby-ivar">@window</span> = <span class="ruby-constant">Editor</span><span class="ruby-operator">::</span><span class="ruby-constant">MainWindow</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">encoding</span>)
+  <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">icon_list</span> = [ <span class="ruby-constant">Editor</span>.<span class="ruby-identifier">fetch_icon</span>(<span class="ruby-string">'json'</span>) ]
+  <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@window</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-ivar">@window</span>.<span class="ruby-identifier">show_all</span>
+  <span class="ruby-constant">Gtk</span>.<span class="ruby-identifier">main</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- start-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- start-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

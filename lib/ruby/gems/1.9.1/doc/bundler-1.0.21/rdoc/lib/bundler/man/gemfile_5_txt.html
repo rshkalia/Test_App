@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>bundle</title>
+
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../lib/bundler/man/bundle.html">bundle</a>
+  
+    <li class="file"><a href="../../../lib/bundler/man/bundle-config.html">bundle-config</a>
+  
+    <li class="file"><a href="../../../lib/bundler/man/bundle-config_txt.html">bundle-config</a>
+  
+    <li class="file"><a href="../../../lib/bundler/man/bundle-exec.html">bundle-exec</a>
+  
+    <li class="file"><a href="../../../lib/bundler/man/bundle-exec_txt.html">bundle-exec</a>
+  
+    <li class="file"><a href="../../../lib/bundler/man/bundle-install.html">bundle-install</a>
+  
+    <li class="file"><a href="../../../lib/bundler/man/bundle-install_txt.html">bundle-install</a>
+  
+    <li class="file"><a href="../../../lib/bundler/man/bundle-package.html">bundle-package</a>
+  
+    <li class="file"><a href="../../../lib/bundler/man/bundle-package_txt.html">bundle-package</a>
+  
+    <li class="file"><a href="../../../lib/bundler/man/bundle-update.html">bundle-update</a>
+  
+    <li class="file"><a href="../../../lib/bundler/man/bundle-update_txt.html">bundle-update</a>
+  
+    <li class="file"><a href="../../../lib/bundler/man/bundle_txt.html">bundle</a>
+  
+    <li class="file"><a href="../../../lib/bundler/man/gemfile_5_txt.html">gemfile.5</a>
+  
+    <li class="file"><a href="../../../lib/bundler/templates/Executable.html">Executable</a>
+  
+    <li class="file"><a href="../../../lib/bundler/templates/Gemfile.html">Gemfile</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../Bundler.html">Bundler</a>
+  
+    <li><a href="../../../Bundler/BundlerError.html">Bundler::BundlerError</a>
+  
+    <li><a href="../../../Bundler/CLI.html">Bundler::CLI</a>
+  
+    <li><a href="../../../Bundler/Definition.html">Bundler::Definition</a>
+  
+    <li><a href="../../../Bundler/DepProxy.html">Bundler::DepProxy</a>
+  
+    <li><a href="../../../Bundler/Dependency.html">Bundler::Dependency</a>
+  
+    <li><a href="../../../Bundler/Deployment.html">Bundler::Deployment</a>
+  
+    <li><a href="../../../Bundler/DeprecatedError.html">Bundler::DeprecatedError</a>
+  
+    <li><a href="../../../Bundler/Dsl.html">Bundler::Dsl</a>
+  
+    <li><a href="../../../Bundler/DslError.html">Bundler::DslError</a>
+  
+    <li><a href="../../../Bundler/Environment.html">Bundler::Environment</a>
+  
+    <li><a href="../../../Bundler/GemHelper.html">Bundler::GemHelper</a>
+  
+    <li><a href="../../../Bundler/GemHelpers.html">Bundler::GemHelpers</a>
+  
+    <li><a href="../../../Bundler/GemInstaller.html">Bundler::GemInstaller</a>
+  
+    <li><a href="../../../Bundler/GemNotFound.html">Bundler::GemNotFound</a>
+  
+    <li><a href="../../../Bundler/GemfileError.html">Bundler::GemfileError</a>
+  
+    <li><a href="../../../Bundler/GemfileNotFound.html">Bundler::GemfileNotFound</a>
+  
+    <li><a href="../../../Bundler/GemspecError.html">Bundler::GemspecError</a>
+  
+    <li><a href="../../../Bundler/GitError.html">Bundler::GitError</a>
+  
+    <li><a href="../../../Bundler/Graph.html">Bundler::Graph</a>
+  
+    <li><a href="../../../Bundler/GraphNode.html">Bundler::GraphNode</a>
+  
+    <li><a href="../../../Bundler/Index.html">Bundler::Index</a>
+  
+    <li><a href="../../../Bundler/InstallError.html">Bundler::InstallError</a>
+  
+    <li><a href="../../../Bundler/Installer.html">Bundler::Installer</a>
+  
+    <li><a href="../../../Bundler/InvalidOption.html">Bundler::InvalidOption</a>
+  
+    <li><a href="../../../Bundler/InvalidSpecSet.html">Bundler::InvalidSpecSet</a>
+  
+    <li><a href="../../../Bundler/LazySpecification.html">Bundler::LazySpecification</a>
+  
+    <li><a href="../../../Bundler/LockfileParser.html">Bundler::LockfileParser</a>
+  
+    <li><a href="../../../Bundler/MatchPlatform.html">Bundler::MatchPlatform</a>
+  
+    <li><a href="../../../Bundler/PathError.html">Bundler::PathError</a>
+  
+    <li><a href="../../../Bundler/ProductionError.html">Bundler::ProductionError</a>
+  
+    <li><a href="../../../Bundler/RemoteSpecification.html">Bundler::RemoteSpecification</a>
+  
+    <li><a href="../../../Bundler/Resolver.html">Bundler::Resolver</a>
+  
+    <li><a href="../../../Bundler/Resolver/SpecGroup.html">Bundler::Resolver::SpecGroup</a>
+  
+    <li><a href="../../../Bundler/RubygemsIntegration.html">Bundler::RubygemsIntegration</a>
+  
+    <li><a href="../../../Bundler/RubygemsIntegration/AlmostModern.html">Bundler::RubygemsIntegration::AlmostModern</a>
+  
+    <li><a href="../../../Bundler/RubygemsIntegration/Ancient.html">Bundler::RubygemsIntegration::Ancient</a>
+  
+    <li><a href="../../../Bundler/RubygemsIntegration/Deprecate.html">Bundler::RubygemsIntegration::Deprecate</a>
+  
+    <li><a href="../../../Bundler/RubygemsIntegration/Gem.html">Bundler::RubygemsIntegration::Gem</a>
+  
+    <li><a href="../../../Bundler/RubygemsIntegration/Gem/SourceIndex.html">Bundler::RubygemsIntegration::Gem::SourceIndex</a>
+  
+    <li><a href="../../../Bundler/RubygemsIntegration/Legacy.html">Bundler::RubygemsIntegration::Legacy</a>
+  
+    <li><a href="../../../Bundler/RubygemsIntegration/Modern.html">Bundler::RubygemsIntegration::Modern</a>
+  
+    <li><a href="../../../Bundler/RubygemsIntegration/Transitional.html">Bundler::RubygemsIntegration::Transitional</a>
+  
+    <li><a href="../../../Bundler/Runtime.html">Bundler::Runtime</a>
+  
+    <li><a href="../../../Bundler/Settings.html">Bundler::Settings</a>
+  
+    <li><a href="../../../Bundler/SharedHelpers.html">Bundler::SharedHelpers</a>
+  
+    <li><a href="../../../Bundler/Source.html">Bundler::Source</a>
+  
+    <li><a href="../../../Bundler/Source/Git.html">Bundler::Source::Git</a>
+  
+    <li><a href="../../../Bundler/Source/Path.html">Bundler::Source::Path</a>
+  
+    <li><a href="../../../Bundler/Source/Path/Installer.html">Bundler::Source::Path::Installer</a>
+  
+    <li><a href="../../../Bundler/Source/Rubygems.html">Bundler::Source::Rubygems</a>
+  
+    <li><a href="../../../Bundler/SpecSet.html">Bundler::SpecSet</a>
+  
+    <li><a href="../../../Bundler/UI.html">Bundler::UI</a>
+  
+    <li><a href="../../../Bundler/UI/RGProxy.html">Bundler::UI::RGProxy</a>
+  
+    <li><a href="../../../Bundler/UI/Shell.html">Bundler::UI::Shell</a>
+  
+    <li><a href="../../../Bundler/VersionConflict.html">Bundler::VersionConflict</a>
+  
+    <li><a href="../../../Thor.html">Thor</a>
+  
+    <li><a href="../../../Thor/Actions.html">Thor::Actions</a>
+  
+    <li><a href="../../../Thor/Actions/ClassMethods.html">Thor::Actions::ClassMethods</a>
+  
+    <li><a href="../../../Thor/Base.html">Thor::Base</a>
+  
+    <li><a href="../../../Thor/Base/ClassMethods.html">Thor::Base::ClassMethods</a>
+  
+    <li><a href="../../../Thor/DynamicTask.html">Thor::DynamicTask</a>
+  
+    <li><a href="../../../Thor/Error.html">Thor::Error</a>
+  
+    <li><a href="../../../Thor/Group.html">Thor::Group</a>
+  
+    <li><a href="../../../Thor/HiddenTask.html">Thor::HiddenTask</a>
+  
+    <li><a href="../../../Thor/Invocation.html">Thor::Invocation</a>
+  
+    <li><a href="../../../Thor/Invocation/ClassMethods.html">Thor::Invocation::ClassMethods</a>
+  
+    <li><a href="../../../Thor/InvocationError.html">Thor::InvocationError</a>
+  
+    <li><a href="../../../Thor/MalformattedArgumentError.html">Thor::MalformattedArgumentError</a>
+  
+    <li><a href="../../../Thor/RakeCompat.html">Thor::RakeCompat</a>
+  
+    <li><a href="../../../Thor/RequiredArgumentMissingError.html">Thor::RequiredArgumentMissingError</a>
+  
+    <li><a href="../../../Thor/Shell.html">Thor::Shell</a>
+  
+    <li><a href="../../../Thor/Shell/Basic.html">Thor::Shell::Basic</a>
+  
+    <li><a href="../../../Thor/Shell/Color.html">Thor::Shell::Color</a>
+  
+    <li><a href="../../../Thor/Shell/HTML.html">Thor::Shell::HTML</a>
+  
+    <li><a href="../../../Thor/Task.html">Thor::Task</a>
+  
+    <li><a href="../../../Thor/UndefinedTaskError.html">Thor::UndefinedTaskError</a>
+  
+    <li><a href="../../../Thor/UnknownArgumentError.html">Thor::UnknownArgumentError</a>
+  
+    <li><a href="../../../Thor/Util.html">Thor::Util</a>
+  
+    <li><a href="../../../Gem.html">Gem</a>
+  
+    <li><a href="../../../Gem/Dependency.html">Gem::Dependency</a>
+  
+    <li><a href="../../../Gem/Platform.html">Gem::Platform</a>
+  
+    <li><a href="../../../Gem/Requirement.html">Gem::Requirement</a>
+  
+    <li><a href="../../../Gem/Specification.html">Gem::Specification</a>
+  
+    <li><a href="../../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>GEMFILE(5)                                                         
+GEMFILE(5)</p>
+
+<p>NAME</p>
+
+<pre>Gemfile - A format for describing gem dependencies for Ruby programs</pre>
+
+<p>SYNOPSIS</p>
+
+<pre>A Gemfile describes the gem dependencies required to execute associated
+Ruby code.
+
+Place the Gemfile in the root of the directory containing  the  associ-
+ated  code.  For instance, in a Rails application, place the Gemfile in
+the same directory as the Rakefile.</pre>
+
+<p>SYNTAX</p>
+
+<pre>A Gemfile is evaluated as Ruby code, in a context which makes available
+a number of methods used to describe the gem requirements.</pre>
+
+<p>SOURCES (source)</p>
+
+<pre>At  the  top of the Gemfile, add one line for each Rubygems source that
+might contain the gems listed in the Gemfile.
+
+    source &quot;http://rubygems.org&quot;
+    source &quot;http://gems.github.com&quot;
+
+Each of these _source_s MUST be a valid Rubygems repository.</pre>
+
+<p>GEMS (gem)</p>
+
+<pre class="ruby">    <span class="ruby-constant">Specify</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">requirements</span> <span class="ruby-identifier">using</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">method</span>, <span class="ruby-identifier">with</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">following</span> <span class="ruby-identifier">argu</span><span class="ruby-operator">-</span>
+    <span class="ruby-identifier">ments</span>. <span class="ruby-constant">All</span> <span class="ruby-identifier">parameters</span> <span class="ruby-identifier">are</span> <span class="ruby-constant">OPTIONAL</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">otherwise</span> <span class="ruby-identifier">specified</span>.
+
+<span class="ruby-constant">NAME</span> (<span class="ruby-identifier">required</span>)
+    <span class="ruby-constant">For</span> <span class="ruby-identifier">each</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">requirement</span>, <span class="ruby-identifier">list</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">single</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">line</span>.
+
+        <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;nokogiri&quot;</span>
+
+<span class="ruby-constant">VERSION</span>
+    <span class="ruby-constant">Each</span> <span class="ruby-identifier">gem</span> <span class="ruby-constant">MAY</span> <span class="ruby-identifier">have</span> <span class="ruby-identifier">one</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">more</span> <span class="ruby-identifier">version</span> <span class="ruby-identifier">specifiers</span>.
+
+        <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;nokogiri&quot;</span>, <span class="ruby-string">&quot;&gt;= 1.4.2&quot;</span>
+        <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;RedCloth&quot;</span>, <span class="ruby-string">&quot;&gt;= 4.1.0&quot;</span>, <span class="ruby-string">&quot;&lt; 4.2.0&quot;</span>
+
+<span class="ruby-constant">REQUIRE</span> <span class="ruby-constant">AS</span> (:<span class="ruby-identifier">require</span>)
+    <span class="ruby-constant">Each</span>  <span class="ruby-identifier">gem</span>  <span class="ruby-constant">MAY</span> <span class="ruby-identifier">specify</span> <span class="ruby-identifier">its</span> <span class="ruby-identifier">main</span> <span class="ruby-identifier">file</span>, <span class="ruby-identifier">which</span> <span class="ruby-identifier">should</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">used</span> <span class="ruby-keyword">when</span> <span class="ruby-identifier">autore</span><span class="ruby-operator">-</span>
+    <span class="ruby-identifier">quiring</span> (<span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">require</span>).
+
+        <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;sqlite3-ruby&quot;</span>, :<span class="ruby-identifier">require</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;sqlite3&quot;</span>
+
+    <span class="ruby-constant">This</span> <span class="ruby-identifier">defaults</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">name</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">itself</span>. <span class="ruby-constant">For</span>  <span class="ruby-identifier">instance</span>,  <span class="ruby-identifier">these</span>  <span class="ruby-identifier">are</span>
+    <span class="ruby-identifier">identical</span><span class="ruby-operator">:</span>
+
+        <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;nokogiri&quot;</span>
+        <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;nokogiri&quot;</span>, :<span class="ruby-identifier">require</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;nokogiri&quot;</span>
+
+    <span class="ruby-constant">Specify</span>  :<span class="ruby-identifier">require</span>  =<span class="ruby-operator">&gt;</span>  <span class="ruby-keyword">false</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">prevent</span> <span class="ruby-identifier">bundler</span> <span class="ruby-identifier">from</span> <span class="ruby-identifier">requiring</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">gem</span>,
+    <span class="ruby-identifier">but</span> <span class="ruby-identifier">still</span> <span class="ruby-identifier">install</span> <span class="ruby-identifier">it</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">maintain</span> <span class="ruby-identifier">dependencies</span>.
+
+<span class="ruby-constant">GROUPS</span> (:<span class="ruby-identifier">group</span> <span class="ruby-keyword">or</span> :<span class="ruby-identifier">groups</span>)
+    <span class="ruby-constant">Each</span> <span class="ruby-identifier">gem</span> <span class="ruby-constant">MAY</span> <span class="ruby-identifier">specify</span> <span class="ruby-identifier">membership</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">one</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">more</span>  <span class="ruby-identifier">groups</span>.  <span class="ruby-constant">Any</span>  <span class="ruby-identifier">gem</span>  <span class="ruby-identifier">that</span>
+    <span class="ruby-identifier">does</span>  <span class="ruby-keyword">not</span>  <span class="ruby-identifier">specify</span>  <span class="ruby-identifier">membership</span>  <span class="ruby-keyword">in</span>  <span class="ruby-identifier">any</span>  <span class="ruby-identifier">group</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">placed</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">default</span>
+    <span class="ruby-identifier">group</span>.
+
+        <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;rspec&quot;</span>, :<span class="ruby-identifier">group</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">test</span>
+        <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;wirble&quot;</span>, :<span class="ruby-identifier">groups</span> =<span class="ruby-operator">&gt;</span> [:<span class="ruby-identifier">development</span>, :<span class="ruby-identifier">test</span>]
+
+    <span class="ruby-constant">The</span> <span class="ruby-constant">Bundler</span> <span class="ruby-identifier">runtime</span> <span class="ruby-identifier">allows</span> <span class="ruby-identifier">its</span>  <span class="ruby-identifier">two</span>  <span class="ruby-identifier">main</span>  <span class="ruby-identifier">methods</span>,  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">setup</span>  <span class="ruby-keyword">and</span>
+    <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">require</span>, <span class="ruby-identifier">to</span> <span class="ruby-identifier">limit</span> <span class="ruby-identifier">their</span> <span class="ruby-identifier">impact</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">particular</span> <span class="ruby-identifier">groups</span>.
+
+        <span class="ruby-comment"># setup adds gems to Ruby's load path</span>
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">setup</span>                    <span class="ruby-comment"># defaults to all groups</span>
+        <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;bundler/setup&quot;</span>          <span class="ruby-comment"># same as Bundler.setup</span>
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">setup</span>(:<span class="ruby-identifier">default</span>)          <span class="ruby-comment"># only set up the _default_ group</span>
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">setup</span>(:<span class="ruby-identifier">test</span>)             <span class="ruby-comment"># only set up the _test_ group (but `not` _default_)</span>
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">setup</span>(:<span class="ruby-identifier">default</span>, :<span class="ruby-identifier">test</span>)   <span class="ruby-comment"># set up the _default_ and _test_ groups, but no others</span>
+
+        <span class="ruby-comment"># require requires all of the gems in the specified groups</span>
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">require</span>                  <span class="ruby-comment"># defaults to just the _default_ group</span>
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">require</span>(:<span class="ruby-identifier">default</span>)        <span class="ruby-comment"># identical</span>
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">require</span>(:<span class="ruby-identifier">default</span>, :<span class="ruby-identifier">test</span>) <span class="ruby-comment"># requires the _default_ and _test_ groups</span>
+        <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">require</span>(:<span class="ruby-identifier">test</span>)           <span class="ruby-comment"># requires just the _test_ group</span>
+
+    <span class="ruby-constant">The</span>  <span class="ruby-constant">Bundler</span> <span class="ruby-constant">CLI</span> <span class="ruby-identifier">allows</span> <span class="ruby-identifier">you</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">specify</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">list</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">groups</span> <span class="ruby-identifier">whose</span> <span class="ruby-identifier">gems</span> <span class="ruby-identifier">bun</span><span class="ruby-operator">-</span>
+    <span class="ruby-identifier">dle</span> <span class="ruby-identifier">install</span> <span class="ruby-identifier">should</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">install</span> <span class="ruby-identifier">with</span> <span class="ruby-identifier">the</span> <span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-identifier">without</span>  <span class="ruby-identifier">option</span>.  <span class="ruby-constant">To</span>  <span class="ruby-identifier">specify</span>
+    <span class="ruby-identifier">multiple</span>  <span class="ruby-identifier">groups</span>  <span class="ruby-identifier">to</span> <span class="ruby-identifier">ignore</span>, <span class="ruby-identifier">specify</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">list</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">groups</span> <span class="ruby-identifier">separated</span> <span class="ruby-identifier">by</span> <span class="ruby-identifier">spa</span><span class="ruby-operator">-</span>
+    <span class="ruby-identifier">ces</span>.
+
+        <span class="ruby-identifier">bundle</span> <span class="ruby-identifier">install</span> <span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-identifier">without</span> <span class="ruby-identifier">test</span>
+        <span class="ruby-identifier">bundle</span> <span class="ruby-identifier">install</span> <span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-identifier">without</span> <span class="ruby-identifier">development</span> <span class="ruby-identifier">test</span>
+
+    <span class="ruby-constant">After</span> <span class="ruby-identifier">running</span> <span class="ruby-identifier">bundle</span> <span class="ruby-identifier">install</span> <span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-identifier">without</span> <span class="ruby-identifier">test</span>, <span class="ruby-identifier">bundler</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">remember</span> <span class="ruby-identifier">that</span>
+    <span class="ruby-identifier">you</span> <span class="ruby-identifier">excluded</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">test</span> <span class="ruby-identifier">group</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">last</span> <span class="ruby-identifier">installation</span>. <span class="ruby-constant">The</span> <span class="ruby-keyword">next</span> <span class="ruby-identifier">time</span> <span class="ruby-identifier">you</span>
+    <span class="ruby-identifier">run</span> <span class="ruby-identifier">bundle</span> <span class="ruby-identifier">install</span>, <span class="ruby-identifier">without</span> <span class="ruby-identifier">any</span> <span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-identifier">without</span> <span class="ruby-identifier">option</span>, <span class="ruby-identifier">bundler</span>  <span class="ruby-identifier">will</span>  <span class="ruby-identifier">recall</span>
+    <span class="ruby-identifier">it</span>.
+
+    <span class="ruby-constant">Also</span>,  <span class="ruby-identifier">calling</span>  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">setup</span>  <span class="ruby-identifier">with</span>  <span class="ruby-identifier">no</span>  <span class="ruby-identifier">parameters</span>, <span class="ruby-keyword">or</span> <span class="ruby-identifier">calling</span> <span class="ruby-identifier">require</span>
+    <span class="ruby-string">&quot;bundler/setup&quot;</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">setup</span> <span class="ruby-identifier">all</span> <span class="ruby-identifier">groups</span> <span class="ruby-identifier">except</span> <span class="ruby-keyword">for</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">ones</span> <span class="ruby-identifier">you</span>  <span class="ruby-identifier">excluded</span>
+    <span class="ruby-identifier">via</span> <span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-identifier">without</span> (<span class="ruby-identifier">since</span> <span class="ruby-identifier">they</span> <span class="ruby-identifier">are</span> <span class="ruby-identifier">obviously</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">available</span>).
+
+    <span class="ruby-constant">Note</span>  <span class="ruby-identifier">that</span> <span class="ruby-identifier">on</span> <span class="ruby-identifier">bundle</span> <span class="ruby-identifier">install</span>, <span class="ruby-identifier">bundler</span> <span class="ruby-identifier">downloads</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">evaluates</span> <span class="ruby-identifier">all</span> <span class="ruby-identifier">gems</span>,
+    <span class="ruby-keyword">in</span> <span class="ruby-identifier">order</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">create</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">single</span> <span class="ruby-identifier">canonical</span> <span class="ruby-identifier">list</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">all</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">required</span>  <span class="ruby-identifier">gems</span>
+    <span class="ruby-keyword">and</span>  <span class="ruby-identifier">their</span> <span class="ruby-identifier">dependencies</span>. <span class="ruby-constant">This</span> <span class="ruby-identifier">means</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">you</span> <span class="ruby-identifier">cannot</span> <span class="ruby-identifier">list</span> <span class="ruby-identifier">different</span> <span class="ruby-identifier">ver</span><span class="ruby-operator">-</span>
+    <span class="ruby-identifier">sions</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">same</span> <span class="ruby-identifier">gems</span> <span class="ruby-keyword">in</span>  <span class="ruby-identifier">different</span>  <span class="ruby-identifier">groups</span>.  <span class="ruby-constant">For</span>  <span class="ruby-identifier">more</span>  <span class="ruby-identifier">details</span>,  <span class="ruby-identifier">see</span>
+    <span class="ruby-constant">Understanding</span> <span class="ruby-constant">Bundler</span> <span class="ruby-identifier">http</span>:<span class="ruby-operator">/</span><span class="ruby-regexp">/gembundler.com/</span><span class="ruby-identifier">rationale</span>.<span class="ruby-identifier">html</span>.
+
+<span class="ruby-constant">PLATFORMS</span> (:<span class="ruby-identifier">platforms</span>)
+    <span class="ruby-constant">If</span>  <span class="ruby-identifier">a</span>  <span class="ruby-identifier">gem</span> <span class="ruby-identifier">should</span> <span class="ruby-identifier">only</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">used</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">particular</span> <span class="ruby-identifier">platform</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">set</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">plat</span><span class="ruby-operator">-</span>
+    <span class="ruby-identifier">forms</span>, <span class="ruby-identifier">you</span> <span class="ruby-identifier">can</span> <span class="ruby-identifier">specify</span> <span class="ruby-identifier">them</span>. <span class="ruby-constant">Platforms</span>  <span class="ruby-identifier">are</span>  <span class="ruby-identifier">essentially</span>  <span class="ruby-identifier">identical</span>  <span class="ruby-identifier">to</span>
+    <span class="ruby-identifier">groups</span>,  <span class="ruby-identifier">except</span>  <span class="ruby-identifier">that</span> <span class="ruby-identifier">you</span> <span class="ruby-keyword">do</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">need</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">use</span> <span class="ruby-identifier">the</span> <span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-identifier">without</span> <span class="ruby-identifier">install</span><span class="ruby-operator">-</span><span class="ruby-identifier">time</span>
+    <span class="ruby-identifier">flag</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">exclude</span> <span class="ruby-identifier">groups</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">gems</span> <span class="ruby-keyword">for</span> <span class="ruby-identifier">other</span> <span class="ruby-identifier">platforms</span>.
+
+    <span class="ruby-constant">There</span> <span class="ruby-identifier">are</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">number</span> <span class="ruby-identifier">of</span> <span class="ruby-constant">Gemfile</span> <span class="ruby-identifier">platforms</span><span class="ruby-operator">:</span>
+
+    <span class="ruby-identifier">ruby</span>   <span class="ruby-constant">C</span> <span class="ruby-constant">Ruby</span> (<span class="ruby-constant">MRI</span>) <span class="ruby-keyword">or</span> <span class="ruby-constant">Rubinius</span>, <span class="ruby-identifier">but</span> <span class="ruby-constant">NOT</span> <span class="ruby-constant">Windows</span>
+
+    <span class="ruby-identifier">ruby_18</span>
+           <span class="ruby-identifier">ruby</span> <span class="ruby-constant">AND</span> <span class="ruby-identifier">version</span> <span class="ruby-value">1.8</span>
+
+    <span class="ruby-identifier">ruby_19</span>
+           <span class="ruby-identifier">ruby</span> <span class="ruby-constant">AND</span> <span class="ruby-identifier">version</span> <span class="ruby-value">1.9</span>
+
+    <span class="ruby-identifier">mri</span>    <span class="ruby-constant">Same</span> <span class="ruby-identifier">as</span> <span class="ruby-identifier">ruby</span>, <span class="ruby-identifier">but</span> <span class="ruby-keyword">not</span> <span class="ruby-constant">Rubinius</span>
+
+    <span class="ruby-identifier">mri_18</span> <span class="ruby-identifier">mri</span> <span class="ruby-constant">AND</span> <span class="ruby-identifier">version</span> <span class="ruby-value">1.8</span>
+
+    <span class="ruby-identifier">mri_19</span> <span class="ruby-identifier">mri</span> <span class="ruby-constant">AND</span> <span class="ruby-identifier">version</span> <span class="ruby-value">1.9</span>
+
+    <span class="ruby-identifier">rbx</span>    <span class="ruby-constant">Same</span> <span class="ruby-identifier">as</span> <span class="ruby-identifier">ruby</span>, <span class="ruby-identifier">but</span> <span class="ruby-identifier">only</span> <span class="ruby-constant">Rubinius</span> (<span class="ruby-keyword">not</span> <span class="ruby-constant">MRI</span>)
+
+    <span class="ruby-identifier">jruby</span>  <span class="ruby-constant">JRuby</span>
+
+    <span class="ruby-identifier">mswin</span>  <span class="ruby-constant">Windows</span>
+
+    <span class="ruby-identifier">mingw</span>  <span class="ruby-constant">Windows</span> <span class="ruby-string">'mingw32'</span> <span class="ruby-identifier">platform</span> (<span class="ruby-identifier">aka</span> <span class="ruby-constant">RubyInstaller</span>)
+
+    <span class="ruby-identifier">mingw_18</span>
+           <span class="ruby-identifier">mingw</span> <span class="ruby-constant">AND</span> <span class="ruby-identifier">version</span> <span class="ruby-value">1.8</span>
+
+    <span class="ruby-identifier">mingw_19</span>
+           <span class="ruby-identifier">mingw</span> <span class="ruby-constant">AND</span> <span class="ruby-identifier">version</span> <span class="ruby-value">1.9</span>
+
+    <span class="ruby-constant">As</span> <span class="ruby-identifier">with</span> <span class="ruby-identifier">groups</span>, <span class="ruby-identifier">you</span> <span class="ruby-identifier">can</span> <span class="ruby-identifier">specify</span> <span class="ruby-identifier">one</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">more</span> <span class="ruby-identifier">platforms</span><span class="ruby-operator">:</span>
+
+        <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;weakling&quot;</span>,   :<span class="ruby-identifier">platforms</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">jruby</span>
+        <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;ruby-debug&quot;</span>, :<span class="ruby-identifier">platforms</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">mri_18</span>
+        <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;nokogiri&quot;</span>,   :<span class="ruby-identifier">platforms</span> =<span class="ruby-operator">&gt;</span> [:<span class="ruby-identifier">mri_18</span>, :<span class="ruby-identifier">jruby</span>]
+
+    <span class="ruby-constant">All</span>  <span class="ruby-identifier">operations</span>  <span class="ruby-identifier">involving</span>  <span class="ruby-identifier">groups</span>  (<span class="ruby-identifier">bundle</span>   <span class="ruby-identifier">install</span>,   <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">setup</span>,
+    <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">require</span>)  <span class="ruby-identifier">behave</span> <span class="ruby-identifier">exactly</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">same</span> <span class="ruby-identifier">as</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">any</span> <span class="ruby-identifier">groups</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">matching</span>
+    <span class="ruby-identifier">the</span> <span class="ruby-identifier">current</span> <span class="ruby-identifier">platform</span> <span class="ruby-identifier">were</span> <span class="ruby-identifier">explicitly</span> <span class="ruby-identifier">excluded</span>.
+
+<span class="ruby-constant">GIT</span> (:<span class="ruby-identifier">git</span>)
+    <span class="ruby-constant">If</span> <span class="ruby-identifier">necessary</span>, <span class="ruby-identifier">you</span> <span class="ruby-identifier">can</span> <span class="ruby-identifier">specify</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">located</span> <span class="ruby-identifier">at</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">particular</span> <span class="ruby-identifier">git</span>
+    <span class="ruby-identifier">repository</span>.        <span class="ruby-constant">The</span>       <span class="ruby-identifier">repository</span>       <span class="ruby-identifier">can</span>       <span class="ruby-identifier">be</span>       <span class="ruby-identifier">public</span>
+    (<span class="ruby-identifier">http</span>:<span class="ruby-operator">/</span><span class="ruby-regexp">/github.com/</span><span class="ruby-identifier">rails</span><span class="ruby-operator">/</span><span class="ruby-identifier">rails</span>.<span class="ruby-identifier">git</span>)             <span class="ruby-keyword">or</span>              <span class="ruby-identifier">private</span>
+    (<span class="ruby-identifier">git</span><span class="ruby-ivar">@github</span>.<span class="ruby-identifier">com</span>:<span class="ruby-identifier">rails</span><span class="ruby-operator">/</span><span class="ruby-identifier">rails</span>.<span class="ruby-identifier">git</span>).  <span class="ruby-constant">If</span>  <span class="ruby-identifier">the</span>  <span class="ruby-identifier">repository</span>  <span class="ruby-identifier">is</span> <span class="ruby-identifier">private</span>, <span class="ruby-identifier">the</span>
+    <span class="ruby-identifier">user</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">you</span> <span class="ruby-identifier">use</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">run</span> <span class="ruby-identifier">bundle</span> <span class="ruby-identifier">install</span> <span class="ruby-constant">MUST</span> <span class="ruby-identifier">have</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">appropriate</span>  <span class="ruby-identifier">keys</span>
+    <span class="ruby-identifier">available</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">their</span> <span class="ruby-identifier">$HOME</span><span class="ruby-operator">/</span>.<span class="ruby-identifier">ssh</span>.
+
+    <span class="ruby-constant">Git</span>  <span class="ruby-identifier">repositories</span>  <span class="ruby-identifier">are</span>  <span class="ruby-identifier">specified</span>  <span class="ruby-identifier">using</span> <span class="ruby-identifier">the</span> :<span class="ruby-identifier">git</span> <span class="ruby-identifier">parameter</span>. <span class="ruby-constant">The</span> <span class="ruby-identifier">group</span>,
+    <span class="ruby-identifier">platforms</span>, <span class="ruby-keyword">and</span> <span class="ruby-identifier">require</span> <span class="ruby-identifier">options</span> <span class="ruby-identifier">are</span> <span class="ruby-identifier">available</span>  <span class="ruby-keyword">and</span>  <span class="ruby-identifier">behave</span>  <span class="ruby-identifier">exactly</span>  <span class="ruby-identifier">the</span>
+    <span class="ruby-identifier">same</span> <span class="ruby-identifier">as</span> <span class="ruby-identifier">they</span> <span class="ruby-identifier">would</span> <span class="ruby-keyword">for</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">normal</span> <span class="ruby-identifier">gem</span>.
+
+        <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;rails&quot;</span>, :<span class="ruby-identifier">git</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;git://github.com/rails/rails.git&quot;</span>
+
+    <span class="ruby-constant">A</span>  <span class="ruby-identifier">git</span>  <span class="ruby-identifier">repository</span>  <span class="ruby-constant">SHOULD</span>  <span class="ruby-identifier">have</span>  <span class="ruby-identifier">at</span> <span class="ruby-identifier">least</span> <span class="ruby-identifier">one</span> <span class="ruby-identifier">file</span>, <span class="ruby-identifier">at</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">root</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">the</span>
+    <span class="ruby-identifier">directory</span> <span class="ruby-identifier">containing</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">gem</span>, <span class="ruby-identifier">with</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">extension</span>  .<span class="ruby-identifier">gemspec</span>.  <span class="ruby-constant">This</span>  <span class="ruby-identifier">file</span>
+    <span class="ruby-constant">MUST</span>  <span class="ruby-identifier">contain</span>  <span class="ruby-identifier">a</span>  <span class="ruby-identifier">valid</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">specification</span>, <span class="ruby-identifier">as</span> <span class="ruby-identifier">expected</span> <span class="ruby-identifier">by</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">build</span>
+    <span class="ruby-identifier">command</span>. <span class="ruby-constant">It</span> <span class="ruby-constant">MUST</span> <span class="ruby-constant">NOT</span> <span class="ruby-identifier">have</span> <span class="ruby-identifier">any</span> <span class="ruby-identifier">dependencies</span>, <span class="ruby-identifier">other</span> <span class="ruby-identifier">than</span> <span class="ruby-identifier">on</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">files</span>  <span class="ruby-keyword">in</span>
+    <span class="ruby-identifier">the</span>  <span class="ruby-identifier">git</span>  <span class="ruby-identifier">repository</span>  <span class="ruby-identifier">itself</span>  <span class="ruby-keyword">and</span> <span class="ruby-identifier">any</span> <span class="ruby-identifier">built</span><span class="ruby-operator">-</span><span class="ruby-keyword">in</span> <span class="ruby-identifier">functionality</span> <span class="ruby-identifier">of</span> <span class="ruby-constant">Ruby</span> <span class="ruby-keyword">or</span>
+    <span class="ruby-constant">Rubygems</span>.
+
+    <span class="ruby-constant">If</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">git</span> <span class="ruby-identifier">repository</span> <span class="ruby-identifier">does</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">have</span> <span class="ruby-identifier">a</span> .<span class="ruby-identifier">gemspec</span>, <span class="ruby-identifier">bundler</span> <span class="ruby-identifier">will</span>  <span class="ruby-identifier">attempt</span>  <span class="ruby-identifier">to</span>
+    <span class="ruby-identifier">create</span> <span class="ruby-identifier">one</span>, <span class="ruby-identifier">but</span> <span class="ruby-identifier">it</span> <span class="ruby-identifier">will</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">contain</span> <span class="ruby-identifier">any</span> <span class="ruby-identifier">dependencies</span>, <span class="ruby-identifier">executables</span>, <span class="ruby-keyword">or</span> <span class="ruby-constant">C</span>
+    <span class="ruby-identifier">extension</span> <span class="ruby-identifier">compilation</span> <span class="ruby-identifier">instructions</span>. <span class="ruby-constant">As</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">result</span>, <span class="ruby-identifier">it</span> <span class="ruby-identifier">may</span> <span class="ruby-identifier">fail</span>  <span class="ruby-identifier">to</span>  <span class="ruby-identifier">prop</span><span class="ruby-operator">-</span>
+    <span class="ruby-identifier">erly</span> <span class="ruby-identifier">integrate</span> <span class="ruby-identifier">into</span> <span class="ruby-identifier">your</span> <span class="ruby-identifier">application</span>.
+
+    <span class="ruby-constant">If</span>  <span class="ruby-identifier">a</span>  <span class="ruby-identifier">git</span>  <span class="ruby-identifier">repository</span> <span class="ruby-identifier">does</span> <span class="ruby-identifier">have</span> <span class="ruby-identifier">a</span> .<span class="ruby-identifier">gemspec</span> <span class="ruby-keyword">for</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">you</span> <span class="ruby-identifier">attached</span> <span class="ruby-identifier">it</span>
+    <span class="ruby-identifier">to</span>, <span class="ruby-identifier">a</span> <span class="ruby-identifier">version</span> <span class="ruby-identifier">specifier</span>, <span class="ruby-keyword">if</span> <span class="ruby-identifier">provided</span>, <span class="ruby-identifier">means</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">git</span> <span class="ruby-identifier">repository</span>  <span class="ruby-identifier">is</span>
+    <span class="ruby-identifier">only</span>  <span class="ruby-identifier">valid</span>  <span class="ruby-keyword">if</span>  <span class="ruby-identifier">the</span>  .<span class="ruby-identifier">gemspec</span> <span class="ruby-identifier">specifies</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">version</span> <span class="ruby-identifier">matching</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">version</span>
+    <span class="ruby-identifier">specifier</span>. <span class="ruby-constant">If</span> <span class="ruby-keyword">not</span>, <span class="ruby-identifier">bundler</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">print</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">warning</span>.
+
+        <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;rails&quot;</span>, <span class="ruby-string">&quot;2.3.8&quot;</span>, :<span class="ruby-identifier">git</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;git://github.com/rails/rails.git&quot;</span>
+        <span class="ruby-comment"># bundle install will fail, because the .gemspec in the rails</span>
+        <span class="ruby-comment"># repository's master branch specifies version 3.0.0</span>
+
+    <span class="ruby-constant">If</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">git</span> <span class="ruby-identifier">repository</span> <span class="ruby-identifier">does</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">have</span> <span class="ruby-identifier">a</span> .<span class="ruby-identifier">gemspec</span> <span class="ruby-keyword">for</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">gem</span>  <span class="ruby-identifier">you</span>  <span class="ruby-identifier">attached</span>
+    <span class="ruby-identifier">it</span> <span class="ruby-identifier">to</span>, <span class="ruby-identifier">a</span> <span class="ruby-identifier">version</span> <span class="ruby-identifier">specifier</span> <span class="ruby-constant">MUST</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">provided</span>. <span class="ruby-constant">Bundler</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">use</span> <span class="ruby-identifier">this</span> <span class="ruby-identifier">ver</span><span class="ruby-operator">-</span>
+    <span class="ruby-identifier">sion</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">simple</span> .<span class="ruby-identifier">gemspec</span> <span class="ruby-identifier">it</span> <span class="ruby-identifier">creates</span>.
+
+    <span class="ruby-constant">Git</span> <span class="ruby-identifier">repositories</span> <span class="ruby-identifier">support</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">number</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">additional</span> <span class="ruby-identifier">options</span>.
+
+    <span class="ruby-identifier">branch</span>, <span class="ruby-identifier">tag</span>, <span class="ruby-keyword">and</span> <span class="ruby-identifier">ref</span>
+           <span class="ruby-constant">You</span> <span class="ruby-constant">MUST</span> <span class="ruby-identifier">only</span> <span class="ruby-identifier">specify</span> <span class="ruby-identifier">at</span> <span class="ruby-identifier">most</span> <span class="ruby-identifier">one</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">these</span> <span class="ruby-identifier">options</span>. <span class="ruby-constant">The</span>  <span class="ruby-identifier">default</span>
+           <span class="ruby-identifier">is</span> :<span class="ruby-identifier">branch</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;master&quot;</span>
+
+    <span class="ruby-identifier">submodules</span>
+           <span class="ruby-constant">Specify</span>  :<span class="ruby-identifier">submodules</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">cause</span> <span class="ruby-identifier">bundler</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">expand</span> <span class="ruby-identifier">any</span> <span class="ruby-identifier">sub</span><span class="ruby-operator">-</span>
+           <span class="ruby-identifier">modules</span> <span class="ruby-identifier">included</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">git</span> <span class="ruby-identifier">repository</span>
+
+    <span class="ruby-constant">If</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">git</span> <span class="ruby-identifier">repository</span> <span class="ruby-identifier">contains</span> <span class="ruby-identifier">multiple</span> .<span class="ruby-identifier">gemspecs</span>, <span class="ruby-identifier">each</span>  .<span class="ruby-identifier">gemspec</span>  <span class="ruby-identifier">repre</span><span class="ruby-operator">-</span>
+    <span class="ruby-identifier">sents</span>  <span class="ruby-identifier">a</span>  <span class="ruby-identifier">gem</span> <span class="ruby-identifier">located</span> <span class="ruby-identifier">at</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">same</span> <span class="ruby-identifier">place</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">file</span> <span class="ruby-identifier">system</span> <span class="ruby-identifier">as</span> <span class="ruby-identifier">the</span> .<span class="ruby-identifier">gem</span><span class="ruby-operator">-</span>
+    <span class="ruby-identifier">spec</span>.
+
+        <span class="ruby-operator">|</span><span class="ruby-operator">~</span><span class="ruby-identifier">rails</span>                   [<span class="ruby-identifier">git</span> <span class="ruby-identifier">root</span>]
+        <span class="ruby-operator">|</span> <span class="ruby-operator">|</span><span class="ruby-operator">-</span><span class="ruby-identifier">rails</span>.<span class="ruby-identifier">gemspec</span>         [<span class="ruby-identifier">rails</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">located</span> <span class="ruby-identifier">here</span>]
+        <span class="ruby-operator">|</span><span class="ruby-operator">~</span><span class="ruby-identifier">actionpack</span>
+        <span class="ruby-operator">|</span> <span class="ruby-operator">|</span><span class="ruby-operator">-</span><span class="ruby-identifier">actionpack</span>.<span class="ruby-identifier">gemspec</span>    [<span class="ruby-identifier">actionpack</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">located</span> <span class="ruby-identifier">here</span>]
+        <span class="ruby-operator">|</span><span class="ruby-operator">~</span><span class="ruby-identifier">activesupport</span>
+        <span class="ruby-operator">|</span> <span class="ruby-operator">|</span><span class="ruby-operator">-</span><span class="ruby-identifier">activesupport</span>.<span class="ruby-identifier">gemspec</span> [<span class="ruby-identifier">activesupport</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">located</span> <span class="ruby-identifier">here</span>]
+
+    <span class="ruby-constant">To</span> <span class="ruby-identifier">install</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">located</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">git</span> <span class="ruby-identifier">repository</span>, <span class="ruby-identifier">bundler</span>  <span class="ruby-identifier">changes</span>  <span class="ruby-identifier">to</span>  <span class="ruby-identifier">the</span>
+    <span class="ruby-identifier">directory</span>  <span class="ruby-identifier">containing</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">gemspec</span>, <span class="ruby-identifier">runs</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">build</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">gemspec</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">installs</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">resulting</span> <span class="ruby-identifier">gem</span>. <span class="ruby-constant">The</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">build</span> <span class="ruby-identifier">command</span>, <span class="ruby-identifier">which</span> <span class="ruby-identifier">comes</span> <span class="ruby-identifier">standard</span>
+    <span class="ruby-identifier">with</span>  <span class="ruby-constant">Rubygems</span>,  <span class="ruby-identifier">evaluates</span> <span class="ruby-identifier">the</span> .<span class="ruby-identifier">gemspec</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">context</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">directory</span>
+    <span class="ruby-keyword">in</span> <span class="ruby-identifier">which</span> <span class="ruby-identifier">it</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">located</span>.
+
+<span class="ruby-constant">PATH</span> (:<span class="ruby-identifier">path</span>)
+    <span class="ruby-constant">You</span> <span class="ruby-identifier">can</span> <span class="ruby-identifier">specify</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">located</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">particular</span> <span class="ruby-identifier">location</span>  <span class="ruby-identifier">on</span>  <span class="ruby-identifier">the</span>
+    <span class="ruby-identifier">file</span> <span class="ruby-identifier">system</span>. <span class="ruby-constant">Relative</span> <span class="ruby-identifier">paths</span> <span class="ruby-identifier">are</span> <span class="ruby-identifier">resolved</span> <span class="ruby-identifier">relative</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">directory</span> <span class="ruby-identifier">con</span><span class="ruby-operator">-</span>
+    <span class="ruby-identifier">taining</span> <span class="ruby-identifier">the</span> <span class="ruby-constant">Gemfile</span>.
+
+    <span class="ruby-constant">Similar</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">semantics</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">the</span> :<span class="ruby-identifier">git</span> <span class="ruby-identifier">option</span>, <span class="ruby-identifier">the</span> :<span class="ruby-identifier">path</span> <span class="ruby-identifier">option</span>  <span class="ruby-identifier">requires</span>
+    <span class="ruby-identifier">that</span>  <span class="ruby-identifier">the</span> <span class="ruby-identifier">directory</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">question</span> <span class="ruby-identifier">either</span> <span class="ruby-identifier">contains</span> <span class="ruby-identifier">a</span> .<span class="ruby-identifier">gemspec</span> <span class="ruby-keyword">for</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">gem</span>,
+    <span class="ruby-keyword">or</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">you</span> <span class="ruby-identifier">specify</span> <span class="ruby-identifier">an</span> <span class="ruby-identifier">explicit</span> <span class="ruby-identifier">version</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">bundler</span> <span class="ruby-identifier">should</span> <span class="ruby-identifier">use</span>.
+
+    <span class="ruby-constant">Unlike</span> :<span class="ruby-identifier">git</span>, <span class="ruby-identifier">bundler</span> <span class="ruby-identifier">does</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">compile</span> <span class="ruby-constant">C</span> <span class="ruby-identifier">extensions</span> <span class="ruby-keyword">for</span>  <span class="ruby-identifier">gems</span>  <span class="ruby-identifier">specified</span>
+    <span class="ruby-identifier">as</span> <span class="ruby-identifier">paths</span>.
+
+        <span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;rails&quot;</span>, :<span class="ruby-identifier">path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;vendor/rails&quot;</span>
+</pre>
+
+<p>BLOCK FORM OF GIT, PATH, GROUP and PLATFORMS</p>
+
+<pre>The  :git,  :path,  :group,  and :platforms options may be applied to a
+group of gems by using block form.
+
+    git &quot;git://github.com/rails/rails.git&quot; do
+      gem &quot;activesupport&quot;
+      gem &quot;actionpack&quot;
+    end
+
+    platforms :ruby do
+      gem &quot;ruby-debug&quot;
+      gem &quot;sqlite3-ruby&quot;
+    end
+
+    group :development do
+      gem &quot;wirble&quot;
+      gem &quot;faker&quot;
+    end
+
+In the case of the git block form, the :ref, :branch, :tag,  and  :sub-
+modules  options  may  be passed to the git method, and all gems in the
+block will inherit those options.</pre>
+
+<p>GEMSPEC (gemspec)</p>
+
+<pre class="ruby"><span class="ruby-constant">If</span> <span class="ruby-identifier">you</span> <span class="ruby-identifier">wish</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">use</span> <span class="ruby-constant">Bundler</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">help</span> <span class="ruby-identifier">install</span> <span class="ruby-identifier">dependencies</span> <span class="ruby-keyword">for</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">gem</span> <span class="ruby-keyword">while</span>
+<span class="ruby-identifier">it</span>  <span class="ruby-identifier">is</span> <span class="ruby-identifier">being</span> <span class="ruby-identifier">developed</span>, <span class="ruby-identifier">use</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">gemspec</span> <span class="ruby-identifier">method</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">pull</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">dependen</span><span class="ruby-operator">-</span>
+<span class="ruby-identifier">cies</span> <span class="ruby-identifier">listed</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> .<span class="ruby-identifier">gemspec</span> <span class="ruby-identifier">file</span>.
+
+<span class="ruby-constant">The</span> <span class="ruby-identifier">gemspec</span> <span class="ruby-identifier">method</span> <span class="ruby-identifier">adds</span> <span class="ruby-identifier">any</span> <span class="ruby-identifier">runtime</span> <span class="ruby-identifier">dependencies</span> <span class="ruby-identifier">as</span> <span class="ruby-identifier">gem</span> <span class="ruby-identifier">requirements</span> <span class="ruby-keyword">in</span>
+<span class="ruby-identifier">the</span>  <span class="ruby-identifier">default</span>  <span class="ruby-identifier">group</span>.  <span class="ruby-constant">It</span>  <span class="ruby-identifier">also</span>  <span class="ruby-identifier">adds</span>  <span class="ruby-identifier">development</span>  <span class="ruby-identifier">dependencies</span>  <span class="ruby-identifier">as</span> <span class="ruby-identifier">gem</span>
+<span class="ruby-identifier">requirements</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">development</span> <span class="ruby-identifier">group</span>. <span class="ruby-constant">Finally</span>, <span class="ruby-identifier">it</span> <span class="ruby-identifier">adds</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">gem</span>  <span class="ruby-identifier">require</span><span class="ruby-operator">-</span>
+<span class="ruby-identifier">ment</span> <span class="ruby-identifier">on</span> <span class="ruby-identifier">your</span> <span class="ruby-identifier">project</span> (:<span class="ruby-identifier">path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'.'</span>). <span class="ruby-constant">In</span> <span class="ruby-identifier">conjunction</span> <span class="ruby-identifier">with</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">setup</span>,
+<span class="ruby-identifier">this</span> <span class="ruby-identifier">allows</span> <span class="ruby-identifier">you</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">require</span> <span class="ruby-identifier">project</span> <span class="ruby-identifier">files</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">your</span> <span class="ruby-identifier">test</span> <span class="ruby-identifier">code</span> <span class="ruby-identifier">as</span> <span class="ruby-identifier">you</span> <span class="ruby-identifier">would</span>
+<span class="ruby-keyword">if</span>  <span class="ruby-identifier">the</span>  <span class="ruby-identifier">project</span>  <span class="ruby-identifier">were</span>  <span class="ruby-identifier">installed</span> <span class="ruby-identifier">as</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">gem</span>; <span class="ruby-identifier">you</span> <span class="ruby-identifier">need</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">manipulate</span> <span class="ruby-identifier">the</span>
+<span class="ruby-identifier">load</span> <span class="ruby-identifier">path</span> <span class="ruby-identifier">manually</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">require</span> <span class="ruby-identifier">project</span> <span class="ruby-identifier">files</span> <span class="ruby-identifier">via</span> <span class="ruby-identifier">relative</span> <span class="ruby-identifier">paths</span>.
+
+<span class="ruby-constant">The</span> <span class="ruby-identifier">gemspec</span>  <span class="ruby-identifier">method</span>  <span class="ruby-identifier">supports</span>  <span class="ruby-identifier">optional</span>  :<span class="ruby-identifier">path</span>,  :<span class="ruby-identifier">name</span>,  <span class="ruby-keyword">and</span>  :<span class="ruby-identifier">develop</span><span class="ruby-operator">-</span>
+<span class="ruby-identifier">ment_group</span> <span class="ruby-identifier">options</span>, <span class="ruby-identifier">which</span> <span class="ruby-identifier">control</span> <span class="ruby-identifier">where</span> <span class="ruby-identifier">bundler</span> <span class="ruby-identifier">looks</span> <span class="ruby-keyword">for</span> <span class="ruby-identifier">the</span> .<span class="ruby-identifier">gemspec</span>,
+<span class="ruby-identifier">what</span> <span class="ruby-identifier">named</span> .<span class="ruby-identifier">gemspec</span> <span class="ruby-identifier">it</span> <span class="ruby-identifier">uses</span> (<span class="ruby-keyword">if</span> <span class="ruby-identifier">more</span> <span class="ruby-identifier">than</span> <span class="ruby-identifier">one</span> <span class="ruby-identifier">is</span>  <span class="ruby-identifier">present</span>),  <span class="ruby-keyword">and</span>  <span class="ruby-identifier">which</span>
+<span class="ruby-identifier">group</span> <span class="ruby-identifier">development</span> <span class="ruby-identifier">dependencies</span> <span class="ruby-identifier">are</span> <span class="ruby-identifier">included</span> <span class="ruby-keyword">in</span>.
+</pre>
+
+<p>SOURCE PRIORITY</p>
+
+<pre>When  attempting  to locate a gem to satisfy a gem requirement, bundler
+uses the following priority order:
+
+1.  The source explicitly attached to the gem (using :path or :git)
+
+2.  For implicit gems (dependencies of explicit gems), any git or  path
+    repository otherwise declared. This results in bundler prioritizing
+    the ActiveSupport gem from the Rails git repository over ones  from
+    rubygems.org
+
+3.  The  sources  specified via source, in the order in which they were
+    declared in the Gemfile.
+
+                         September 2011                      GEMFILE(5)</pre>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"local_window_size:EFI"4Net::SSH::Connection::Channel#local_window_size;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"MThis is the remaining window size on the local end of this channel. When:encoding"IBM437I"5this reaches zero, no more data can be received.;@:
+@fileI"&lib/net/ssh/connection/channel.rb;@F@

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Module: Spruz::GO</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/spruz/go.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-go">#go</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Spruz.html">Spruz</a>
+  
+    <li><a href="../Spruz/Attempt.html">Spruz::Attempt</a>
+  
+    <li><a href="../Spruz/Bijection.html">Spruz::Bijection</a>
+  
+    <li><a href="../Spruz/Blank.html">Spruz::Blank</a>
+  
+    <li><a href="../Spruz/Blank/Array.html">Spruz::Blank::Array</a>
+  
+    <li><a href="../Spruz/Blank/FalseClass.html">Spruz::Blank::FalseClass</a>
+  
+    <li><a href="../Spruz/Blank/Hash.html">Spruz::Blank::Hash</a>
+  
+    <li><a href="../Spruz/Blank/NilClass.html">Spruz::Blank::NilClass</a>
+  
+    <li><a href="../Spruz/Blank/Numeric.html">Spruz::Blank::Numeric</a>
+  
+    <li><a href="../Spruz/Blank/Object.html">Spruz::Blank::Object</a>
+  
+    <li><a href="../Spruz/Blank/String.html">Spruz::Blank::String</a>
+  
+    <li><a href="../Spruz/Blank/TrueClass.html">Spruz::Blank::TrueClass</a>
+  
+    <li><a href="../Spruz/CountBy.html">Spruz::CountBy</a>
+  
+    <li><a href="../Spruz/DeepDup.html">Spruz::DeepDup</a>
+  
+    <li><a href="../Spruz/FileBinary.html">Spruz::FileBinary</a>
+  
+    <li><a href="../Spruz/FileBinary/ClassMethods.html">Spruz::FileBinary::ClassMethods</a>
+  
+    <li><a href="../Spruz/FileBinary/Constants.html">Spruz::FileBinary::Constants</a>
+  
+    <li><a href="../Spruz/Full.html">Spruz::Full</a>
+  
+    <li><a href="../Spruz/GO.html">Spruz::GO</a>
+  
+    <li><a href="../Spruz/Generator.html">Spruz::Generator</a>
+  
+    <li><a href="../Spruz/HashSymbolizeKeysRecursive.html">Spruz::HashSymbolizeKeysRecursive</a>
+  
+    <li><a href="../Spruz/HashUnion.html">Spruz::HashUnion</a>
+  
+    <li><a href="../Spruz/Limited.html">Spruz::Limited</a>
+  
+    <li><a href="../Spruz/LinesFile.html">Spruz::LinesFile</a>
+  
+    <li><a href="../Spruz/LinesFile/LineExtension.html">Spruz::LinesFile::LineExtension</a>
+  
+    <li><a href="../Spruz/Memoize.html">Spruz::Memoize</a>
+  
+    <li><a href="../Spruz/Minimize.html">Spruz::Minimize</a>
+  
+    <li><a href="../Spruz/ModuleGroup.html">Spruz::ModuleGroup</a>
+  
+    <li><a href="../Spruz/Null.html">Spruz::Null</a>
+  
+    <li><a href="../Spruz/Once.html">Spruz::Once</a>
+  
+    <li><a href="../Spruz/P.html">Spruz::P</a>
+  
+    <li><a href="../Spruz/PartialApplication.html">Spruz::PartialApplication</a>
+  
+    <li><a href="../Spruz/RangePlus.html">Spruz::RangePlus</a>
+  
+    <li><a href="../Spruz/Round.html">Spruz::Round</a>
+  
+    <li><a href="../Spruz/SecureWrite.html">Spruz::SecureWrite</a>
+  
+    <li><a href="../Spruz/Shuffle.html">Spruz::Shuffle</a>
+  
+    <li><a href="../Spruz/StringCamelize.html">Spruz::StringCamelize</a>
+  
+    <li><a href="../Spruz/StringUnderscore.html">Spruz::StringUnderscore</a>
+  
+    <li><a href="../Spruz/StringVersion.html">Spruz::StringVersion</a>
+  
+    <li><a href="../Spruz/StringVersion/Version.html">Spruz::StringVersion::Version</a>
+  
+    <li><a href="../Spruz/Subhash.html">Spruz::Subhash</a>
+  
+    <li><a href="../Spruz/TimeDummy.html">Spruz::TimeDummy</a>
+  
+    <li><a href="../Spruz/TimeDummy/ClassMethods.html">Spruz::TimeDummy::ClassMethods</a>
+  
+    <li><a href="../Spruz/ToProc.html">Spruz::ToProc</a>
+  
+    <li><a href="../Spruz/UniqBy.html">Spruz::UniqBy</a>
+  
+    <li><a href="../Spruz/Write.html">Spruz::Write</a>
+  
+    <li><a href="../Array.html">Array</a>
+  
+    <li><a href="../Enumerable.html">Enumerable</a>
+  
+    <li><a href="../File.html">File</a>
+  
+    <li><a href="../Float.html">Float</a>
+  
+    <li><a href="../Hash.html">Hash</a>
+  
+    <li><a href="../IO.html">IO</a>
+  
+    <li><a href="../IRB.html">IRB</a>
+  
+    <li><a href="../Integer.html">Integer</a>
+  
+    <li><a href="../Method.html">Method</a>
+  
+    <li><a href="../Module.html">Module</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../Proc.html">Proc</a>
+  
+    <li><a href="../Range.html">Range</a>
+  
+    <li><a href="../String.html">String</a>
+  
+    <li><a href="../Symbol.html">Symbol</a>
+  
+    <li><a href="../Time.html">Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Spruz::GO</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-go" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">go</span><span
+            class="method-args">(s, args = ARGV)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Parses the argument array <em>args</em>, according to the pattern
+<em>s</em>, to retrieve the single character command line options from it.
+If <em>s</em> is 'xy:' an option '-x' without an option argument is
+searched, and an option '-y foo' with an option argument ('foo').</p>
+
+<p>An option hash is returned with all found options set to true or the found
+option argument.</p>
+          
+
+          
+          <div class="method-source-code" id="go-source">
+            <pre><span class="ruby-comment"># File lib/spruz/go.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">go</span>(<span class="ruby-identifier">s</span>, <span class="ruby-identifier">args</span> = <span class="ruby-constant">ARGV</span>)
+  <span class="ruby-identifier">b</span>,<span class="ruby-identifier">v</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/(.)(:?)/</span>).<span class="ruby-identifier">inject</span>([{},{}]) { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span>,(<span class="ruby-identifier">o</span>,<span class="ruby-identifier">a</span>)<span class="ruby-operator">|</span>
+    <span class="ruby-identifier">a</span> = <span class="ruby-identifier">a</span> <span class="ruby-operator">==</span> <span class="ruby-string">':'</span>
+    <span class="ruby-identifier">t</span>[<span class="ruby-identifier">a</span> <span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>][<span class="ruby-identifier">o</span>] = <span class="ruby-identifier">a</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>
+  }
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">a</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>
+    <span class="ruby-identifier">a</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">/\A-(.+)/</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">a</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">break</span>
+    <span class="ruby-identifier">p</span> = <span class="ruby-node">$1</span>
+    <span class="ruby-keyword">until</span> <span class="ruby-identifier">p</span> <span class="ruby-operator">==</span> <span class="ruby-string">''</span>
+      <span class="ruby-identifier">o</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-value">0</span>, <span class="ruby-value">1</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">o</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span> <span class="ruby-operator">==</span> <span class="ruby-string">''</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">v</span>[<span class="ruby-identifier">o</span>] = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword">or</span> <span class="ruby-keyword">break</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">v</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">p</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">break</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">o</span>)
+        <span class="ruby-identifier">b</span>[<span class="ruby-identifier">o</span>] = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">args</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">a</span>
+        <span class="ruby-keyword">break</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">break</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">b</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">v</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- go-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- go-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"compression_level:EFI"1Net::SSH::Transport::State#compression_level;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"RThe compression level to use when compressing data (or nil, for the default).:encoding"IBM437:
+@fileI"#lib/net/ssh/transport/state.rb;@F@

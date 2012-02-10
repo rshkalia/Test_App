@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"hmac_server:EFI"0Net::SSH::Transport::Algorithms#hmac_server;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"JThe type of HMAC to use to validate packets arriving from the server.:encoding"IBM437:
+@fileI"(lib/net/ssh/transport/algorithms.rb;@F@

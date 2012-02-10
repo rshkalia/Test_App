@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Changelog</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Changelog.html">Changelog</a>
+  
+    <li class="file"><a href="./Install.html">Install</a>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Text.html">Text</a>
+  
+    <li><a href="./Text/Format.html">Text::Format</a>
+  
+    <li><a href="./Text/Format/Alpha.html">Text::Format::Alpha</a>
+  
+    <li><a href="./Text/Format/Number.html">Text::Format::Number</a>
+  
+    <li><a href="./Text/Format/Roman.html">Text::Format::Roman</a>
+  
+    <li><a href="./Text/Format/SplitWord.html">Text::Format::SplitWord</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h2 id="label-Text%3A%3AFormat+1.0.0"><a href="Text/Format.html">Text::Format</a> 1.0.0</h2>
+<ul><li>
+<p>Changed installer: added a .gem package.</p>
+</li><li>
+<p>Changed installer: moving to a variant of setup.rb by Minero Aoki.</p>
+</li><li>
+<p>Fixed significant problems with hard_margin wrapping and fallback issues,
+eliminating all known possibilities for an infinite loop in wrapping. Some
+of the formatting changes involved with this result in different and more
+subtle wrapping and splitting of words; please read the full documentation
+for details.</p>
+</li><li>
+<p>Clarified the API for hyphenate_to (delineated the return value required if
+the hyphenator cannot hyphenate the word to the specified size).</p>
+</li><li>
+<p>Changed a number of public and private API calls to work better. As long as
+the constants provided by <a href="Text/Format.html">Text::Format</a> have
+been used (and not direct access to the constant values), there will be no
+issues presented by most of these changes.</p>
+</li><li>
+<p>Changed the initialization of the <a
+href="Text/Format.html">Text::Format</a> object. The documentation has also
+been updated to be correct. Note that this will mean that some uses of <a
+href="Text/Format.html">Text::Format</a> will not work, as <a
+href="Text/Format.html#method-c-new">Text::Format.new</a> now yields
+<code>self</code> if a block is given instead of evaluating the block with
+Object#instance_eval.</p>
+</li><li>
+<p>Added text numbering generators (<a
+href="Text/Format/Alpha.html">Text::Format::Alpha</a>, <a
+href="Text/Format/Number.html">Text::Format::Number</a>, and <a
+href="Text/Format/Roman.html">Text::Format::Roman</a>) to work with
+tag_paragraphs and tag_text to generate numbered paragraphs.</p>
+</li><li>
+<p>nobreak_regex must be a hash of regular expressions, not strings that are
+converted to regular expressions. This Perlism has finally been removed.</p>
+</li><li>
+<p>The performance has been improved; the number of times that lines are
+joined together and then split apart has been reduced.</p>
+</li><li>
+<p>Changed the dependency to Text::Hyphen from TeX::Hyphen.</p>
+</li><li>
+<p>Added auto-split capabilities to paragraphs. See the updated documentation.</p>
+</li></ul>
+
+<h2 id="label-Text%3A%3AFormat+0.64"><a href="Text/Format.html">Text::Format</a> 0.64</h2>
+<ul><li>
+<p>Fixed a bug where a NoMethod exception would be raised if paragraphs was
+called with either (" ") or ([" "]).</p>
+</li></ul>
+
+<h2 id="label-Text%3A%3AFormat+0.63"><a href="Text/Format.html">Text::Format</a> 0.63</h2>
+<ul><li>
+<p>Fixed a bug where a crash would occur when a hyphenator returned nil
+instead of "".</p>
+</li></ul>
+
+<h2 id="label-Text%3A%3AFormat+0.62"><a href="Text/Format.html">Text::Format</a> 0.62</h2>
+<ul><li>
+<p>Modified the API for hyphenators. Previously, a hyphenator could only be
+defined as an object containing a method hyphenate_to with the signature:</p>
+
+<pre>#hyphenate_to(word, size)</pre>
+
+<p>Now, the hyphenate_to method may be the above signature or:</p>
+
+<pre>#hyphenate_to(word, size, formatter)</pre>
+
+<p>So that the hyphenator may access information about the formatting object,
+if necessary. Thanks to Tim Bates for suggesting a case where this would be
+useful.</p>
+</li><li>
+<p>Fixed a bug for strings matching /As*Z/ raising a NameError.</p>
+</li><li>
+<p>Fixed a test case that failed uner 1.6.8. The following no longer works:</p>
+
+<pre>l, m1, m2 = /((?:\S+\s+){11})(.+)/.match(line)</pre>
+
+<p>This has been replaced with an explicit use of <a href="http://1">l</a> and
+<a href="http://2">l</a>. Thanks to Tim Bates for finding this problem.</p>
+</li><li>
+<p>Changed installer to Phil Thomson's install-package wrapper.</p>
+</li></ul>
+
+<h2 id="label-Text%3A%3AFormat+0.61"><a href="Text/Format.html">Text::Format</a> 0.61</h2>
+<ul><li>
+<p>Fixed a problem with the installer. Note that <a
+href="Text/Format.html">Text::Format</a> is no longer case sensitive for
+require purposes. It will be required as:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'text/format'</span>
+</pre>
+
+<p>Versions earlier than 0.60 were case-sensitive. Please be aware of this if
+you are installing <a href="Text/Format.html">Text::Format</a> over an
+older version. It may not replace the existing library in the way that you
+expect.</p>
+</li></ul>
+
+<h2 id="label-Text%3A%3AFormat+0.60"><a href="Text/Format.html">Text::Format</a> 0.60</h2>
+<ul><li>
+<p>Added Symbol equivalents for the Hash initialization. Hash initialization
+has been modified so that values are set as follows (Symbols are highest
+priority; strings are middle; defaults are lowest):</p>
+
+<pre>@columns = arg[:columns] || arg['columns'] || @columns</pre>
+</li><li>
+<p>Fixed a problem with Text::Format::RIGHT_FILL handling where a single word
+is larger than columns.</p>
+</li><li>
+<p>Removed Comparable mixin (&lt;=&gt; doesn't make sense; == does).</p>
+</li><li>
+<p>Added hard_margins, split_rules, hyphenator, and split_words. <a
+href="Text.html">Text</a> formatted with hard_margins will have words
+larger than columns split forcibly. Words forcibly split will be placed
+into split_words. See the documentation for important information on how
+this feature works.</p>
+</li></ul>
+
+<h2 id="label-Text%3A%3AFormat+0.52.2"><a href="Text/Format.html">Text::Format</a> 0.52.2</h2>
+<ul><li>
+<p>Fixed the ordering of #&lt;=&gt; in cases of Boolean values.</p>
+</li><li>
+<p>Fixed expand and unexpand Array handling.</p>
+</li><li>
+<p>Added a <a href="Changelog.html">Changelog</a>.</p>
+</li></ul>
+
+<h2 id="label-Text%3A%3AFormat+0.52.1"><a href="Text/Format.html">Text::Format</a> 0.52.1</h2>
+<ul><li>
+<p>Fixed a problem when tabs aren't counted properly.</p>
+</li><li>
+<p>Changed abbreviations from Hash to Array to better suit Ruby's
+capabilities.</p>
+</li><li>
+<p>Fixed problems with the way that Array arguments are handled in calls to
+the major object types.</p>
+</li></ul>
+
+<h2 id="label-Text%3A%3AFormat+0.52"><a href="Text/Format.html">Text::Format</a> 0.52</h2>
+<ul><li>
+<p>Initial release</p>
+</li></ul>
+
+<p>$Id: <a href="Changelog.html">Changelog</a>,v 1.6 2005/06/24 19:49:09
+austin Exp $</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

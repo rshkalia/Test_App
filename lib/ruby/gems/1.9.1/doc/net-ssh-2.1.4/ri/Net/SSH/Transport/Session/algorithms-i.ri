@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"algorithms:EFI",Net::SSH::Transport::Session#algorithms;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I";The Algorithms instance used to perform key exchanges.:encoding"IBM437:
+@fileI"%lib/net/ssh/transport/session.rb;@F@

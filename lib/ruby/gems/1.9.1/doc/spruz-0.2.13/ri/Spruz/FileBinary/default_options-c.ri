@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"default_options:EFI"'Spruz::FileBinary::default_options;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"6Default options can be queried/set via this hash.:encoding"IBM437:
+@fileI"lib/spruz/file_binary.rb;@T@

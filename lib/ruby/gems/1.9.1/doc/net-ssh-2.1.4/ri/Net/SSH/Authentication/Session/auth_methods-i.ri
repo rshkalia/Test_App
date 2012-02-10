@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"auth_methods:EFI"3Net::SSH::Authentication::Session#auth_methods;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I".the list of authentication methods to try:encoding"IBM437:
+@fileI"*lib/net/ssh/authentication/session.rb;@F@

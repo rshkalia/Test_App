@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"window:EFI"&JSON::Editor::JSONTreeView#window;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I":Returns the MainWindow instance of this JSONTreeView.:encoding"IBM437:
+@fileI"lib/json/editor.rb;@F@

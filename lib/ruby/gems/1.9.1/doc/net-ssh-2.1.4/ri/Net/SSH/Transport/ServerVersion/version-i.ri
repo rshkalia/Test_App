@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"version:EFI"/Net::SSH::Transport::ServerVersion#version;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"/The version string reported by the server.:encoding"IBM437:
+@fileI",lib/net/ssh/transport/server_version.rb;@F@

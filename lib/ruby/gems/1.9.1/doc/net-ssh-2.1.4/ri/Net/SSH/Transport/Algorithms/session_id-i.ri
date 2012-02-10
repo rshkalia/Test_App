@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"session_id:EFI"/Net::SSH::Transport::Algorithms#session_id;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"QThe session-id for this session, as decided during the initial key exchange.:encoding"IBM437:
+@fileI"(lib/net/ssh/transport/algorithms.rb;@F@

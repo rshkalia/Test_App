@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"proxy_host:EFI"'Net::SSH::Proxy::SOCKS4#proxy_host;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"FThe proxy's host name or IP address, as given to the constructor.:encoding"IBM437:
+@fileI" lib/net/ssh/proxy/socks4.rb;@F@

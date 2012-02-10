@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>README - term-ansicolor-1.0.7 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Term.html">Term</a>
+  
+    <li><a href="./Term/ANSIColor.html">Term::ANSIColor</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Term%3A%3AANSIColor+-+ANSI+escape+sequences+in+Ruby"><a href="Term/ANSIColor.html">Term::ANSIColor</a> - ANSI escape sequences in Ruby</h1>
+
+<h2 id="label-Description">Description</h2>
+
+<p>This library can be used to color/decolor strings using ANSI escape
+sequences.</p>
+
+<h2 id="label-Installation">Installation</h2>
+
+<p>Just type into the command line as root:</p>
+
+<p># ruby install.rb</p>
+
+<p>Or if you prefer using Rake, try:</p>
+
+<p># rake install</p>
+
+<p>Or if you want to use rubygems just type this and rubygems fetches the gem
+and installs it for you:</p>
+
+<p># gem install term-ansicolor</p>
+
+<h2 id="label-Download">Download</h2>
+
+<p>The latest version of this library can be downloaded at</p>
+<ul><li>
+<p><a href="http://www.ping.de/~flori">www.ping.de/~flori</a></p>
+</li></ul>
+
+<p>The homepage of this library is located at</p>
+<ul><li>
+<p><a
+href="http://flori.github.com/term-ansicolor">flori.github.com/term-ansicolor</a></p>
+</li></ul>
+
+<h2 id="label-Examples">Examples</h2>
+
+<p>Additional to the two executables cdiff and decolor, the file
+examples/example.rb in the source/gem-distribution shows how this library
+can be used:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'term/ansicolor'</span>
+
+<span class="ruby-comment"># Use this trick to work around namespace cluttering that</span>
+<span class="ruby-comment"># happens if you just include Term::ANSIColor:</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Color</span>
+  <span class="ruby-identifier">extend</span> <span class="ruby-constant">Term</span><span class="ruby-operator">::</span><span class="ruby-constant">ANSIColor</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">print</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">red</span>, <span class="ruby-constant">Color</span>.<span class="ruby-identifier">bold</span>, <span class="ruby-string">&quot;No Namespace cluttering:&quot;</span>, <span class="ruby-constant">Color</span>.<span class="ruby-identifier">clear</span>, <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-identifier">print</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">green</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;green&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">clear</span>, <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-identifier">print</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">on_red</span>(<span class="ruby-constant">Color</span>.<span class="ruby-identifier">green</span>(<span class="ruby-string">&quot;green&quot;</span>)), <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-identifier">print</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">yellow</span> { <span class="ruby-constant">Color</span>.<span class="ruby-identifier">on_black</span> { <span class="ruby-string">&quot;yellow on_black&quot;</span> } }, <span class="ruby-string">&quot;\n\n&quot;</span>
+
+<span class="ruby-comment"># Or shortcut Term::ANSIColor by assignment:</span>
+<span class="ruby-identifier">c</span> = <span class="ruby-constant">Term</span><span class="ruby-operator">::</span><span class="ruby-constant">ANSIColor</span>
+
+<span class="ruby-identifier">print</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">red</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">bold</span>, <span class="ruby-string">&quot;No Namespace cluttering (alternative):&quot;</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">clear</span>, <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-identifier">print</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">green</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;green&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">clear</span>, <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-identifier">print</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">on_red</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">green</span>(<span class="ruby-string">&quot;green&quot;</span>)), <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-identifier">print</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">yellow</span> { <span class="ruby-identifier">c</span>.<span class="ruby-identifier">on_black</span> { <span class="ruby-string">&quot;yellow on_black&quot;</span> } }, <span class="ruby-string">&quot;\n\n&quot;</span>
+
+<span class="ruby-comment"># Anyway, I don't define any of Term::ANSIColor's methods in this example</span>
+<span class="ruby-comment"># and I want to keep it short:</span>
+<span class="ruby-identifier">include</span> <span class="ruby-constant">Term</span><span class="ruby-operator">::</span><span class="ruby-constant">ANSIColor</span>
+
+<span class="ruby-identifier">print</span> <span class="ruby-identifier">red</span>, <span class="ruby-identifier">bold</span>, <span class="ruby-string">&quot;Usage as constants:&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-identifier">print</span> <span class="ruby-identifier">clear</span>, <span class="ruby-string">&quot;clear&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-string">&quot;reset&quot;</span>, <span class="ruby-identifier">reset</span>,
+  <span class="ruby-identifier">bold</span>, <span class="ruby-string">&quot;bold&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-identifier">dark</span>, <span class="ruby-string">&quot;dark&quot;</span>, <span class="ruby-identifier">reset</span>,
+  <span class="ruby-identifier">underscore</span>, <span class="ruby-string">&quot;underscore&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-identifier">blink</span>, <span class="ruby-string">&quot;blink&quot;</span>, <span class="ruby-identifier">reset</span>,
+  <span class="ruby-identifier">negative</span>, <span class="ruby-string">&quot;negative&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-identifier">concealed</span>, <span class="ruby-string">&quot;concealed&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-string">&quot;|\n&quot;</span>,
+  <span class="ruby-identifier">black</span>, <span class="ruby-string">&quot;black&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-identifier">red</span>, <span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-identifier">green</span>, <span class="ruby-string">&quot;green&quot;</span>, <span class="ruby-identifier">reset</span>,
+  <span class="ruby-identifier">yellow</span>, <span class="ruby-string">&quot;yellow&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-identifier">blue</span>, <span class="ruby-string">&quot;blue&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-identifier">magenta</span>, <span class="ruby-string">&quot;magenta&quot;</span>, <span class="ruby-identifier">reset</span>,
+  <span class="ruby-identifier">cyan</span>, <span class="ruby-string">&quot;cyan&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-identifier">white</span>, <span class="ruby-string">&quot;white&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-string">&quot;|\n&quot;</span>,
+  <span class="ruby-identifier">on_black</span>, <span class="ruby-string">&quot;on_black&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-identifier">on_red</span>, <span class="ruby-string">&quot;on_red&quot;</span>, <span class="ruby-identifier">reset</span>,
+  <span class="ruby-identifier">on_green</span>, <span class="ruby-string">&quot;on_green&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-identifier">on_yellow</span>, <span class="ruby-string">&quot;on_yellow&quot;</span>, <span class="ruby-identifier">reset</span>,
+  <span class="ruby-identifier">on_blue</span>, <span class="ruby-string">&quot;on_blue&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-identifier">on_magenta</span>, <span class="ruby-string">&quot;on_magenta&quot;</span>, <span class="ruby-identifier">reset</span>,
+  <span class="ruby-identifier">on_cyan</span>, <span class="ruby-string">&quot;on_cyan&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-identifier">on_white</span>, <span class="ruby-string">&quot;on_white&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-string">&quot;|\n\n&quot;</span>
+
+<span class="ruby-identifier">print</span> <span class="ruby-identifier">red</span>, <span class="ruby-identifier">bold</span>, <span class="ruby-string">&quot;Usage as unary argument methods:&quot;</span>, <span class="ruby-identifier">reset</span>, <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-identifier">print</span> <span class="ruby-identifier">clear</span>(<span class="ruby-string">&quot;clear&quot;</span>), <span class="ruby-identifier">reset</span>(<span class="ruby-string">&quot;reset&quot;</span>), <span class="ruby-identifier">bold</span>(<span class="ruby-string">&quot;bold&quot;</span>), <span class="ruby-identifier">dark</span>(<span class="ruby-string">&quot;dark&quot;</span>),
+  <span class="ruby-identifier">underscore</span>(<span class="ruby-string">&quot;underscore&quot;</span>), <span class="ruby-identifier">blink</span>(<span class="ruby-string">&quot;blink&quot;</span>), <span class="ruby-identifier">negative</span>(<span class="ruby-string">&quot;negative&quot;</span>),
+  <span class="ruby-identifier">concealed</span>(<span class="ruby-string">&quot;concealed&quot;</span>), <span class="ruby-string">&quot;|\n&quot;</span>,
+  <span class="ruby-identifier">black</span>(<span class="ruby-string">&quot;black&quot;</span>), <span class="ruby-identifier">red</span>(<span class="ruby-string">&quot;red&quot;</span>), <span class="ruby-identifier">green</span>(<span class="ruby-string">&quot;green&quot;</span>), <span class="ruby-identifier">yellow</span>(<span class="ruby-string">&quot;yellow&quot;</span>),
+  <span class="ruby-identifier">blue</span>(<span class="ruby-string">&quot;blue&quot;</span>), <span class="ruby-identifier">magenta</span>(<span class="ruby-string">&quot;magenta&quot;</span>), <span class="ruby-identifier">cyan</span>(<span class="ruby-string">&quot;cyan&quot;</span>), <span class="ruby-identifier">white</span>(<span class="ruby-string">&quot;white&quot;</span>), <span class="ruby-string">&quot;|\n&quot;</span>,
+  <span class="ruby-identifier">on_black</span>(<span class="ruby-string">&quot;on_black&quot;</span>), <span class="ruby-identifier">on_red</span>(<span class="ruby-string">&quot;on_red&quot;</span>), <span class="ruby-identifier">on_green</span>(<span class="ruby-string">&quot;on_green&quot;</span>),<span class="ruby-comment">#</span>
+  <span class="ruby-identifier">on_yellow</span>(<span class="ruby-string">&quot;on_yellow&quot;</span>), <span class="ruby-identifier">on_blue</span>(<span class="ruby-string">&quot;on_blue&quot;</span>), <span class="ruby-identifier">on_magenta</span>(<span class="ruby-string">&quot;on_magenta&quot;</span>),
+  <span class="ruby-identifier">on_cyan</span>(<span class="ruby-string">&quot;on_cyan&quot;</span>), <span class="ruby-identifier">on_white</span>(<span class="ruby-string">&quot;on_white&quot;</span>), <span class="ruby-string">&quot;|\n\n&quot;</span>
+
+<span class="ruby-identifier">print</span> <span class="ruby-identifier">red</span> { <span class="ruby-identifier">bold</span> { <span class="ruby-string">&quot;Usage as block forms:&quot;</span> } }, <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-identifier">print</span> <span class="ruby-identifier">clear</span> { <span class="ruby-string">&quot;clear&quot;</span> }, <span class="ruby-identifier">reset</span> { <span class="ruby-string">&quot;reset&quot;</span> }, <span class="ruby-identifier">bold</span> { <span class="ruby-string">&quot;bold&quot;</span> },
+  <span class="ruby-identifier">dark</span> { <span class="ruby-string">&quot;dark&quot;</span> }, <span class="ruby-identifier">underscore</span> { <span class="ruby-string">&quot;underscore&quot;</span> }, <span class="ruby-identifier">blink</span> { <span class="ruby-string">&quot;blink&quot;</span> },
+  <span class="ruby-identifier">negative</span> { <span class="ruby-string">&quot;negative&quot;</span> }, <span class="ruby-identifier">concealed</span> { <span class="ruby-string">&quot;concealed&quot;</span> }, <span class="ruby-string">&quot;|\n&quot;</span>,
+  <span class="ruby-identifier">black</span> { <span class="ruby-string">&quot;black&quot;</span> }, <span class="ruby-identifier">red</span> { <span class="ruby-string">&quot;red&quot;</span> }, <span class="ruby-identifier">green</span> { <span class="ruby-string">&quot;green&quot;</span> },
+  <span class="ruby-identifier">yellow</span> { <span class="ruby-string">&quot;yellow&quot;</span> }, <span class="ruby-identifier">blue</span> { <span class="ruby-string">&quot;blue&quot;</span> }, <span class="ruby-identifier">magenta</span> { <span class="ruby-string">&quot;magenta&quot;</span> },
+  <span class="ruby-identifier">cyan</span> { <span class="ruby-string">&quot;cyan&quot;</span> }, <span class="ruby-identifier">white</span> { <span class="ruby-string">&quot;white&quot;</span> }, <span class="ruby-string">&quot;|\n&quot;</span>,
+  <span class="ruby-identifier">on_black</span> { <span class="ruby-string">&quot;on_black&quot;</span> }, <span class="ruby-identifier">on_red</span> { <span class="ruby-string">&quot;on_red&quot;</span> }, <span class="ruby-identifier">on_green</span> { <span class="ruby-string">&quot;on_green&quot;</span> },
+  <span class="ruby-identifier">on_yellow</span> { <span class="ruby-string">&quot;on_yellow&quot;</span> }, <span class="ruby-identifier">on_blue</span> { <span class="ruby-string">&quot;on_blue&quot;</span> },
+  <span class="ruby-identifier">on_magenta</span> { <span class="ruby-string">&quot;on_magenta&quot;</span> }, <span class="ruby-identifier">on_cyan</span> { <span class="ruby-string">&quot;on_cyan&quot;</span> },
+  <span class="ruby-identifier">on_white</span> { <span class="ruby-string">&quot;on_white&quot;</span> }, <span class="ruby-string">&quot;|\n\n&quot;</span>
+
+<span class="ruby-comment"># Usage as Mixin into String or its Subclasses</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">String</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Term</span><span class="ruby-operator">::</span><span class="ruby-constant">ANSIColor</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">print</span> <span class="ruby-string">&quot;Usage as String Mixins:&quot;</span>.<span class="ruby-identifier">red</span>.<span class="ruby-identifier">bold</span>, <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-identifier">print</span> <span class="ruby-string">&quot;clear&quot;</span>.<span class="ruby-identifier">clear</span>, <span class="ruby-string">&quot;reset&quot;</span>.<span class="ruby-identifier">reset</span>, <span class="ruby-string">&quot;bold&quot;</span>.<span class="ruby-identifier">bold</span>, <span class="ruby-string">&quot;dark&quot;</span>.<span class="ruby-identifier">dark</span>,
+  <span class="ruby-string">&quot;underscore&quot;</span>.<span class="ruby-identifier">underscore</span>, <span class="ruby-string">&quot;blink&quot;</span>.<span class="ruby-identifier">blink</span>, <span class="ruby-string">&quot;negative&quot;</span>.<span class="ruby-identifier">negative</span>,
+  <span class="ruby-string">&quot;concealed&quot;</span>.<span class="ruby-identifier">concealed</span>, <span class="ruby-string">&quot;|\n&quot;</span>,
+  <span class="ruby-string">&quot;black&quot;</span>.<span class="ruby-identifier">black</span>, <span class="ruby-string">&quot;red&quot;</span>.<span class="ruby-identifier">red</span>, <span class="ruby-string">&quot;green&quot;</span>.<span class="ruby-identifier">green</span>, <span class="ruby-string">&quot;yellow&quot;</span>.<span class="ruby-identifier">yellow</span>,
+  <span class="ruby-string">&quot;blue&quot;</span>.<span class="ruby-identifier">blue</span>, <span class="ruby-string">&quot;magenta&quot;</span>.<span class="ruby-identifier">magenta</span>, <span class="ruby-string">&quot;cyan&quot;</span>.<span class="ruby-identifier">cyan</span>, <span class="ruby-string">&quot;white&quot;</span>.<span class="ruby-identifier">white</span>, <span class="ruby-string">&quot;|\n&quot;</span>,
+  <span class="ruby-string">&quot;on_black&quot;</span>.<span class="ruby-identifier">on_black</span>, <span class="ruby-string">&quot;on_red&quot;</span>.<span class="ruby-identifier">on_red</span>, <span class="ruby-string">&quot;on_green&quot;</span>.<span class="ruby-identifier">on_green</span>,
+  <span class="ruby-string">&quot;on_yellow&quot;</span>.<span class="ruby-identifier">on_yellow</span>, <span class="ruby-string">&quot;on_blue&quot;</span>.<span class="ruby-identifier">on_blue</span>, <span class="ruby-string">&quot;on_magenta&quot;</span>.<span class="ruby-identifier">on_magenta</span>,
+  <span class="ruby-string">&quot;on_cyan&quot;</span>.<span class="ruby-identifier">on_cyan</span>, <span class="ruby-string">&quot;on_white&quot;</span>.<span class="ruby-identifier">on_white</span>, <span class="ruby-string">&quot;|\n\n&quot;</span>
+
+<span class="ruby-identifier">symbols</span> = <span class="ruby-constant">Term</span><span class="ruby-operator">::</span><span class="ruby-constant">ANSIColor</span><span class="ruby-operator">::</span><span class="ruby-identifier">attributes</span>
+<span class="ruby-identifier">print</span> <span class="ruby-identifier">red</span> { <span class="ruby-identifier">bold</span> { <span class="ruby-string">&quot;All supported attributes = &quot;</span> } },
+  <span class="ruby-identifier">blue</span> { <span class="ruby-identifier">symbols</span>.<span class="ruby-identifier">inspect</span> }, <span class="ruby-string">&quot;\n\n&quot;</span>
+
+<span class="ruby-identifier">print</span> <span class="ruby-string">&quot;Send symbols to strings:&quot;</span>.<span class="ruby-identifier">send</span>(:<span class="ruby-identifier">red</span>).<span class="ruby-identifier">send</span>(:<span class="ruby-identifier">bold</span>), <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-identifier">print</span> <span class="ruby-identifier">symbols</span>[<span class="ruby-value">12</span>, <span class="ruby-value">8</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">c</span>) }, <span class="ruby-string">&quot;\n\n&quot;</span>
+
+<span class="ruby-identifier">print</span> <span class="ruby-identifier">red</span> { <span class="ruby-identifier">bold</span> { <span class="ruby-string">&quot;Make strings monochromatic again:&quot;</span> } }, <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-identifier">print</span> [
+    <span class="ruby-string">&quot;red&quot;</span>.<span class="ruby-identifier">red</span>,
+    <span class="ruby-string">&quot;not red anymore&quot;</span>.<span class="ruby-identifier">red</span>.<span class="ruby-identifier">uncolored</span>,
+    <span class="ruby-identifier">uncolored</span> { <span class="ruby-string">&quot;not red anymore&quot;</span>.<span class="ruby-identifier">red</span> },
+    <span class="ruby-identifier">uncolored</span>(<span class="ruby-string">&quot;not red anymore&quot;</span>.<span class="ruby-identifier">red</span>)
+  ].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\n&quot;</span> }
+</pre>
+
+<h2 id="label-Author">Author</h2>
+
+<p>Florian Frank <a href="mailto:flori@ping.de">flori@ping.de</a></p>
+
+<h2 id="label-License">License</h2>
+
+<p>This is free software; you can redistribute it and/or modify it under the
+terms of the GNU General Public License Version 2 as published by the Free
+Software Foundation: <a
+href="http://www.gnu.org/copyleft/gpl.html">www.gnu.org/copyleft/gpl.html</a></p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

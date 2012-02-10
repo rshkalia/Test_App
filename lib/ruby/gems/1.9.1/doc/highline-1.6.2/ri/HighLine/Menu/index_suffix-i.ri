@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"index_suffix:EFI" HighLine::Menu#index_suffix;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"GThe String placed between an _index_ and a menu item.  Defaults to:encoding"IBM437I"H". ".  Switches to " ", when _index_ is set to a String (like "-").;@:
+@fileI"lib/highline/menu.rb;@F@

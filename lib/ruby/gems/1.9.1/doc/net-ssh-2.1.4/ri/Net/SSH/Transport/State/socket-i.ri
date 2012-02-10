@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"socket:EFI"&Net::SSH::Transport::State#socket;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"3The socket object that owns this state object.:encoding"IBM437:
+@fileI"#lib/net/ssh/transport/state.rb;@F@

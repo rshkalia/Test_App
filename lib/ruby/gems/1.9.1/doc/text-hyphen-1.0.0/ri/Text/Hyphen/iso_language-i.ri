@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"iso_language:EFI"Text::Hyphen#iso_language;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I">Returns the language's ISO 639 ID, e.g., "en_us" or "pt".:encoding"IBM437:
+@fileI"lib/text/hyphen.rb;@F@

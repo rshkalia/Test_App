@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Class: RestClient::Payload::Multipart</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/restclient/payload.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Base.html">RestClient::Payload::Base</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-boundary">#boundary</a>
+    
+    <li><a href="#method-i-build_stream">#build_stream</a>
+    
+    <li><a href="#method-i-close">#close</a>
+    
+    <li><a href="#method-i-create_file_field">#create_file_field</a>
+    
+    <li><a href="#method-i-create_regular_field">#create_regular_field</a>
+    
+    <li><a href="#method-i-handle_key">#handle_key</a>
+    
+    <li><a href="#method-i-headers">#headers</a>
+    
+    <li><a href="#method-i-mime_for">#mime_for</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../RestClient.html">RestClient</a>
+  
+    <li><a href="../../RestClient/AbstractResponse.html">RestClient::AbstractResponse</a>
+  
+    <li><a href="../../RestClient/Exception.html">RestClient::Exception</a>
+  
+    <li><a href="../../RestClient/ExceptionWithResponse.html">RestClient::ExceptionWithResponse</a>
+  
+    <li><a href="../../RestClient/Exceptions.html">RestClient::Exceptions</a>
+  
+    <li><a href="../../RestClient/MaxRedirectsReached.html">RestClient::MaxRedirectsReached</a>
+  
+    <li><a href="../../RestClient/Payload.html">RestClient::Payload</a>
+  
+    <li><a href="../../RestClient/Payload/Base.html">RestClient::Payload::Base</a>
+  
+    <li><a href="../../RestClient/Payload/Multipart.html">RestClient::Payload::Multipart</a>
+  
+    <li><a href="../../RestClient/Payload/Streamed.html">RestClient::Payload::Streamed</a>
+  
+    <li><a href="../../RestClient/Payload/UrlEncoded.html">RestClient::Payload::UrlEncoded</a>
+  
+    <li><a href="../../RestClient/RawResponse.html">RestClient::RawResponse</a>
+  
+    <li><a href="../../RestClient/Redirect.html">RestClient::Redirect</a>
+  
+    <li><a href="../../RestClient/Request.html">RestClient::Request</a>
+  
+    <li><a href="../../RestClient/Redirect.html">RestClient::Request::Redirect</a>
+  
+    <li><a href="../../RestClient/RequestFailed.html">RestClient::Request::RequestFailed</a>
+  
+    <li><a href="../../RestClient/RequestFailed.html">RestClient::RequestFailed</a>
+  
+    <li><a href="../../RestClient/Resource.html">RestClient::Resource</a>
+  
+    <li><a href="../../RestClient/Response.html">RestClient::Response</a>
+  
+    <li><a href="../../RestClient/ResponseForException.html">RestClient::ResponseForException</a>
+  
+    <li><a href="../../RestClient/SSLCertificateNotVerified.html">RestClient::SSLCertificateNotVerified</a>
+  
+    <li><a href="../../RestClient/ServerBrokeConnection.html">RestClient::ServerBrokeConnection</a>
+  
+    <li><a href="../../Net.html">Net</a>
+  
+    <li><a href="../../Net/HTTP.html">Net::HTTP</a>
+  
+    <li><a href="../../Net/HTTP/Patch.html">Net::HTTP::Patch</a>
+  
+    <li><a href="../../Net/HTTP/Protocol.html">Net::HTTP::Protocol</a>
+  
+    <li><a href="../../MIME.html">MIME</a>
+  
+    <li><a href="../../MIME/Types.html">MIME::Types</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class RestClient::Payload::Multipart</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="EOL">EOL
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-boundary" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">boundary</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="boundary-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">boundary</span>
+  <span class="ruby-ivar">@boundary</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">rand</span>(<span class="ruby-value">1_000_000</span>).<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- boundary-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- boundary-method -->
+
+    
+      <div id="method-i-build_stream" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_stream</span><span
+            class="method-args">(params)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="build_stream-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">build_stream</span>(<span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">b</span> = <span class="ruby-node">&quot;--#{boundary}&quot;</span>
+
+  <span class="ruby-ivar">@stream</span> = <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;RESTClient.Stream.#{rand(1000)}&quot;</span>)
+  <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">binmode</span>
+  <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">b</span> <span class="ruby-operator">+</span> <span class="ruby-constant">EOL</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Hash</span>
+    <span class="ruby-identifier">x</span> = <span class="ruby-identifier">flatten_params</span>(<span class="ruby-identifier">params</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">x</span> = <span class="ruby-identifier">params</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">last_index</span> = <span class="ruby-identifier">x</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">x</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span> = * <span class="ruby-identifier">a</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:read</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:path</span>)
+      <span class="ruby-identifier">create_file_field</span>(<span class="ruby-ivar">@stream</span>, <span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">create_regular_field</span>(<span class="ruby-ivar">@stream</span>, <span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">write</span>(<span class="ruby-constant">EOL</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span>)
+    <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">write</span>(<span class="ruby-constant">EOL</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">last_index</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">write</span>(<span class="ruby-string">'--'</span>)
+  <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">write</span>(<span class="ruby-constant">EOL</span>)
+  <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">seek</span>(<span class="ruby-value">0</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- build_stream-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- build_stream-method -->
+
+    
+      <div id="method-i-close" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">close</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="close-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">close</span>
+  <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">close!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- close-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- close-method -->
+
+    
+      <div id="method-i-create_file_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_file_field</span><span
+            class="method-args">(s, k, v)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_file_field-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_file_field</span>(<span class="ruby-identifier">s</span>, <span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;Content-Disposition: form-data;&quot;</span>)
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">write</span>(<span class="ruby-node">&quot; name=\&quot;#{k}\&quot;;&quot;</span>) <span class="ruby-keyword">unless</span> (<span class="ruby-identifier">k</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">k</span><span class="ruby-operator">==</span><span class="ruby-string">''</span>)
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">write</span>(<span class="ruby-node">&quot; filename=\&quot;#{v.respond_to?(:original_filename) ? v.original_filename : File.basename(v.path)}\&quot;#{EOL}&quot;</span>)
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">write</span>(<span class="ruby-node">&quot;Content-Type: #{v.respond_to?(:content_type) ? v.content_type : mime_for(v.path)}#{EOL}&quot;</span>)
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">write</span>(<span class="ruby-constant">EOL</span>)
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">data</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value">8124</span>)
+      <span class="ruby-identifier">s</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">data</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-identifier">v</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:close</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_file_field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_file_field-method -->
+
+    
+      <div id="method-i-create_regular_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_regular_field</span><span
+            class="method-args">(s, k, v)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_regular_field-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_regular_field</span>(<span class="ruby-identifier">s</span>, <span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>)
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">write</span>(<span class="ruby-node">&quot;Content-Disposition: form-data; name=\&quot;#{k}\&quot;&quot;</span>)
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">write</span>(<span class="ruby-constant">EOL</span>)
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">write</span>(<span class="ruby-constant">EOL</span>)
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">v</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_regular_field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_regular_field-method -->
+
+    
+      <div id="method-i-handle_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_key</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>for <a href="Multipart.html">Multipart</a> do not escape the keys</p>
+          
+
+          
+          <div class="method-source-code" id="handle_key-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 222</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_key</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">key</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_key-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_key-method -->
+
+    
+      <div id="method-i-headers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">headers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="headers-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">headers</span>
+  <span class="ruby-keyword">super</span>.<span class="ruby-identifier">merge</span>({<span class="ruby-string">'Content-Type'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">%Q{multipart/form-data; boundary=#{boundary}}</span>})
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- headers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- headers-method -->
+
+    
+      <div id="method-i-mime_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mime_for</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mime_for-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mime_for</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">mime</span> = <span class="ruby-constant">MIME</span><span class="ruby-operator">::</span><span class="ruby-constant">Types</span>.<span class="ruby-identifier">type_for</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-identifier">mime</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-string">'text/plain'</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">mime</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">content_type</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mime_for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mime_for-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

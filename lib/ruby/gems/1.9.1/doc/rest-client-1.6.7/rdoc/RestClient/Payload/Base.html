@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>Class: RestClient::Payload::Base</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/restclient/payload.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-build_stream">#build_stream</a>
+    
+    <li><a href="#method-i-close">#close</a>
+    
+    <li><a href="#method-i-flatten_params">#flatten_params</a>
+    
+    <li><a href="#method-i-flatten_params_array">#flatten_params_array</a>
+    
+    <li><a href="#method-i-headers">#headers</a>
+    
+    <li><a href="#method-i-inspect">#inspect</a>
+    
+    <li><a href="#method-i-length">#length</a>
+    
+    <li><a href="#method-i-read">#read</a>
+    
+    <li><a href="#method-i-short_inspect">#short_inspect</a>
+    
+    <li><a href="#method-i-size">#size</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../RestClient.html">RestClient</a>
+  
+    <li><a href="../../RestClient/AbstractResponse.html">RestClient::AbstractResponse</a>
+  
+    <li><a href="../../RestClient/Exception.html">RestClient::Exception</a>
+  
+    <li><a href="../../RestClient/ExceptionWithResponse.html">RestClient::ExceptionWithResponse</a>
+  
+    <li><a href="../../RestClient/Exceptions.html">RestClient::Exceptions</a>
+  
+    <li><a href="../../RestClient/MaxRedirectsReached.html">RestClient::MaxRedirectsReached</a>
+  
+    <li><a href="../../RestClient/Payload.html">RestClient::Payload</a>
+  
+    <li><a href="../../RestClient/Payload/Base.html">RestClient::Payload::Base</a>
+  
+    <li><a href="../../RestClient/Payload/Multipart.html">RestClient::Payload::Multipart</a>
+  
+    <li><a href="../../RestClient/Payload/Streamed.html">RestClient::Payload::Streamed</a>
+  
+    <li><a href="../../RestClient/Payload/UrlEncoded.html">RestClient::Payload::UrlEncoded</a>
+  
+    <li><a href="../../RestClient/RawResponse.html">RestClient::RawResponse</a>
+  
+    <li><a href="../../RestClient/Redirect.html">RestClient::Redirect</a>
+  
+    <li><a href="../../RestClient/Request.html">RestClient::Request</a>
+  
+    <li><a href="../../RestClient/Redirect.html">RestClient::Request::Redirect</a>
+  
+    <li><a href="../../RestClient/RequestFailed.html">RestClient::Request::RequestFailed</a>
+  
+    <li><a href="../../RestClient/RequestFailed.html">RestClient::RequestFailed</a>
+  
+    <li><a href="../../RestClient/Resource.html">RestClient::Resource</a>
+  
+    <li><a href="../../RestClient/Response.html">RestClient::Response</a>
+  
+    <li><a href="../../RestClient/ResponseForException.html">RestClient::ResponseForException</a>
+  
+    <li><a href="../../RestClient/SSLCertificateNotVerified.html">RestClient::SSLCertificateNotVerified</a>
+  
+    <li><a href="../../RestClient/ServerBrokeConnection.html">RestClient::ServerBrokeConnection</a>
+  
+    <li><a href="../../Net.html">Net</a>
+  
+    <li><a href="../../Net/HTTP.html">Net::HTTP</a>
+  
+    <li><a href="../../Net/HTTP/Patch.html">Net::HTTP::Patch</a>
+  
+    <li><a href="../../Net/HTTP/Protocol.html">Net::HTTP::Protocol</a>
+  
+    <li><a href="../../MIME.html">MIME</a>
+  
+    <li><a href="../../MIME/Types.html">MIME::Types</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class RestClient::Payload::Base</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(params)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">build_stream</span>(<span class="ruby-identifier">params</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-build_stream" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_stream</span><span
+            class="method-args">(params)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="build_stream-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">build_stream</span>(<span class="ruby-identifier">params</span>)
+  <span class="ruby-ivar">@stream</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>)
+  <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">seek</span>(<span class="ruby-value">0</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- build_stream-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- build_stream-method -->
+
+    
+      <div id="method-i-close" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">close</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="close-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">close</span>
+  <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">closed?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- close-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- close-method -->
+
+    
+      <div id="method-i-flatten_params" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">flatten_params</span><span
+            class="method-args">(params, parent_key = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Flatten parameters by converting hashes of hashes to flat hashes {keys1
+=&gt; {keys2 =&gt; value}} will be transformed into [<a
+href="http://key2">keys1</a>, value]</p>
+          
+
+          
+          <div class="method-source-code" id="flatten_params-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">flatten_params</span>(<span class="ruby-identifier">params</span>, <span class="ruby-identifier">parent_key</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">calculated_key</span> = <span class="ruby-identifier">parent_key</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{parent_key}[#{handle_key(key)}]&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">handle_key</span>(<span class="ruby-identifier">key</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Hash</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">flatten_params</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">calculated_key</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">flatten_params_array</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">calculated_key</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">calculated_key</span>, <span class="ruby-identifier">value</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- flatten_params-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- flatten_params-method -->
+
+    
+      <div id="method-i-flatten_params_array" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">flatten_params_array</span><span
+            class="method-args">(value, calculated_key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="flatten_params_array-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">flatten_params_array</span> <span class="ruby-identifier">value</span>, <span class="ruby-identifier">calculated_key</span>
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-identifier">value</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elem</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">elem</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Hash</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">flatten_params</span>(<span class="ruby-identifier">elem</span>, <span class="ruby-identifier">calculated_key</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">elem</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">flatten_params_array</span>(<span class="ruby-identifier">elem</span>, <span class="ruby-identifier">calculated_key</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-node">&quot;#{calculated_key}[]&quot;</span>, <span class="ruby-identifier">elem</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- flatten_params_array-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- flatten_params_array-method -->
+
+    
+      <div id="method-i-headers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">headers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="headers-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">headers</span>
+  {<span class="ruby-string">'Content-Length'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_s</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- headers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- headers-method -->
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">inspect</span>
+  <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">seek</span>(<span class="ruby-value">0</span>)
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect-method -->
+
+    
+      <div id="method-i-length" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">length</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Base.html#method-i-size">size</a>
+        </div>
+        
+      </div><!-- length-method -->
+
+    
+      <div id="method-i-read" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read</span><span
+            class="method-args">(bytes=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="read-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">read</span>(<span class="ruby-identifier">bytes</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">bytes</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- read-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Base.html#method-i-to_s">to_s</a>
+        </div>
+        
+
+        
+      </div><!-- read-method -->
+
+    
+      <div id="method-i-short_inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">short_inspect</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="short_inspect-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">short_inspect</span>
+  (<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">500</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{size} byte(s) length&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">inspect</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- short_inspect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- short_inspect-method -->
+
+    
+      <div id="method-i-size" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="size-source">
+            <pre><span class="ruby-comment"># File lib/restclient/payload.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">size</span>
+  <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- size-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Base.html#method-i-length">length</a>
+        </div>
+        
+
+        
+      </div><!-- size-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">(bytes=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Base.html#method-i-read">read</a>
+        </div>
+        
+      </div><!-- to_s-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

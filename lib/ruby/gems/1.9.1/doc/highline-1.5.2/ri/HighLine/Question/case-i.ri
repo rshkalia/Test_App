@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	case:EFI"HighLine::Question#case;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"OUsed to control character case processing for the answer to this question.:encoding"IBM437I"BSee HighLine::Question.change_case() for acceptable settings.;@:
+@fileI"lib/highline/question.rb;@F@
